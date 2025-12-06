@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-premium-dark: #121418;
+  --color-premium-light: #F5F7FA;
+  --color-premium-accent: #5E81AC;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-premium-light text-premium-dark font-sans;
+}
+
+.dark body {
+  @apply bg-premium-dark text-premium-light;
+}
