@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import Globe3D from './Globe3D';
 
 const About = () => {
     return (
-        <section id="about" className="py-20 bg-white overflow-hidden">
+        <section id="about" className="py-20 relative overflow-hidden">
+             {/* Semi-transparent background panel to ensure readability over particles */}
+            <div className="absolute inset-0 bg-white/80 backdrop-blur-sm -z-10"></div>
+            
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-center gap-12">
                     <motion.div
@@ -32,19 +38,28 @@ const About = () => {
                             </div>
                         </div>
                     </motion.div>
+                    
+                    {/* 3D Globe Section */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8 }}
-                        className="md:w-1/2"
+                        className="md:w-1/2 h-[400px] w-full cursor-move"
                     >
-                        <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
-                            {/* Placeholder for About Image */}
-                            <div className="w-full h-80 bg-gray-200 flex items-center justify-center text-gray-400 text-xl font-medium">
-                                Office / Team Image
-                            </div>
-                        </div>
+                         <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
+                            <ambientLight intensity={0.5} />
+                            <Suspense fallback={null}>
+                                <Globe3D />
+                                {/* Allow user to spin the globe */}
+                                <OrbitControls 
+                                    enableZoom={false} 
+                                    autoRotate 
+                                    autoRotateSpeed={0.5}
+                                    enablePan={false}
+                                />
+                            </Suspense>
+                        </Canvas>
                     </motion.div>
                 </div>
             </div>

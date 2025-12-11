@@ -1,21 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TiltCard from './TiltCard'; // Import the new component
 
 const FeatureCard = ({ title, description, icon, index }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        whileHover={{ y: -10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
-        className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 cursor-pointer"
-    >
-        <div className="w-14 h-14 bg-premium-light rounded-xl flex items-center justify-center mb-6 text-premium-accent text-2xl">
-            {icon}
-        </div>
-        <h3 className="text-xl font-bold text-premium-dark mb-3">{title}</h3>
-        <p className="text-gray-600 leading-relaxed">{description}</p>
-    </motion.div>
+    <div className="h-full perspective-1000"> {/* Added perspective container */}
+        <TiltCard className="h-full bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/20 cursor-pointer relative overflow-hidden group">
+            {/* Glossy shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            
+            <div className="w-14 h-14 bg-premium-light rounded-xl flex items-center justify-center mb-6 text-premium-accent text-2xl shadow-inner">
+                {icon}
+            </div>
+            <h3 className="text-xl font-bold text-premium-dark mb-3">{title}</h3>
+            <p className="text-gray-600 leading-relaxed">{description}</p>
+        </TiltCard>
+    </div>
 );
 
 const AppHighlights = () => {
@@ -43,7 +42,7 @@ const AppHighlights = () => {
     ];
 
     return (
-        <section id="features" className="py-20 bg-premium-light">
+        <section id="features" className="py-20 relative z-20"> {/* Removed bg-premium-light to show particles */}
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.h2

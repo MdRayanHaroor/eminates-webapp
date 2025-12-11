@@ -5,16 +5,25 @@ import About from './components/About';
 import AppHighlights from './components/AppHighlights';
 import Download from './components/Download';
 import Footer from './components/Footer';
+import ParticleBackground from './components/ParticleBackground';
 
 function App() {
   return (
-    <div className="min-h-screen bg-premium-light font-sans text-premium-dark overflow-x-hidden">
-      <Navbar />
-      <Hero />
-      <About />
-      <AppHighlights />
-      <Download />
-      <Footer />
+    // REMOVED: bg-premium-light (it's now handled by ParticleBackground)
+    <div className="min-h-screen font-sans text-premium-dark overflow-x-hidden relative">
+      
+      {/* 3D Background Layer */}
+      <ParticleBackground />
+      
+      {/* Content Layer */}
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <About />
+        <AppHighlights />
+        <Download />
+        <Footer />
+      </div>
     </div>
   );
 }
