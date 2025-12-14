@@ -2,8 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FcAndroidOs } from "react-icons/fc";
 import { IoLogoApple } from "react-icons/io";
+import { useEffect, useState } from "react";
+import { getLatestApkUrl } from "../lib/getLatestApk";
 
 const Download = () => {
+
+    const [apkUrl, setApkUrl] = useState(null);
+
+    useEffect(() => {
+        getLatestApkUrl().then(setApkUrl);
+    }, []);
+
     return (
         <section id="download" className="py-24 bg-premium-dark text-white relative overflow-hidden">
             {/* Background Elements */}
@@ -42,8 +51,14 @@ const Download = () => {
 
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
                     <motion.a
-                        href="/app-arm64-v8a-release.apk"
+                        href={apkUrl ?? "#"}
                         download
+                        onClick={(e) => {
+                            if (!apkUrl) {
+                                console.warn("APK URL not loaded yet");
+                                e.preventDefault(); // stop .htm download
+                            }
+                        }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="bg-gradient-to-r from-blue-800 to-blue-600 text-white px-6 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all shadow-lg flex items-center gap-3 w-full sm:w-auto justify-center cursor-pointer"
