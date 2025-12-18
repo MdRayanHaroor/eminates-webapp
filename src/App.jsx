@@ -1,30 +1,33 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import AppHighlights from './components/AppHighlights';
-import Download from './components/Download';
-import Footer from './components/Footer';
-import ParticleBackground from './components/ParticleBackground';
+import { Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import AdminLayout from './layouts/AdminLayout';
+import Login from './pages/admin/Login';
+import Dashboard from './pages/admin/Dashboard';
+import UserManagement from './pages/admin/UserManagement';
+import InvestmentRequests from './pages/admin/InvestmentRequests';
+import Payouts from './pages/admin/Payouts';
+import InvestmentPlans from './pages/admin/InvestmentPlans';
+import AppSettings from './pages/admin/AppSettings';
 
 function App() {
   return (
-    // REMOVED: bg-premium-light (it's now handled by ParticleBackground)
-    <div className="min-h-screen font-sans text-premium-dark overflow-x-hidden relative">
-      
-      {/* 3D Background Layer */}
-      <ParticleBackground />
-      
-      {/* Content Layer */}
-      <div className="relative z-10">
-        <Navbar />
-        <Hero />
-        <About />
-        <AppHighlights />
-        <Download />
-        <Footer />
-      </div>
-    </div>
+    <Routes>
+      {/* Public Routes */}
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/admin/login" element={<Login />} />
+
+      {/* Admin Protected Routes */}
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="users" element={<UserManagement />} />
+        <Route path="requests" element={<InvestmentRequests />} />
+        <Route path="payouts" element={<Payouts />} />
+        <Route path="plans" element={<InvestmentPlans />} />
+        <Route path="settings" element={<AppSettings />} />
+      </Route>
+    </Routes>
   );
 }
 
