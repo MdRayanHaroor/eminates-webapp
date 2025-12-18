@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabaseClient';
+import { FiCheckCircle, FiSearch, FiFilter, FiUploadCloud } from 'react-icons/fi';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Payouts = () => {
     const [payouts, setPayouts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [filterStatus, setFilterStatus] = useState('pending');
+    const [selectedPayout, setSelectedPayout] = useState(null);
+    const [utr, setUtr] = useState('');
+    const [processing, setProcessing] = useState(false);
 
     useEffect(() => {
         fetchPayouts();
@@ -13,12 +19,21 @@ const Payouts = () => {
         try {
             const { data, error } = await supabase
                 .from('payouts')
-                .select('*')
+                .select(`
+                    *,
+                    investor_requests (
+                        id,
+                        plan_name,
+                        account_holder_name,
+                        account_number,
+                        ifsc_code,
+                        bank_name,
+                        users (full_name, email)
+                    )
+                `)
                 .order('created_at', { ascending: false });
 
             if (error) throw error;
-            setPayouts(data);
-        } catch (error) {
             // Table might not exist or empty
             console.error('Error fetching payouts:', error);
         } finally {

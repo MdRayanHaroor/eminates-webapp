@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet, useNavigate, Link } from 'react-router-dom';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
+import Sidebar from '../components/admin/Sidebar';
+import Header from '../components/admin/Header';
 
 const AdminLayout = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState(null);
     const [authorized, setAuthorized] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         let mounted = true;
 
         const checkAdminRole = async (userId) => {
-            console.log("Checking admin role for:", userId);
             try {
-                // 1. Query the Public Users Table
                 const { data: userProfile, error } = await supabase
                     .from('users')
                     .select('role')
@@ -23,158 +24,125 @@ const AdminLayout = () => {
 
                 if (!mounted) return;
 
-                if (error) throw new Error(`Database Error: ${error.message} (Hint: Check RLS Policies)`);
-                if (!userProfile) throw new Error(`User authenticated (ID: ${userId}) but missing in 'public.users' table.`);
-                if (userProfile.role !== 'admin') throw new Error(`Access Denied: Role is '${userProfile.role}', expected 'admin'.`);
+                if (error) {
+                    console.error("Profile check error:", error);
+                    throw new Error("Failed to verify user privileges.");
+                };
 
-                // 2. Success!
+                if (!userProfile || userProfile.role !== 'admin') {
+                    throw new Error("Access Denied: You do not have admin privileges.");
+                }
+
                 setAuthorized(true);
             } catch (err) {
-                console.error("Role Check Failed:", err);
+                console.error("Auth Error:", err);
                 setAuthError(err.message);
+                await supabase.auth.signOut();
             } finally {
                 if (mounted) setIsLoading(false);
             }
         };
 
-        const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-            if (!mounted) return;
-            console.log("Auth Event:", event);
+        const initAuth = async () => {
+            // Check current session
+            const { data: { session } } = await supabase.auth.getSession();
 
-            // Check for OAuth errors in URL first (e.g., code exchange failure)
-            const urlParams = new URLSearchParams(window.location.search);
-            const hashParams = new URLSearchParams(window.location.hash.substring(1));
-            const oauthError = urlParams.get('error') || hashParams.get('error');
-            const oauthErrorDescription = urlParams.get('error_description') || hashParams.get('error_description');
-
-            if (oauthError) {
-                console.error("OAuth Error Detected:", oauthError, oauthErrorDescription);
-                setAuthError(`Google Login Failed: ${decodeURIComponent(oauthErrorDescription || oauthError)}`);
-                setIsLoading(false);
-                // Clean up the URL
-                window.history.replaceState({}, document.title, "/admin/login");
-                return;
-            }
-
-            // Helper to handle the "we have a code but no session from event" case
-            const handleOAuthCode = async () => {
-                console.log("OAuth code detected. Attempting manual session verification...");
-                try {
-                    // Immediate check
-                    const { data: { session: immediateSession }, error: immediateError } = await supabase.auth.getSession();
-                    if (immediateSession) {
-                        console.log("Manual check: Session found!");
-                        await checkAdminRole(immediateSession.user.id);
-                        return;
-                    }
-
-                    if (immediateError) {
-                        console.warn("Manual check error:", immediateError);
-                    }
-
-                    // Retry after delay (Supabase might still be exchanging code)
-                    console.log("Manual check: No session yet. Retrying in 1s...");
-                    setTimeout(async () => {
-                        if (!mounted) return;
-                        const { data: { session: retrySession }, error: retryError } = await supabase.auth.getSession();
-
-                        if (retrySession) {
-                            console.log("Retry check: Session found!");
-                            await checkAdminRole(retrySession.user.id);
-                        } else {
-                            console.error("Retry check: Still no session. OAuth flow likely failed.", retryError);
-                            setAuthError("Authentication failed. Please try logging in again.");
-                            setIsLoading(false);
-                        }
-                    }, 1500);
-
-                } catch (err) {
-                    console.error("Error handling OAuth code:", err);
-                    setAuthError("An unexpected error occurred during login.");
-                    setIsLoading(false);
-                }
-            };
-
-            if (event === 'INITIAL_SESSION') {
-                if (session) {
-                    await checkAdminRole(session.user.id);
+            if (session) {
+                await checkAdminRole(session.user.id);
+            } else {
+                // No session, check for OAuth code flow or hash params
+                if (window.location.hash.includes('access_token') || window.location.search.includes('code')) {
+                    // Let Supabase handle the redirect logic internally, but set a timeout just in case it hangs
+                    // We don't verify role here, we wait for the subsequent "SIGNED_IN" event or page reload
                 } else {
-                    if (window.location.search.includes('code=')) {
-                        console.log("INITIAL_SESSION null, but found OAuth code. Force checking...");
-                        await handleOAuthCode();
-                        return;
+                    if (mounted) {
+                        setIsLoading(false);
+                        navigate('/admin/login', { replace: true });
                     }
-                    console.log("No session found. Redirecting...");
-                    navigate('/admin/login');
                 }
             }
-            else if (event === 'SIGNED_IN') {
-                if (session) await checkAdminRole(session.user.id);
-            }
-            else if (event === 'SIGNED_OUT') {
-                if (window.location.search.includes('code=')) {
-                    console.log("SIGNED_OUT detected, but OAuth code present. Force checking...");
-                    await handleOAuthCode();
-                    return;
+
+            // Listen for auth changes
+            const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+                if (!mounted) return;
+
+                if (event === 'SIGNED_IN' && session) {
+                    // Only re-verify if we aren't already authorized to avoid loops
+                    if (!authorized) {
+                        setIsLoading(true);
+                        await checkAdminRole(session.user.id);
+                    }
+                } else if (event === 'SIGNED_OUT') {
+                    setAuthorized(false);
+                    if (location.pathname.startsWith('/admin') && location.pathname !== '/admin/login') {
+                        navigate('/admin/login', { replace: true });
+                    }
                 }
-                setAuthorized(false);
+            });
+
+            return () => subscription.unsubscribe();
+        };
+
+        initAuth();
+
+        // Safety Timeout: If still loading after 15 seconds, force fail
+        const timer = setTimeout(() => {
+            if (mounted && isLoading) {
+                console.warn("Auth timeout reached.");
+                setAuthError("Authentication took too long. Please try again.");
                 setIsLoading(false);
-                navigate('/admin/login');
             }
-        });
+        }, 15000);
 
         return () => {
             mounted = false;
-            subscription.unsubscribe();
+            clearTimeout(timer);
         };
-    }, [navigate]);
+    }, [navigate, location.pathname]);
 
     if (isLoading) {
         return (
-            <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white gap-4">
+            <div className="flex flex-col items-center justify-center h-screen bg-slate-950 text-white gap-4">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-                <p>Verifying Credentials...</p>
-                {/* Visual feedback that we see the code */}
-                {window.location.search.includes('code=') && <p className="text-sm text-gray-400">Processing Google Login...</p>}
+                <p className="text-slate-400 animate-pulse">Verifying Admin Privileges...</p>
             </div>
         );
     }
 
     if (authError) {
         return (
-            <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white p-8">
-                <div className="bg-red-900/50 border border-red-500 p-6 rounded-lg max-w-2xl text-center">
-                    <h2 className="text-2xl font-bold mb-4 text-red-400">Login Failed</h2>
-                    <p className="text-lg mb-4">{authError}</p>
+            <div className="flex flex-col items-center justify-center h-screen bg-slate-950 text-white p-8">
+                <div className="bg-red-500/10 border border-red-500/50 p-8 rounded-xl max-w-lg text-center backdrop-blur-sm shadow-2xl">
+                    <h2 className="text-2xl font-bold mb-4 text-red-500">Access Denied</h2>
+                    <p className="text-slate-300 mb-6">{authError}</p>
                     <button
-                        onClick={() => { supabase.auth.signOut(); navigate('/admin/login'); }}
-                        className="bg-white text-red-900 font-bold px-6 py-2 rounded hover:bg-gray-200 transition"
+                        onClick={() => {
+                            setAuthError(null);
+                            setIsLoading(true);
+                            navigate('/admin/login', { replace: true });
+                        }}
+                        className="bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-2 rounded-lg transition-all"
                     >
-                        Try Again
+                        Return to Login
                     </button>
                 </div>
             </div>
         );
     }
 
-    if (!authorized) return null;
+    if (!authorized) return null; // Should have redirected
 
     return (
-        <div className="flex h-screen bg-gray-900 text-white">
-            <aside className="w-64 bg-gray-800 p-4 flex flex-col">
-                <h2 className="text-xl font-bold mb-8 text-blue-400">Admin Dashboard</h2>
-                <nav className="flex-1">
-                    <ul className="space-y-2">
-                        <li><Link to="/admin/dashboard" className="block py-2 px-4 rounded hover:bg-gray-700 transition">Overview</Link></li>
-                        <li><Link to="/admin/users" className="block py-2 px-4 rounded hover:bg-gray-700 transition">User Management</Link></li>
-                        <li><Link to="/admin/requests" className="block py-2 px-4 rounded hover:bg-gray-700 transition">Requests</Link></li>
-                    </ul>
-                </nav>
-                <button onClick={() => supabase.auth.signOut()} className="text-left text-red-400 mt-auto p-2">Logout</button>
-            </aside>
-            <main className="flex-1 p-8 overflow-y-auto bg-gray-900">
-                <Outlet />
-            </main>
+        <div className="flex bg-slate-950 min-h-screen text-slate-100 font-sans selection:bg-blue-500/30">
+            <Sidebar />
+            <div className="flex-1 ml-64 flex flex-col min-w-0">
+                <Header />
+                <main className="flex-1 mt-16 p-8 overflow-y-auto w-full">
+                    <div className="max-w-7xl mx-auto w-full">
+                        <Outlet />
+                    </div>
+                </main>
+            </div>
         </div>
     );
 };

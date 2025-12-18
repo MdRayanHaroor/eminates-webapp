@@ -5,6 +5,7 @@ import AdminLayout from './layouts/AdminLayout';
 import Login from './pages/admin/Login';
 import Dashboard from './pages/admin/Dashboard';
 import UserManagement from './pages/admin/UserManagement';
+import UserDetails from './pages/admin/UserDetails';
 import InvestmentRequests from './pages/admin/InvestmentRequests';
 import Payouts from './pages/admin/Payouts';
 import InvestmentPlans from './pages/admin/InvestmentPlans';
@@ -22,6 +23,7 @@ function App() {
         <Route index element={<Dashboard />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="users" element={<UserManagement />} />
+        <Route path="users/:userId" element={<UserDetails />} />
         <Route path="requests" element={<InvestmentRequests />} />
         <Route path="payouts" element={<Payouts />} />
         <Route path="plans" element={<InvestmentPlans />} />
