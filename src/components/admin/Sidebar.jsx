@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import {
     FiHome,
     FiUsers,
+    FiBell,
     FiDollarSign,
     FiBriefcase,
     FiSettings,
@@ -19,6 +20,7 @@ const Sidebar = () => {
         { path: '/admin/requests', icon: <FiDollarSign />, label: 'Inv. Requests' },
         { path: '/admin/plans', icon: <FiBriefcase />, label: 'Inv. Plans' },
         { path: '/admin/payouts', icon: <FiDollarSign />, label: 'Payouts' },
+        { path: '/admin/notifications', icon: <FiBell />, label: 'Notifications' }, // Added Notifications
         { path: '/admin/settings', icon: <FiSettings />, label: 'Settings' },
     ];
 
@@ -46,8 +48,8 @@ const Sidebar = () => {
                                 <Link
                                     to={item.path}
                                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${isActive
-                                            ? 'bg-blue-600/10 text-blue-400 border border-blue-600/20'
-                                            : 'text-gray-400 hover:bg-slate-800 hover:text-white'
+                                        ? 'bg-blue-600/10 text-blue-400 border border-blue-600/20'
+                                        : 'text-gray-400 hover:bg-slate-800 hover:text-white'
                                         }`}
                                 >
                                     <span className="text-xl">{item.icon}</span>

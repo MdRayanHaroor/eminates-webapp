@@ -9,6 +9,7 @@ import UserDetails from './pages/admin/UserDetails';
 import InvestmentRequests from './pages/admin/InvestmentRequests';
 import Payouts from './pages/admin/Payouts';
 import InvestmentPlans from './pages/admin/InvestmentPlans';
+import Notifications from './pages/admin/Notifications';
 import AppSettings from './pages/admin/AppSettings';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="requests" element={<InvestmentRequests />} />
         <Route path="payouts" element={<Payouts />} />
         <Route path="plans" element={<InvestmentPlans />} />
+        <Route path="notifications" element={<Notifications />} />
         <Route path="settings" element={<AppSettings />} />
       </Route>
     </Routes>
