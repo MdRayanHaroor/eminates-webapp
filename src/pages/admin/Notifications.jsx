@@ -68,24 +68,24 @@ const Notifications = () => {
         <div className="space-y-6">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold text-white">Notifications</h1>
-                    <p className="text-slate-400 mt-1">View system and user notifications.</p>
+                    <h1 className="text-3xl font-bold text-gray-900">Notifications</h1>
+                    <p className="text-gray-500 mt-1">View system and user notifications.</p>
                 </div>
 
                 {/* Actions Toolbar */}
                 <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
                     <div className="relative">
-                        <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                        <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                         <input
                             type="text"
                             placeholder="Search notifications..."
-                            className="bg-slate-800 border border-slate-700 text-white pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full sm:w-64"
+                            className="bg-white border border-gray-300 text-gray-900 pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full sm:w-64"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </div>
                     <select
-                        className="bg-slate-800 border border-slate-700 text-slate-300 px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500"
+                        className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500"
                         value={typeFilter}
                         onChange={(e) => setTypeFilter(e.target.value)}
                     >
@@ -99,10 +99,10 @@ const Notifications = () => {
             </div>
 
             {/* Table Card */}
-            <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-lg shadow-black/20">
+            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                 <div className="overflow-x-auto">
-                    <table className="w-full text-left text-sm text-slate-400">
-                        <thead className="bg-slate-950/50 uppercase text-xs font-semibold tracking-wider text-slate-500">
+                    <table className="w-full text-left text-sm text-gray-600">
+                        <thead className="bg-gray-50 uppercase text-xs font-semibold tracking-wider text-gray-500">
                             <tr>
                                 <th className="px-6 py-4">Title</th>
                                 <th className="px-6 py-4">Message</th>
@@ -111,15 +111,15 @@ const Notifications = () => {
                                 <th className="px-6 py-4 text-right">Read Status</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-slate-800">
+                        <tbody className="divide-y divide-gray-100">
                             {loading ? (
-                                <tr><td colSpan="5" className="text-center py-8 text-slate-500">Loading notifications...</td></tr>
+                                <tr><td colSpan="5" className="text-center py-8 text-gray-400">Loading notifications...</td></tr>
                             ) : filteredNotifications.length === 0 ? (
-                                <tr><td colSpan="5" className="text-center py-8 text-slate-500">No notifications found.</td></tr>
+                                <tr><td colSpan="5" className="text-center py-8 text-gray-400">No notifications found.</td></tr>
                             ) : (
                                 filteredNotifications.map(notification => (
-                                    <tr key={notification.id} className="hover:bg-slate-800/50 transition-colors group">
-                                        <td className="px-6 py-4 font-medium text-white">
+                                    <tr key={notification.id} className="hover:bg-gray-50 transition-colors group">
+                                        <td className="px-6 py-4 font-medium text-gray-900">
                                             {notification.title || 'Untitled'}
                                         </td>
                                         <td className="px-6 py-4">
@@ -132,16 +132,16 @@ const Notifications = () => {
                                                 {notification.type}
                                             </span>
                                         </td>
-                                        <td className="px-6 py-4 text-slate-400">
+                                        <td className="px-6 py-4 text-gray-500">
                                             {new Date(notification.created_at).toLocaleString()}
                                         </td>
                                         <td className="px-6 py-4 text-right">
                                             {notification.is_read ? (
-                                                <span className="text-green-400 flex items-center justify-end gap-1">
+                                                <span className="text-green-600 flex items-center justify-end gap-1">
                                                     <FiCheck /> Read
                                                 </span>
                                             ) : (
-                                                <span className="text-blue-400 flex items-center justify-end gap-1">
+                                                <span className="text-blue-600 flex items-center justify-end gap-1">
                                                     <FiInfo /> Unread
                                                 </span>
                                             )}
@@ -154,7 +154,7 @@ const Notifications = () => {
                 </div>
 
                 {/* Footer */}
-                <div className="px-6 py-4 border-t border-slate-800 bg-slate-900/50 flex justify-between items-center text-xs text-slate-500">
+                <div className="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-between items-center text-xs text-gray-500">
                     <span>Showing {filteredNotifications.length} notifications</span>
                 </div>
             </div>

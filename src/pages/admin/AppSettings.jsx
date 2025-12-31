@@ -157,19 +157,19 @@ const AppSettings = () => {
 
     return (
         <div className="space-y-6">
-            <h1 className="text-3xl font-bold text-white">App Settings</h1>
+            <h1 className="text-3xl font-bold text-gray-900">App Settings</h1>
 
             {/* Tabs */}
-            <div className="flex gap-6 border-b border-slate-700">
+            <div className="flex gap-6 border-b border-gray-200">
                 <button
                     onClick={() => setActiveTab('banks')}
-                    className={`pb-3 flex items-center gap-2 transition-colors ${activeTab === 'banks' ? 'text-blue-400 border-b-2 border-blue-400' : 'text-slate-400 hover:text-white'}`}
+                    className={`pb-3 flex items-center gap-2 transition-colors ${activeTab === 'banks' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500 hover:text-gray-900'}`}
                 >
                     <FiCreditCard /> Bank Accounts
                 </button>
                 <button
                     onClick={() => setActiveTab('versions')}
-                    className={`pb-3 flex items-center gap-2 transition-colors ${activeTab === 'versions' ? 'text-blue-400 border-b-2 border-blue-400' : 'text-slate-400 hover:text-white'}`}
+                    className={`pb-3 flex items-center gap-2 transition-colors ${activeTab === 'versions' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500 hover:text-gray-900'}`}
                 >
                     <FiSmartphone /> App Versions
                 </button>
@@ -178,43 +178,43 @@ const AppSettings = () => {
             {/* Bank Accounts Tab */}
             {activeTab === 'banks' && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-lg">
+                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                         <div className="flex justify-between items-center mb-6">
                             <div>
-                                <h3 className="text-xl font-bold text-white">Admin Bank Accounts</h3>
-                                <p className="text-slate-400 text-sm">Manage accounts displayed to users for depositing funds.</p>
+                                <h3 className="text-xl font-bold text-gray-800">Admin Bank Accounts</h3>
+                                <p className="text-gray-500 text-sm">Manage accounts displayed to users for depositing funds.</p>
                             </div>
-                            <button onClick={handleAddBankAccount} className="text-blue-400 hover:text-blue-300 flex items-center gap-2 font-medium">
+                            <button onClick={handleAddBankAccount} className="text-blue-600 hover:text-blue-700 flex items-center gap-2 font-medium">
                                 <FiPlus /> Add Account
                             </button>
                         </div>
 
                         <div className="space-y-4">
-                            {bankAccounts.length === 0 && <p className="text-slate-500 text-center py-4">No bank accounts added.</p>}
+                            {bankAccounts.length === 0 && <p className="text-gray-400 text-center py-4">No bank accounts added.</p>}
                             {bankAccounts.map((account, index) => (
-                                <div key={index} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700 items-end">
+                                <div key={index} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 bg-gray-50 p-4 rounded-lg border border-gray-200 items-end">
                                     <div className="lg:col-span-1">
-                                        <label className="text-xs text-slate-500 block mb-1">Bank Name</label>
-                                        <input type="text" placeholder="e.g. HDFC Bank" className="w-full bg-slate-900 border border-slate-600 rounded px-3 py-2 text-white text-sm"
+                                        <label className="text-xs text-gray-500 block mb-1">Bank Name</label>
+                                        <input type="text" placeholder="e.g. HDFC Bank" className="w-full bg-white border border-gray-300 rounded px-3 py-2 text-gray-900 text-sm"
                                             value={account.bank_name} onChange={e => handleBankChange(index, 'bank_name', e.target.value)} />
                                     </div>
                                     <div className="lg:col-span-1">
-                                        <label className="text-xs text-slate-500 block mb-1">Account Holder</label>
-                                        <input type="text" placeholder="Name" className="w-full bg-slate-900 border border-slate-600 rounded px-3 py-2 text-white text-sm"
+                                        <label className="text-xs text-gray-500 block mb-1">Account Holder</label>
+                                        <input type="text" placeholder="Name" className="w-full bg-white border border-gray-300 rounded px-3 py-2 text-gray-900 text-sm"
                                             value={account.account_holder_name} onChange={e => handleBankChange(index, 'account_holder_name', e.target.value)} />
                                     </div>
                                     <div className="lg:col-span-1">
-                                        <label className="text-xs text-slate-500 block mb-1">Account Number</label>
-                                        <input type="text" placeholder="0000..." className="w-full bg-slate-900 border border-slate-600 rounded px-3 py-2 text-white text-sm font-mono"
+                                        <label className="text-xs text-gray-500 block mb-1">Account Number</label>
+                                        <input type="text" placeholder="0000..." className="w-full bg-white border border-gray-300 rounded px-3 py-2 text-gray-900 text-sm font-mono"
                                             value={account.account_number} onChange={e => handleBankChange(index, 'account_number', e.target.value)} />
                                     </div>
                                     <div className="lg:col-span-1">
-                                        <label className="text-xs text-slate-500 block mb-1">IFSC Code</label>
-                                        <input type="text" placeholder="IFSC..." className="w-full bg-slate-900 border border-slate-600 rounded px-3 py-2 text-white text-sm font-mono uppercase"
+                                        <label className="text-xs text-gray-500 block mb-1">IFSC Code</label>
+                                        <input type="text" placeholder="IFSC..." className="w-full bg-white border border-gray-300 rounded px-3 py-2 text-gray-900 text-sm font-mono uppercase"
                                             value={account.ifsc_code} onChange={e => handleBankChange(index, 'ifsc_code', e.target.value)} />
                                     </div>
                                     <div className="flex justify-end">
-                                        <button onClick={() => handleRemoveBankAccount(index)} className="p-2 text-red-400 hover:bg-slate-700 rounded transition"><FiTrash2 /></button>
+                                        <button onClick={() => handleRemoveBankAccount(index)} className="p-2 text-red-500 hover:bg-gray-200 rounded transition"><FiTrash2 /></button>
                                     </div>
                                 </div>
                             ))}
@@ -224,7 +224,7 @@ const AppSettings = () => {
                             <button
                                 onClick={saveBankSettings}
                                 disabled={savingBanks}
-                                className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-lg font-bold flex items-center gap-2 shadow-lg shadow-blue-600/20 disabled:opacity-50"
+                                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-bold flex items-center gap-2 shadow-sm disabled:opacity-50"
                             >
                                 {savingBanks ? 'Saving...' : <><FiSave /> Save Changes</>}
                             </button>
@@ -237,15 +237,15 @@ const AppSettings = () => {
             {activeTab === 'versions' && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
                     <div className="flex justify-between items-center">
-                        <h3 className="text-xl font-bold text-white">Version History</h3>
-                        <button onClick={() => setIsVersionModalOpen(true)} className="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2">
+                        <h3 className="text-xl font-bold text-gray-800">Version History</h3>
+                        <button onClick={() => setIsVersionModalOpen(true)} className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2">
                             <FiPlus /> New Version
                         </button>
                     </div>
 
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-lg">
-                        <table className="w-full text-left text-slate-400">
-                            <thead className="bg-slate-950/50 uppercase text-xs font-semibold tracking-wider text-slate-500">
+                    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <table className="w-full text-left text-gray-600">
+                            <thead className="bg-gray-50 uppercase text-xs font-semibold tracking-wider text-gray-500">
                                 <tr>
                                     <th className="px-6 py-4">Version</th>
                                     <th className="px-6 py-4">Build</th>
@@ -255,16 +255,16 @@ const AppSettings = () => {
                                     <th className="px-6 py-4">Date</th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-slate-800">
+                            <tbody className="divide-y divide-gray-100">
                                 {versions.map(v => (
                                     <tr key={v.id}>
-                                        <td className="px-6 py-4 text-white font-mono">{v.version}</td>
-                                        <td className="px-6 py-4 text-slate-400 font-mono">{v.build_number}</td>
+                                        <td className="px-6 py-4 text-gray-900 font-mono">{v.version}</td>
+                                        <td className="px-6 py-4 text-gray-500 font-mono">{v.build_number}</td>
                                         <td className="px-6 py-4 capitalize">{v.platform}</td>
                                         <td className="px-6 py-4">
-                                            {v.force_update ? <span className="text-red-400 bg-red-500/10 px-2 py-1 rounded text-xs">Yes</span> : <span className="text-slate-500">No</span>}
+                                            {v.force_update ? <span className="text-red-600 bg-red-50 px-2 py-1 rounded text-xs">Yes</span> : <span className="text-gray-400">No</span>}
                                         </td>
-                                        <td className="px-6 py-4 text-xs text-blue-400 truncate max-w-xs">{v.download_url}</td>
+                                        <td className="px-6 py-4 text-xs text-blue-600 truncate max-w-xs">{v.download_url}</td>
                                         <td className="px-6 py-4">{new Date(v.created_at).toLocaleDateString()}</td>
                                     </tr>
                                 ))}
@@ -275,42 +275,42 @@ const AppSettings = () => {
                     {/* New Version Modal */}
                     <AnimatePresence>
                         {isVersionModalOpen && (
-                            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-                                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="bg-slate-900 border border-slate-700 w-full max-w-md p-6 rounded-xl">
-                                    <h3 className="text-xl font-bold text-white mb-4">Release New Version</h3>
+                            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+                                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="bg-white border border-gray-200 w-full max-w-md p-6 rounded-xl shadow-2xl">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-4">Release New Version</h3>
                                     <div className="space-y-4">
                                         <div className="grid grid-cols-2 gap-4">
                                             <div>
-                                                <label className="block text-slate-400 text-sm mb-1">Version (e.g. 1.0.2)</label>
-                                                <input type="text" className="w-full bg-slate-800 border border-slate-600 rounded p-2 text-white"
+                                                <label className="block text-gray-500 text-sm mb-1">Version (e.g. 1.0.2)</label>
+                                                <input type="text" className="w-full bg-white border border-gray-300 rounded p-2 text-gray-900"
                                                     value={newVersion.version} onChange={e => setNewVersion({ ...newVersion, version: e.target.value })} />
                                             </div>
                                             <div>
-                                                <label className="block text-slate-400 text-sm mb-1">Build Number</label>
-                                                <input type="number" className="w-full bg-slate-800 border border-slate-600 rounded p-2 text-white"
+                                                <label className="block text-gray-500 text-sm mb-1">Build Number</label>
+                                                <input type="number" className="w-full bg-white border border-gray-300 rounded p-2 text-gray-900"
                                                     value={newVersion.build_number} onChange={e => setNewVersion({ ...newVersion, build_number: e.target.value })} />
                                             </div>
                                         </div>
                                         <div>
-                                            <label className="block text-slate-400 text-sm mb-1">Platform</label>
-                                            <select className="w-full bg-slate-800 border border-slate-600 rounded p-2 text-white"
+                                            <label className="block text-gray-500 text-sm mb-1">Platform</label>
+                                            <select className="w-full bg-white border border-gray-300 rounded p-2 text-gray-900"
                                                 value={newVersion.platform} onChange={e => setNewVersion({ ...newVersion, platform: e.target.value })}>
                                                 <option value="android">Android</option>
                                                 <option value="ios">iOS</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <label className="block text-slate-400 text-sm mb-1">Download URL</label>
-                                            <input type="text" placeholder="https://..." className="w-full bg-slate-800 border border-slate-600 rounded p-2 text-white"
+                                            <label className="block text-gray-500 text-sm mb-1">Download URL</label>
+                                            <input type="text" placeholder="https://..." className="w-full bg-white border border-gray-300 rounded p-2 text-gray-900"
                                                 value={newVersion.download_url} onChange={e => setNewVersion({ ...newVersion, download_url: e.target.value })} />
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <input type="checkbox" id="mandatory" checked={newVersion.force_update} onChange={e => setNewVersion({ ...newVersion, force_update: e.target.checked })} />
-                                            <label htmlFor="mandatory" className="text-slate-300 text-sm">Force Update (Mandatory)</label>
+                                            <label htmlFor="mandatory" className="text-gray-700 text-sm">Force Update (Mandatory)</label>
                                         </div>
                                         <div className="flex justify-end gap-3 mt-6">
-                                            <button onClick={() => setIsVersionModalOpen(false)} className="px-4 py-2 bg-slate-800 text-slate-300 rounded hover:bg-slate-700">Cancel</button>
-                                            <button onClick={handleCreateVersion} className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500 font-bold">Release</button>
+                                            <button onClick={() => setIsVersionModalOpen(false)} className="px-4 py-2 bg-gray-100 text-gray-600 rounded hover:bg-gray-200">Cancel</button>
+                                            <button onClick={handleCreateVersion} className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 font-bold">Release</button>
                                         </div>
                                     </div>
                                 </motion.div>

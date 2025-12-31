@@ -125,19 +125,19 @@ const AdminLayout = () => {
 
     if (isLoading) {
         return (
-            <div className="flex flex-col items-center justify-center h-screen bg-slate-950 text-white gap-4">
-                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-                <p className="text-slate-400 animate-pulse">Verifying Admin Privileges...</p>
+            <div className="flex flex-col items-center justify-center h-screen bg-gray-50 text-gray-900 gap-4">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+                <p className="text-gray-500 animate-pulse">Verifying Admin Privileges...</p>
             </div>
         );
     }
 
     if (authError) {
         return (
-            <div className="flex flex-col items-center justify-center h-screen bg-slate-950 text-white p-8">
-                <div className="bg-red-500/10 border border-red-500/50 p-8 rounded-xl max-w-lg text-center backdrop-blur-sm shadow-2xl">
-                    <h2 className="text-2xl font-bold mb-4 text-red-500">Access Restricted</h2>
-                    <p className="text-slate-300 mb-6">{authError}</p>
+            <div className="flex flex-col items-center justify-center h-screen bg-gray-50 text-gray-900 p-8">
+                <div className="bg-red-50 border border-red-200 p-8 rounded-xl max-w-lg text-center shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-red-600">Access Restricted</h2>
+                    <p className="text-gray-600 mb-6">{authError}</p>
                     <div className="flex gap-4 justify-center">
                         <button
                             onClick={() => window.location.reload()}
@@ -151,7 +151,7 @@ const AdminLayout = () => {
                                 setIsLoading(true);
                                 navigate('/admin/login', { replace: true });
                             }}
-                            className="bg-slate-700 hover:bg-slate-600 text-white font-medium px-6 py-2 rounded-lg transition-all"
+                            className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium px-6 py-2 rounded-lg transition-all"
                         >
                             Back to Login
                         </button>
@@ -164,7 +164,7 @@ const AdminLayout = () => {
     if (!authorized) return null; // Should have redirected
 
     return (
-        <div className="flex bg-slate-950 min-h-screen text-slate-100 font-sans selection:bg-blue-500/30">
+        <div className="flex bg-gray-50 min-h-screen text-gray-900 font-sans selection:bg-blue-500/30">
             <Sidebar />
             <div className="flex-1 ml-64 flex flex-col min-w-0">
                 <Header />

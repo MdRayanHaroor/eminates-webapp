@@ -30,10 +30,10 @@ const Sidebar = () => {
     };
 
     return (
-        <aside className="w-64 h-screen bg-slate-900 border-r border-slate-700 flex flex-col fixed left-0 top-0 z-50">
+        <aside className="w-64 h-screen bg-white border-r border-gray-200 flex flex-col fixed left-0 top-0 z-50">
             {/* Logo Area */}
-            <div className="h-16 flex items-center px-6 border-b border-slate-700">
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
+            <div className="h-16 flex items-center px-6 border-b border-gray-200">
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
                     Admin Portal
                 </span>
             </div>
@@ -48,8 +48,8 @@ const Sidebar = () => {
                                 <Link
                                     to={item.path}
                                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${isActive
-                                        ? 'bg-blue-600/10 text-blue-400 border border-blue-600/20'
-                                        : 'text-gray-400 hover:bg-slate-800 hover:text-white'
+                                        ? 'bg-blue-50 text-blue-600 border border-blue-100'
+                                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                                         }`}
                                 >
                                     <span className="text-xl">{item.icon}</span>
@@ -62,10 +62,10 @@ const Sidebar = () => {
             </nav>
 
             {/* Logout */}
-            <div className="p-4 border-t border-slate-700">
+            <div className="p-4 border-t border-gray-200">
                 <button
                     onClick={handleLogout}
-                    className="flex items-center gap-3 w-full px-4 py-3 text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
+                    className="flex items-center gap-3 w-full px-4 py-3 text-red-500 hover:bg-red-50 rounded-lg transition-colors"
                 >
                     <FiLogOut />
                     <span className="font-medium text-sm">Logout</span>
