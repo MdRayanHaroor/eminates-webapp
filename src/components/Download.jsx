@@ -70,7 +70,7 @@ const Download = () => {
                         </div>
                     </motion.a>
 
-                    <motion.button
+                    {/* <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="bg-gray-800 text-gray-400 px-6 py-4 rounded-xl font-bold text-lg border border-gray-700 cursor-not-allowed flex items-center gap-3 w-full sm:w-auto justify-center"
@@ -80,7 +80,7 @@ const Download = () => {
                             <div className="text-xs font-normal opacity-80">Coming Soon</div>
                             <div className="leading-none">iOS Version</div>
                         </div>
-                    </motion.button>
+                    </motion.button> */}
                 </div>
 
                 <motion.p

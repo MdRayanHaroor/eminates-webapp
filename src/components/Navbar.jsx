@@ -36,11 +36,16 @@ const Navbar = () => {
                     Eminates
                 </div>
                 <div className="hidden md:flex space-x-8 items-center">
-                    {['Home', 'About', 'App Features'].map((item) => (
+                    {['Home', 'About', 'App Features', 'Our Business'].map((item) => (
                         <motion.button
                             key={item}
                             whileHover={{ scale: 1.1, color: '#5E81AC' }}
-                            onClick={() => scrollToSection(item === 'App Features' ? 'features' : item.toLowerCase())}
+                            onClick={() => {
+                                let targetId = item.toLowerCase();
+                                if (item === 'App Features') targetId = 'features';
+                                if (item === 'Our Business') targetId = 'our-businesses';
+                                scrollToSection(targetId);
+                            }}
                             className="text-premium-dark transition-colors font-medium"
                         >
                             {item}

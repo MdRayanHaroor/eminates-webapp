@@ -6,6 +6,7 @@ import AppHighlights from '../components/AppHighlights';
 import Download from '../components/Download';
 import Footer from '../components/Footer';
 import ParticleBackground from '../components/ParticleBackground';
+import BusinessShowcase from '../components/BusinessShowcase';
 
 function LandingPage() {
     return (
@@ -20,6 +21,7 @@ function LandingPage() {
                 <Hero />
                 <About />
                 <AppHighlights />
+                <BusinessShowcase />
                 <Download />
                 <Footer />
             </div>
