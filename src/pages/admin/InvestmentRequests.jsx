@@ -28,6 +28,18 @@ const InvestmentRequests = () => {
         filterRequests();
     }, [activeTab, requests]);
 
+    // Handle Escape key to close modals
+    useEffect(() => {
+        const handleEsc = (e) => {
+            if (e.key === 'Escape') {
+                if (isActionModalOpen) setIsActionModalOpen(false);
+                else if (selectedRequest) setSelectedRequest(null);
+            }
+        };
+        window.addEventListener('keydown', handleEsc);
+        return () => window.removeEventListener('keydown', handleEsc);
+    }, [isActionModalOpen, selectedRequest]);
+
     // Fetch signed URLs when a request is selected
     useEffect(() => {
         if (selectedRequest) {
@@ -107,13 +119,14 @@ const InvestmentRequests = () => {
         if (activeTab === 'all') {
             setFilteredRequests(requests);
         } else if (activeTab === 'active') {
-            // Check for both 'active' AND 'investment confirmed' (case insensitive)
-            setFilteredRequests(requests.filter(r => {
-                const s = r.status?.toLowerCase();
-                return s === 'active' || s === 'investment confirmed';
-            }));
+            // Active investments are those that are confirmed
+            setFilteredRequests(requests.filter(r => r.is_confirmed === true));
         } else if (activeTab === 'approved') {
-            setFilteredRequests(requests.filter(r => r.status?.toLowerCase() === 'approved'));
+            // Approved but not yet confirmed (waiting for payment/UTR)
+            // Comparison is now case-insensitive but targeting the new Title Case values
+            setFilteredRequests(requests.filter(r => r.status?.toLowerCase() === 'approved' && !r.is_confirmed));
+        } else if (activeTab === 'utr_submitted') {
+            setFilteredRequests(requests.filter(r => r.status?.toLowerCase() === 'utr submitted'));
         } else {
             setFilteredRequests(requests.filter(r => r.status?.toLowerCase() === activeTab));
         }
@@ -136,11 +149,18 @@ const InvestmentRequests = () => {
             let updates = {};
 
             if (actionType === 'approve') {
-                updates = {
-                    status: 'approved',
-                    is_confirmed: true,
-                    admin_bank_details: selectedBank // Snapshot selected bank
-                };
+                if (selectedRequest.status?.toLowerCase() === 'utr submitted' || selectedRequest.status?.toLowerCase() === 'utr_submitted') {
+                    updates = {
+                        status: 'Investment Confirmed', // Explicit Title Case as requested
+                        is_confirmed: true,
+                    };
+                } else {
+                    updates = {
+                        status: 'Approved', // Explicit Title Case as requested
+                        is_confirmed: false, // Initial approval moves to 'Approved' status, waiting for UTR
+                        admin_bank_details: selectedBank // Snapshot selected bank
+                    };
+                }
             } else {
                 if (!rejectionReason.trim()) {
                     alert("Please provide a rejection reason.");
@@ -148,7 +168,7 @@ const InvestmentRequests = () => {
                     return;
                 }
                 updates = {
-                    status: 'rejected',
+                    status: 'Rejected', // Explicit Title Case as requested
                     rejection_reason: rejectionReason,
                     is_confirmed: false
                 };
@@ -167,7 +187,7 @@ const InvestmentRequests = () => {
             setSelectedRequest(null);
         } catch (error) {
             console.error("Error updating request:", error);
-            alert("Failed to update request status.");
+            alert(`Failed to update request: ${error.message}`);
         } finally {
             setProcessingAction(false);
         }
@@ -179,6 +199,7 @@ const InvestmentRequests = () => {
         if (s === 'approved') return 'bg-blue-50 text-blue-600 border-blue-200';
         if (s === 'active' || s === 'investment confirmed') return 'bg-green-50 text-green-600 border-green-200';
         if (s === 'pending') return 'bg-yellow-50 text-yellow-600 border-yellow-200';
+        if (s === 'utr submitted' || s === 'utr_submitted') return 'bg-purple-50 text-purple-600 border-purple-200';
         if (s === 'rejected') return 'bg-red-50 text-red-600 border-red-200';
         return 'bg-gray-50 text-gray-600 border-gray-200';
     };
@@ -194,7 +215,7 @@ const InvestmentRequests = () => {
 
             {/* Tabs */}
             <div className="flex gap-4 border-b border-gray-200 overflow-x-auto pb-1">
-                {['all', 'pending', 'approved', 'rejected', 'active'].map(status => (
+                {['all', 'pending', 'approved', 'utr_submitted', 'rejected', 'active'].map(status => (
                     <button
                         key={status}
                         onClick={() => setActiveTab(status)}
@@ -203,7 +224,7 @@ const InvestmentRequests = () => {
                                 ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
                                 : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'}`}
                     >
-                        {status === 'active' ? 'Confirmed (Active)' : status}
+                        {status === 'active' ? 'Confirmed (Active)' : status.replace('_', ' ')}
                     </button>
                 ))}
             </div>
@@ -379,7 +400,7 @@ const InvestmentRequests = () => {
                             </div>
 
                             <div className="p-6 border-t border-gray-200 flex justify-end gap-3 sticky bottom-0 bg-white">
-                                {selectedRequest.status === 'pending' && (
+                                {selectedRequest.status?.toLowerCase() === 'pending' && (
                                     <>
                                         <button
                                             onClick={() => handleOpenAction('reject', selectedRequest)}
@@ -392,6 +413,22 @@ const InvestmentRequests = () => {
                                             className="px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 transition-all font-medium shadow-md shadow-green-200"
                                         >
                                             Approve Investment
+                                        </button>
+                                    </>
+                                )}
+                                {(selectedRequest.status?.toLowerCase() === 'utr submitted' || selectedRequest.status?.toLowerCase() === 'utr_submitted') && (
+                                    <>
+                                        <button
+                                            onClick={() => handleOpenAction('reject', selectedRequest)}
+                                            className="px-4 py-2 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition-all font-medium border border-red-200"
+                                        >
+                                            Reject Request
+                                        </button>
+                                        <button
+                                            onClick={() => handleOpenAction('approve', selectedRequest)}
+                                            className="px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 transition-all font-medium shadow-md shadow-green-200"
+                                        >
+                                            Confirm Investment
                                         </button>
                                     </>
                                 )}
@@ -418,24 +455,37 @@ const InvestmentRequests = () => {
 
                             {actionType === 'approve' ? (
                                 <div className="space-y-4">
-                                    <p className="text-gray-500 text-sm">Please select the bank account where the user should deposit the funds (or where the UTR was verified).</p>
-                                    {adminBanks.length > 0 ? (
-                                        <div className="space-y-2">
-                                            {adminBanks.map((bank, idx) => (
-                                                <div
-                                                    key={idx}
-                                                    className={`p-3 rounded-lg border cursor-pointer transition-all ${selectedBank === bank ? 'border-green-500 bg-green-50' : 'border-gray-200 hover:border-gray-400'}`}
-                                                    onClick={() => setSelectedBank(bank)}
-                                                >
-                                                    <div className="font-bold text-gray-900 text-sm">{bank.bank_name || 'Bank Name'}</div>
-                                                    <div className="text-xs text-gray-500">{bank.account_number}</div>
-                                                </div>
-                                            ))}
+                                    {(selectedRequest?.status?.toLowerCase() === 'utr submitted' || selectedRequest?.status?.toLowerCase() === 'utr_submitted') ? (
+                                        <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                                            <p className="text-green-800 text-sm font-semibold mb-1">Confirm Investment?</p>
+                                            <p className="text-green-700 text-sm">
+                                                The user has submitted UTR: <span className="font-mono font-bold">{selectedRequest.transaction_utr}</span>.
+                                                <br />
+                                                Clicking confirm will activate this investment plan.
+                                            </p>
                                         </div>
                                     ) : (
-                                        <div className="p-3 bg-yellow-50 border border-yellow-200 text-yellow-700 rounded text-sm">
-                                            No admin bank accounts found in settings.
-                                        </div>
+                                        <>
+                                            <p className="text-gray-500 text-sm">Please select the bank account where the user should deposit the funds.</p>
+                                            {adminBanks.length > 0 ? (
+                                                <div className="space-y-2">
+                                                    {adminBanks.map((bank, idx) => (
+                                                        <div
+                                                            key={idx}
+                                                            className={`p-3 rounded-lg border cursor-pointer transition-all ${selectedBank === bank ? 'border-green-500 bg-green-50' : 'border-gray-200 hover:border-gray-400'}`}
+                                                            onClick={() => setSelectedBank(bank)}
+                                                        >
+                                                            <div className="font-bold text-gray-900 text-sm">{bank.bank_name || 'Bank Name'}</div>
+                                                            <div className="text-xs text-gray-500">{bank.account_number}</div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            ) : (
+                                                <div className="p-3 bg-yellow-50 border border-yellow-200 text-yellow-700 rounded text-sm">
+                                                    No admin bank accounts found in settings.
+                                                </div>
+                                            )}
+                                        </>
                                     )}
                                 </div>
                             ) : (

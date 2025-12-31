@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../../lib/supabaseClient';
-import { FiArrowLeft, FiUser, FiCreditCard, FiActivity, FiDownload } from 'react-icons/fi';
+import { FiArrowLeft, FiDownload, FiUser, FiMail, FiPhone, FiCalendar, FiShield, FiDollarSign, FiClock, FiFileText, FiLink } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import autoTable from 'jspdf-autotable';
 
 const UserDetails = () => {
     const { userId } = useParams();
@@ -13,6 +13,7 @@ const UserDetails = () => {
     const [investments, setInvestments] = useState([]);
     const [loading, setLoading] = useState(true);
     const [activeTab, setActiveTab] = useState('overview');
+    const [isDownloading, setIsDownloading] = useState(false);
 
     useEffect(() => {
         fetchUserDetails();
@@ -20,7 +21,6 @@ const UserDetails = () => {
 
     const fetchUserDetails = async () => {
         try {
-            // 1. Fetch User Profile
             const { data: userData, error: userError } = await supabase
                 .from('users')
                 .select('*')
@@ -28,20 +28,19 @@ const UserDetails = () => {
                 .single();
 
             if (userError) throw userError;
+            setUser(userData);
 
-            // 2. Fetch User Investments
-            const { data: invData, error: invError } = await supabase
+            const { data: investmentData, error: investmentError } = await supabase
                 .from('investor_requests')
                 .select('*')
                 .eq('user_id', userId)
                 .order('created_at', { ascending: false });
 
-            if (invError) console.error("Error fetching investments:", invError);
+            if (investmentError) throw investmentError;
+            setInvestments(investmentData);
 
-            setUser(userData);
-            setInvestments(invData || []);
         } catch (error) {
-            console.error("Error fetching user details:", error);
+            console.error('Error fetching user details:', error);
         } finally {
             setLoading(false);
         }
@@ -49,343 +48,504 @@ const UserDetails = () => {
 
     const generatePDF = async () => {
         if (!user) return;
+        setIsDownloading(true);
 
-        // Fetch valid signed URLs for all documents
-        const signedDocs = {};
         try {
-            for (const inv of investments) {
-                const docs = [
-                    { key: 'aadhaar_card_url', id: inv.id, path: inv.aadhaar_card_url },
-                    { key: 'pan_card_url', id: inv.id, path: inv.pan_card_url },
-                    { key: 'selfie_url', id: inv.id, path: inv.selfie_url }
-                ];
+            // 1. Refetch fresh data to ensure accuracy
+            const { data: freshUser, error: uErr } = await supabase
+                .from('users')
+                .select('*')
+                .eq('id', userId)
+                .single();
+            if (uErr) throw uErr;
 
-                for (const doc of docs) {
-                    if (doc.path) {
-                        const { data } = await supabase.storage.from('kyc_docs').createSignedUrl(doc.path, 3600 * 24); // 24 hours validity
-                        if (data?.signedUrl) {
-                            signedDocs[`${inv.id}_${doc.key}`] = data.signedUrl;
+            const { data: freshInvestments, error: iErr } = await supabase
+                .from('investor_requests')
+                .select('*, payouts(*)')
+                .eq('user_id', userId)
+                .order('created_at', { ascending: false });
+            if (iErr) throw iErr;
+
+            // Manual fetch for payouts to ensure we get everything linked by request_id
+            const requestIds = freshInvestments.map(inv => inv.id);
+            let freshPayouts = [];
+            if (requestIds.length > 0) {
+                const { data: pData, error: pErr } = await supabase
+                    .from('payouts')
+                    .select('*')
+                    .in('request_id', requestIds)
+                    .order('created_at', { ascending: false });
+
+                if (!pErr && pData) freshPayouts = pData;
+            }
+
+            // Fetch valid signed URLs for all documents
+            const signedDocs = {};
+            try {
+                for (const inv of freshInvestments) {
+                    const docs = [
+                        { key: 'aadhaar_card_url', id: inv.id, path: inv.aadhaar_card_url },
+                        { key: 'pan_card_url', id: inv.id, path: inv.pan_card_url },
+                        { key: 'selfie_url', id: inv.id, path: inv.selfie_url }
+                    ];
+
+                    for (const doc of docs) {
+                        if (doc.path) {
+                            const { data } = await supabase.storage.from('kyc_docs').createSignedUrl(doc.path, 3600 * 24); // 24 hours validity
+                            if (data?.signedUrl) {
+                                signedDocs[`${inv.id}_${doc.key}`] = data.signedUrl;
+                            }
                         }
                     }
                 }
+            } catch (err) {
+                console.error("Error generating signed URLs for PDF:", err);
             }
-        } catch (err) {
-            console.error("Error generating signed URLs for PDF:", err);
-        }
 
-        const doc = new jsPDF();
+            const doc = new jsPDF();
 
-        // Header
-        doc.setFontSize(20);
-        doc.setTextColor(40);
-        doc.text("Investor Details Report", 14, 20);
+            // Header
+            doc.setFontSize(20);
+            doc.setTextColor(40);
+            doc.text("Investor Details Report", 14, 20);
 
-        doc.setFontSize(10);
-        doc.setTextColor(100);
-        doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 28);
-        doc.text(`User ID: ${user.id}`, 14, 33);
-
-        // Section: Personal Info
-        doc.setDrawColor(200);
-        doc.line(14, 35, 196, 35);
-
-        doc.setFontSize(14);
-        doc.setTextColor(0);
-        doc.text("Personal Information", 14, 45);
-
-        const infoData = [
-            ["Full Name", user.full_name || '-'],
-            ["Email", user.email || '-'],
-            ["Phone", user.phone || '-'],
-            ["Joined Date", new Date(user.created_at).toLocaleDateString()],
-            ["Role", user.role || 'User'],
-        ];
-
-        doc.autoTable({
-            startY: 50,
-            head: [['Field', 'Value']],
-            body: infoData,
-            theme: 'striped',
-            headStyles: { fillColor: [66, 133, 244] },
-            margin: { left: 14, right: 14 }
-        });
-
-        // Section: Investment History
-        let finalY = doc.lastAutoTable.finalY + 15;
-        doc.setFontSize(14);
-        doc.text("Investment History & Documents", 14, finalY);
-
-        const investmentRows = investments.map(inv => [
-            inv.plan_name,
-            `Rs. ${inv.investment_amount}`,
-            new Date(inv.created_at).toLocaleDateString(),
-            inv.status,
-            inv.transaction_utr || '-'
-        ]);
-
-        doc.autoTable({
-            startY: finalY + 5,
-            head: [['Plan', 'Amount', 'Date', 'Status', 'UTR']],
-            body: investmentRows,
-            theme: 'grid',
-            headStyles: { fillColor: [52, 168, 83] },
-            margin: { left: 14, right: 14 }
-        });
-
-        // Section: Document Links
-        finalY = doc.lastAutoTable.finalY + 15;
-        doc.setFontSize(14);
-        doc.text("Uploaded Documents", 14, finalY);
-
-        let docY = finalY + 10;
-        doc.setFontSize(10);
-        doc.setTextColor(50, 50, 200); // Blue for links
-
-        if (investments.length > 0) {
-            investments.forEach((inv, index) => {
-                if (inv.aadhaar_card_url || inv.pan_card_url || inv.selfie_url) {
-                    doc.setTextColor(0);
-                    doc.text(`Request #${index + 1} (${inv.plan_name}) - ${new Date(inv.created_at).toLocaleDateString()}:`, 14, docY);
-                    docY += 7;
-                    doc.setTextColor(50, 50, 200);
-
-                    if (inv.aadhaar_card_url) {
-                        const url = signedDocs[`${inv.id}_aadhaar_card_url`] || inv.aadhaar_card_url;
-                        doc.textWithLink("View Aadhaar Card", 20, docY, { url: url });
-                        docY += 6;
-                    }
-                    if (inv.pan_card_url) {
-                        const url = signedDocs[`${inv.id}_pan_card_url`] || inv.pan_card_url;
-                        doc.textWithLink("View PAN Card", 20, docY, { url: url });
-                        docY += 6;
-                    }
-                    if (inv.selfie_url) {
-                        const url = signedDocs[`${inv.id}_selfie_url`] || inv.selfie_url;
-                        doc.textWithLink("View Selfie", 20, docY, { url: url });
-                        docY += 6;
-                    }
-                    docY += 4;
-                }
-            });
-        } else {
+            doc.setFontSize(10);
             doc.setTextColor(100);
-            doc.text("No documents found.", 14, docY);
-            docY += 10;
-        }
+            doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 28);
+            doc.text(`User ID: ${freshUser.id}`, 14, 33);
 
-        // Section: Bank Details (from latest request)
-        if (investments.length > 0) {
-            const latest = investments[0];
-            finalY = docY + 10;
-
-            // Check page break
-            if (finalY > 250) {
-                doc.addPage();
-                finalY = 20;
-            }
+            // Personal Info
+            doc.setDrawColor(200);
+            doc.line(14, 35, 196, 35);
 
             doc.setFontSize(14);
             doc.setTextColor(0);
-            doc.text("Bank Details (Latest)", 14, finalY);
+            doc.text("Personal Information", 14, 45);
 
-            const bankData = [
-                ["Bank Name", latest.bank_name || '-'],
-                ["Account Holder", latest.account_holder_name || '-'],
-                ["Account Number", latest.account_number || '-'],
-                ["IFSC Code", latest.ifsc_code || '-'],
+            const infoData = [
+                ["Full Name", freshUser.full_name || '-'],
+                ["Email", freshUser.email || '-'],
+                ["Phone", freshUser.phone || '-'],
+                ["Joined Date", new Date(freshUser.created_at).toLocaleDateString()],
+                ["Role", freshUser.role || 'User'],
             ];
 
-            doc.autoTable({
-                startY: finalY + 5,
-                body: bankData,
-                theme: 'plain',
-                styles: { fontSize: 10, cellPadding: 2 },
-                columnStyles: { 0: { fontStyle: 'bold', cellWidth: 50 } },
-                margin: { left: 14 }
+            autoTable(doc, {
+                startY: 50,
+                head: [['Field', 'Value']],
+                body: infoData,
+                theme: 'striped',
+                headStyles: { fillColor: [66, 133, 244] },
+                margin: { left: 14, right: 14 }
             });
-        }
 
-        doc.save(`user_report_${user.full_name?.replace(/\s+/g, '_')}_${user.id.slice(0, 6)}.pdf`);
+            // Investment History
+            let finalY = (doc.lastAutoTable?.finalY || 50) + 15;
+            doc.setFontSize(14);
+            doc.text("Investment History", 14, finalY);
+
+            const investmentRows = freshInvestments.map(inv => [
+                inv.plan_name,
+                `Rs. ${inv.investment_amount}`,
+                new Date(inv.created_at).toLocaleDateString(),
+                inv.status,
+                inv.transaction_utr || '-'
+            ]);
+
+            autoTable(doc, {
+                startY: finalY + 5,
+                head: [['Plan', 'Amount', 'Date', 'Status', 'UTR']],
+                body: investmentRows,
+                theme: 'grid',
+                headStyles: { fillColor: [52, 168, 83] }, // Green
+                margin: { left: 14, right: 14 }
+            });
+
+            // Payouts History
+            finalY = (doc.lastAutoTable?.finalY || 100) + 15;
+
+            if (freshPayouts.length > 0) {
+                if (finalY > 250) { doc.addPage(); finalY = 20; }
+
+                doc.setFontSize(14);
+                doc.text("Payouts History", 14, finalY);
+
+                const payoutRows = freshPayouts.map(p => {
+                    const relatedReq = freshInvestments.find(r => r.id === p.request_id);
+                    return [
+                        new Date(p.created_at).toLocaleDateString(),
+                        relatedReq ? relatedReq.plan_name : '-',
+                        p.type,
+                        `Rs. ${p.amount}`,
+                        p.status,
+                        p.transaction_utr || '-'
+                    ];
+                });
+
+                autoTable(doc, {
+                    startY: finalY + 5,
+                    head: [['Date', 'Plan', 'Type', 'Amount', 'Status', 'UTR']],
+                    body: payoutRows,
+                    theme: 'grid',
+                    headStyles: { fillColor: [255, 170, 0] }, // Orange
+                    margin: { left: 14, right: 14 }
+                });
+
+                finalY = doc.lastAutoTable.finalY + 15;
+            }
+
+            // Document Links
+            if (finalY > 250) { doc.addPage(); finalY = 20; }
+
+            doc.setFontSize(14);
+            doc.text("Uploaded Documents", 14, finalY);
+
+            let docY = finalY + 10;
+            doc.setFontSize(10);
+            doc.setTextColor(50, 50, 200); // Blue for links
+
+            if (freshInvestments.length > 0) {
+                freshInvestments.forEach((inv, index) => {
+                    const hasDocs = inv.aadhaar_card_url || inv.pan_card_url || inv.selfie_url;
+                    if (hasDocs) {
+                        if (docY > 270) { doc.addPage(); docY = 20; }
+
+                        doc.setTextColor(0);
+                        doc.text(`Request #${index + 1} (${inv.plan_name}) - ${new Date(inv.created_at).toLocaleDateString()}:`, 14, docY);
+                        docY += 7;
+                        doc.setTextColor(50, 50, 200);
+
+                        if (inv.aadhaar_card_url) {
+                            const url = signedDocs[`${inv.id}_aadhaar_card_url`] || inv.aadhaar_card_url;
+                            doc.textWithLink("View Aadhaar Card", 20, docY, { url: url });
+                            docY += 6;
+                        }
+                        if (inv.pan_card_url) {
+                            const url = signedDocs[`${inv.id}_pan_card_url`] || inv.pan_card_url;
+                            doc.textWithLink("View PAN Card", 20, docY, { url: url });
+                            docY += 6;
+                        }
+                        if (inv.selfie_url) {
+                            const url = signedDocs[`${inv.id}_selfie_url`] || inv.selfie_url;
+                            doc.textWithLink("View Selfie", 20, docY, { url: url });
+                            docY += 6;
+                        }
+                        docY += 4;
+                    }
+                });
+            } else {
+                doc.setTextColor(100);
+                doc.text("No documents found.", 14, docY);
+                docY += 10;
+            }
+
+            // Bank Details
+            if (freshInvestments.length > 0) {
+                const latest = freshInvestments[0];
+                finalY = docY + 10;
+
+                if (finalY > 250) {
+                    doc.addPage();
+                    finalY = 20;
+                }
+
+                doc.setFontSize(14);
+                doc.setTextColor(0);
+                doc.text("Bank Details (Latest)", 14, finalY);
+
+                const bankData = [
+                    ["Bank Name", latest.bank_name || '-'],
+                    ["Account Holder", latest.account_holder_name || '-'],
+                    ["Account Number", latest.account_number || '-'],
+                    ["IFSC Code", latest.ifsc_code || '-'],
+                ];
+
+                autoTable(doc, {
+                    startY: finalY + 5,
+                    body: bankData,
+                    theme: 'plain',
+                    styles: { fontSize: 10, cellPadding: 2 },
+                    columnStyles: { 0: { fontStyle: 'bold', cellWidth: 50 } },
+                    margin: { left: 14 }
+                });
+            }
+
+            doc.save(`user_report_${freshUser.full_name?.replace(/\s+/g, '_')}_${freshUser.id.slice(0, 6)}.pdf`);
+        } catch (error) {
+            console.error("PDF Generation Error:", error);
+            alert(`Failed to generate PDF: ${error.message}`);
+        } finally {
+            setIsDownloading(false);
+        }
     };
 
-    if (loading) return <div className="text-white p-8">Loading profile...</div>;
-    if (!user) return <div className="text-white p-8">User not found</div>;
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center min-h-[calc(100vh-64px)]">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+            </div>
+        );
+    }
 
-    // Extract bank details from latest investment or return null
-    const latestInvestment = investments.length > 0 ? investments[0] : null;
+    if (!user) {
+        return (
+            <div className="text-center py-12">
+                <p className="text-gray-500">User not found</p>
+                <button
+                    onClick={() => navigate('/admin/users')}
+                    className="mt-4 text-blue-600 hover:text-blue-700 font-medium"
+                >
+                    Back to Users
+                </button>
+            </div>
+        );
+    }
 
     return (
-        <div className="space-y-6">
-            {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                <div className="flex items-center gap-4">
-                    <button
-                        onClick={() => navigate('/admin/users')}
-                        className="p-2 hover:bg-gray-100 rounded-full text-gray-500 hover:text-gray-900 transition-colors"
-                    >
-                        <FiArrowLeft size={24} />
-                    </button>
-                    <div>
-                        <h1 className="text-2xl font-bold text-gray-900">{user.full_name || 'Unknown User'}</h1>
-                        <p className="text-gray-500 text-sm">{user.email}</p>
-                    </div>
-                    <div>
-                        <span className={`px-3 py-1 rounded-full text-sm font-medium border capitalize
-                            ${user.role === 'admin' ? 'bg-red-50 text-red-600 border-red-200' :
-                                user.role === 'agent' ? 'bg-purple-50 text-purple-600 border-purple-200' :
-                                    'bg-blue-50 text-blue-600 border-blue-200'}`}>
-                            {user.role}
+        <div className="p-6 max-w-7xl mx-auto space-y-6">
+            <button
+                onClick={() => navigate('/admin/users')}
+                className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors"
+            >
+                <FiArrowLeft /> Back to Users
+            </button>
+
+            <div className="flex flex-col lg:flex-row gap-6 items-start justify-between">
+                <div>
+                    <h1 className="text-3xl font-bold text-gray-900">{user.full_name}</h1>
+                    <div className="flex items-center gap-4 mt-2 text-gray-500">
+                        <span className="flex items-center gap-2">
+                            <FiMail /> {user.email}
+                        </span>
+                        <span className="flex items-center gap-2">
+                            <FiPhone /> {user.phone}
+                        </span>
+                        <span className="flex items-center gap-2">
+                            <FiCalendar /> Joined {new Date(user.created_at).toLocaleDateString()}
                         </span>
                     </div>
                 </div>
 
                 <button
                     onClick={generatePDF}
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
+                    disabled={isDownloading}
+                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    <FiDownload /> Download Report
+                    <FiDownload className={isDownloading ? 'animate-bounce' : ''} />
+                    {isDownloading ? 'Downloading...' : 'Download Report'}
                 </button>
             </div>
 
-            {/* Tabs */}
-            <div className="border-b border-gray-200 flex gap-6">
-                {['overview', 'investments', 'bank_details'].map((tab) => (
-                    <button
-                        key={tab}
-                        onClick={() => setActiveTab(tab)}
-                        className={`pb-3 text-sm font-medium capitalize transition-colors relative
-                            ${activeTab === tab ? 'text-blue-600' : 'text-gray-500 hover:text-gray-800'}`}
-                    >
-                        {tab.replace('_', ' ')}
-                        {activeTab === tab && (
-                            <motion.div
-                                layoutId="activeTab"
-                                className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"
-                            />
-                        )}
-                    </button>
-                ))}
-            </div>
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div className="border-b border-gray-100">
+                    <nav className="flex gap-6 px-6">
+                        {['overview', 'documents', 'investments'].map((tab) => (
+                            <button
+                                key={tab}
+                                onClick={() => setActiveTab(tab)}
+                                className={`py-4 px-2 font-medium text-sm border-b-2 transition-colors capitalize ${activeTab === tab
+                                    ? 'border-blue-600 text-blue-600'
+                                    : 'border-transparent text-gray-500 hover:text-gray-700'
+                                    }`}
+                            >
+                                {tab}
+                            </button>
+                        ))}
+                    </nav>
+                </div>
 
-            {/* Content */}
-            <div className="min-h-[400px]">
-                {activeTab === 'overview' && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                                <FiUser className="text-blue-500" /> Personal Info
-                            </h3>
-                            <div className="space-y-4 text-sm">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="text-gray-500 block">Full Name</label>
-                                        <p className="text-gray-900 font-medium">{user.full_name || '-'}</p>
+                <div className="p-6">
+                    {activeTab === 'overview' && (
+                        <div className="space-y-8">
+                            <section>
+                                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                    <FiUser className="text-blue-500" /> Basic Information
+                                </h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    <div className="p-4 bg-gray-50 rounded-lg">
+                                        <p className="text-sm text-gray-500">Full Name</p>
+                                        <p className="font-medium text-gray-900">{user.full_name}</p>
                                     </div>
-                                    <div>
-                                        <label className="text-gray-500 block">Phone</label>
-                                        <p className="text-gray-900">{user.phone || '-'}</p>
+                                    <div className="p-4 bg-gray-50 rounded-lg">
+                                        <p className="text-sm text-gray-500">Email Address</p>
+                                        <p className="font-medium text-gray-900">{user.email}</p>
                                     </div>
-                                    <div>
-                                        <label className="text-gray-500 block">Joined Date</label>
-                                        <p className="text-gray-900">{new Date(user.created_at).toLocaleDateString()}</p>
+                                    <div className="p-4 bg-gray-50 rounded-lg">
+                                        <p className="text-sm text-gray-500">Phone Number</p>
+                                        <p className="font-medium text-gray-900">{user.phone}</p>
                                     </div>
-                                    <div>
-                                        <label className="text-gray-500 block">User ID</label>
-                                        <p className="text-gray-900 font-mono text-xs">{user.id}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Recent Activity Summary */}
-                        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                                <FiActivity className="text-green-500" /> Stats
-                            </h3>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="bg-gray-50 p-4 rounded-lg">
-                                    <div className="text-gray-500 text-xs uppercase">Total Requests</div>
-                                    <div className="text-2xl font-bold text-gray-900 mt-1">{investments.length}</div>
-                                </div>
-                                <div className="bg-gray-50 p-4 rounded-lg">
-                                    <div className="text-gray-500 text-xs uppercase">Last Active</div>
-                                    <div className="text-sm font-medium text-gray-900 mt-2">
-                                        {latestInvestment ? new Date(latestInvestment.created_at).toLocaleDateString() : 'N/A'}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-
-                {activeTab === 'investments' && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4">
-                        {investments.length === 0 ? (
-                            <p className="text-gray-500">No investment history found.</p>
-                        ) : (
-                            investments.map((inv) => (
-                                <div key={inv.id} className="bg-white p-4 rounded-xl border border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-blue-300 transition-colors shadow-sm">
-                                    <div>
-                                        <h4 className="text-gray-900 font-medium">{inv.plan_name}</h4>
-                                        <p className="text-gray-500 text-sm">Amount: ₹{inv.investment_amount}</p>
-                                        <p className="text-gray-400 text-xs">Date: {new Date(inv.created_at).toLocaleDateString()}</p>
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        <span className={`px-2 py-1 rounded text-xs font-semibold capitalize
-                                            ${inv.status === 'approved' ? 'bg-green-50 text-green-600' :
-                                                inv.status === 'pending' ? 'bg-yellow-50 text-yellow-600' :
-                                                    'bg-red-50 text-red-600'}`}>
-                                            {inv.status}
+                                    <div className="p-4 bg-gray-50 rounded-lg">
+                                        <p className="text-sm text-gray-500">Role</p>
+                                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium capitalize mt-1 ${user.role === 'admin' ? 'bg-purple-100 text-purple-800' : 'bg-gray-100 text-gray-800'
+                                            }`}>
+                                            {user.role}
                                         </span>
-                                        {inv.aadhaar_card_url && (
-                                            <a href={inv.aadhaar_card_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-500 text-sm flex items-center gap-1">
-                                                <FiDownload size={14} /> Docs
-                                            </a>
-                                        )}
                                     </div>
                                 </div>
-                            ))
-                        )}
-                    </motion.div>
-                )}
+                            </section>
 
-                {activeTab === 'bank_details' && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                        <div className="bg-white p-6 rounded-xl border border-gray-200 block max-w-2xl shadow-sm">
-                            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                                <FiCreditCard className="text-purple-500" /> Bank Information
-                            </h3>
-                            {latestInvestment ? (
-                                <div className="space-y-4 text-sm">
-                                    <div className="grid grid-cols-2 gap-6">
-                                        <div>
-                                            <label className="text-gray-500 block mb-1">Account Holder</label>
-                                            <div className="font-medium text-gray-900 p-2 bg-gray-50 rounded border border-gray-100">{latestInvestment.account_holder_name}</div>
+                            <section>
+                                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                    <FiDollarSign className="text-green-500" /> Bank Details
+                                </h3>
+                                {investments.length > 0 ? (
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                        <div className="p-4 bg-gray-50 rounded-lg">
+                                            <p className="text-sm text-gray-500">Bank Name</p>
+                                            <p className="font-medium text-gray-900">{investments[0].bank_name}</p>
                                         </div>
-                                        <div>
-                                            <label className="text-gray-500 block mb-1">Bank Name</label>
-                                            <div className="font-medium text-gray-900 p-2 bg-gray-50 rounded border border-gray-100">{latestInvestment.bank_name}</div>
+                                        <div className="p-4 bg-gray-50 rounded-lg">
+                                            <p className="text-sm text-gray-500">Account Holder</p>
+                                            <p className="font-medium text-gray-900">{investments[0].account_holder_name}</p>
                                         </div>
-                                        <div>
-                                            <label className="text-gray-500 block mb-1">Account Number</label>
-                                            <div className="font-medium text-gray-900 p-2 bg-gray-50 rounded border border-gray-100 font-mono">{latestInvestment.account_number}</div>
+                                        <div className="p-4 bg-gray-50 rounded-lg">
+                                            <p className="text-sm text-gray-500">Account Number</p>
+                                            <p className="font-medium text-gray-900">{investments[0].account_number}</p>
                                         </div>
-                                        <div>
-                                            <label className="text-gray-500 block mb-1">IFSC Code</label>
-                                            <div className="font-medium text-gray-900 p-2 bg-gray-50 rounded border border-gray-100 font-mono">{latestInvestment.ifsc_code}</div>
+                                        <div className="p-4 bg-gray-50 rounded-lg">
+                                            <p className="text-sm text-gray-500">IFSC Code</p>
+                                            <p className="font-medium text-gray-900">{investments[0].ifsc_code}</p>
                                         </div>
                                     </div>
-                                    <p className="text-xs text-gray-400 mt-4 italic">
-                                        * Details sourced from most recent investment request (ID: {latestInvestment.id.slice(0, 8)}).
+                                ) : (
+                                    <div className="p-8 text-center bg-gray-50 rounded-lg border border-dashed border-gray-200">
+                                        <p className="text-gray-500">No bank details available</p>
+                                    </div>
+                                )}
+                            </section>
+                        </div>
+                    )}
+
+                    {activeTab === 'investments' && (
+                        <div className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                <div className="p-6 bg-blue-50 rounded-xl border border-blue-100">
+                                    <p className="text-sm text-blue-600 font-medium mb-1">Total Investments</p>
+                                    <p className="text-3xl font-bold text-blue-900">{investments.length}</p>
+                                </div>
+                                <div className="p-6 bg-green-50 rounded-xl border border-green-100">
+                                    <p className="text-sm text-green-600 font-medium mb-1">Total Amount</p>
+                                    <p className="text-3xl font-bold text-green-900">
+                                        Rs. {investments.reduce((sum, inv) => sum + (parseFloat(inv.investment_amount) || 0), 0).toLocaleString()}
                                     </p>
                                 </div>
-                            ) : (
-                                <p className="text-gray-500">No bank details found (User has not made any investment requests yet).</p>
+                            </div>
+
+                            <div className="space-y-4">
+                                {investments.map((inv) => (
+                                    <div key={inv.id} className="bg-gray-50 rounded-lg p-6 border border-gray-100 hover:border-blue-200 transition-colors">
+                                        <div className="flex flex-col md:flex-row justify-between gap-4">
+                                            <div>
+                                                <h4 className="font-semibold text-gray-900 text-lg">{inv.plan_name}</h4>
+                                                <div className="flex items-center gap-4 mt-2 text-sm text-gray-500">
+                                                    <span className="flex items-center gap-1">
+                                                        <FiCalendar /> {new Date(inv.created_at).toLocaleDateString()}
+                                                    </span>
+                                                    <span className="flex items-center gap-1">
+                                                        <FiClock /> {new Date(inv.created_at).toLocaleTimeString()}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="text-right">
+                                                <p className="text-xl font-bold text-gray-900">Rs. {inv.investment_amount}</p>
+                                                <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium capitalize mt-2 ${inv.status === 'approved' ? 'bg-blue-100 text-blue-800' :
+                                                    inv.status === 'active' || inv.status === 'investment confirmed' ? 'bg-green-100 text-green-800' :
+                                                        'bg-yellow-100 text-yellow-800'
+                                                    }`}>
+                                                    {inv.status}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        {inv.transaction_utr && (
+                                            <div className="mt-4 pt-4 border-t border-gray-200">
+                                                <p className="text-sm text-gray-600">
+                                                    <span className="font-medium">Transaction UTR:</span> {inv.transaction_utr}
+                                                </p>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                                {investments.length === 0 && (
+                                    <div className="text-center py-12 bg-gray-50 rounded-lg border border-dashed border-gray-200">
+                                        <p className="text-gray-500">No investment history found</p>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 'documents' && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {investments.map((inv) => (
+                                <React.Fragment key={inv.id}>
+                                    {inv.aadhaar_card_url && (
+                                        <DocumentCard
+                                            title="Aadhaar Card"
+                                            url={inv.aadhaar_card_url}
+                                            date={inv.created_at}
+                                            plan={inv.plan_name}
+                                        />
+                                    )}
+                                    {inv.pan_card_url && (
+                                        <DocumentCard
+                                            title="PAN Card"
+                                            url={inv.pan_card_url}
+                                            date={inv.created_at}
+                                            plan={inv.plan_name}
+                                        />
+                                    )}
+                                    {inv.selfie_url && (
+                                        <DocumentCard
+                                            title="Selfie"
+                                            url={inv.selfie_url} // Assuming selfie_url exists in schema
+                                            date={inv.created_at}
+                                            plan={inv.plan_name}
+                                        />
+                                    )}
+                                </React.Fragment>
+                            ))}
+                            {investments.length === 0 && (
+                                <div className="col-span-full text-center py-12 bg-gray-50 rounded-lg border border-dashed border-gray-200">
+                                    <p className="text-gray-500">No documents uploaded</p>
+                                </div>
                             )}
                         </div>
-                    </motion.div>
-                )}
+                    )}
+                </div>
             </div>
+        </div>
+    );
+};
+
+const DocumentCard = ({ title, url, date, plan }) => {
+    // Logic to handle signed URLs locally for the preview card if needed (component specific)
+    // For now, simpler implementation:
+    const handleView = async () => {
+        try {
+            const { data, error } = await supabase.storage.from('kyc_docs').createSignedUrl(url, 60);
+            if (data?.signedUrl) window.open(data.signedUrl, '_blank');
+        } catch (e) {
+            console.error("Could not open document", e);
+            alert("Could not open document");
+        }
+    };
+
+    return (
+        <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 hover:border-blue-200 transition-colors group">
+            <div className="flex items-start justify-between mb-4">
+                <div className="p-2 bg-white rounded-lg shadow-sm text-blue-600">
+                    <FiFileText size={20} />
+                </div>
+                <span className="text-xs text-gray-500">{new Date(date).toLocaleDateString()}</span>
+            </div>
+            <h4 className="font-medium text-gray-900 mb-1">{title}</h4>
+            <p className="text-xs text-gray-500 mb-4">Plan: {plan}</p>
+            <button
+                onClick={handleView}
+                className="w-full py-2 px-4 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 hover:text-blue-600 transition-colors flex items-center justify-center gap-2"
+            >
+                <FiLink size={14} /> View Document
+            </button>
         </div>
     );
 };
