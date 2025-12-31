@@ -68,15 +68,16 @@ const Login = () => {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-900">
-            <div className="w-full max-w-md bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700">
-                <h2 className="text-2xl font-bold text-white mb-6 text-center">Admin Login</h2>
-                {error && <div className="bg-red-500/10 border border-red-500 text-red-500 p-3 rounded mb-4 text-sm">{error}</div>}
+        <div className="flex justify-center items-center h-screen bg-gray-50">
+            <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">Admin Login</h2>
+                <p className="text-gray-500 text-center mb-6 text-sm">Welcome back! Please sign in to continue.</p>
+                {error && <div className="bg-red-50 border border-red-200 text-red-600 p-3 rounded mb-4 text-sm font-medium">{error}</div>}
 
                 <button
                     onClick={handleGoogleLogin}
                     disabled={loading}
-                    className="w-full bg-white hover:bg-gray-100 text-gray-900 font-semibold py-2 px-4 rounded mb-6 flex items-center justify-center gap-2 transition-colors duration-200"
+                    className="w-full bg-white hover:bg-gray-50 text-gray-700 font-semibold py-2.5 px-4 rounded-lg mb-6 flex items-center justify-center gap-2 border border-gray-300 transition-all duration-200 shadow-sm"
                 >
                     <svg className="w-5 h-5" viewBox="0 0 24 24">
                         <path
@@ -100,38 +101,38 @@ const Login = () => {
                 </button>
 
                 <div className="flex items-center gap-4 mb-6">
-                    <div className="h-px bg-gray-600 flex-1"></div>
-                    <span className="text-gray-400 text-sm">OR</span>
-                    <div className="h-px bg-gray-600 flex-1"></div>
+                    <div className="h-px bg-gray-200 flex-1"></div>
+                    <span className="text-gray-400 text-xs font-medium uppercase">Or sign in with email</span>
+                    <div className="h-px bg-gray-200 flex-1"></div>
                 </div>
 
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div>
-                        <label className="block text-gray-400 text-sm mb-1">Email</label>
+                        <label className="block text-gray-700 text-sm font-medium mb-1">Email</label>
                         <input
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="w-full p-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                            className="w-full p-2.5 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-gray-400"
                             placeholder="admin@example.com"
                         />
                     </div>
                     <div>
-                        <label className="block text-gray-400 text-sm mb-1">Password</label>
+                        <label className="block text-gray-700 text-sm font-medium mb-1">Password</label>
                         <input
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="w-full p-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                            className="w-full p-2.5 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-gray-400"
                             placeholder="••••••••"
                         />
                     </div>
                     <button
                         type="submit"
                         disabled={loading}
-                        className={`w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded font-semibold transition-colors duration-200 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-bold transition-all duration-200 shadow-sm ${loading ? 'opacity-75 cursor-not-allowed' : 'hover:shadow'}`}
                     >
-                        {loading ? 'Logging in...' : 'Login with Password'}
+                        {loading ? 'Logging in...' : 'Sign In'}
                     </button>
                 </form>
             </div>
