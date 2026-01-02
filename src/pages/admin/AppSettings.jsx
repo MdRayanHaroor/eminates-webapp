@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabaseClient';
+import { syncLatestApkFromStorage } from '../../lib/apkSync';
 import { FiSave, FiPlus, FiTrash2, FiSmartphone, FiCreditCard } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -30,6 +31,7 @@ const AppSettings = () => {
     const fetchSettings = async () => {
         setLoading(true);
         try {
+            await syncLatestApkFromStorage(); // successful sync
             await Promise.all([fetchBankSettings(), fetchAppVersions()]);
         } catch (error) {
             console.error("Error loading settings:", error);
