@@ -18,7 +18,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white z-0 pointer-events-none"></div>
 
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10">
-                
+
                 {/* Text Content */}
                 <div className="md:w-1/2 mb-10 md:mb-0 pointer-events-none md:pointer-events-auto">
                     <motion.h1
@@ -55,6 +55,12 @@ const Hero = () => {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
+                            onClick={() => {
+                                const element = document.getElementById('about');
+                                if (element) {
+                                    element.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
                             className="px-8 py-3 rounded-full font-bold text-lg text-premium-dark border-2 border-premium-dark hover:bg-premium-dark hover:text-white transition-all cursor-pointer pointer-events-auto"
                         >
                             Learn More
@@ -69,13 +75,13 @@ const Hero = () => {
                         <directionalLight position={[10, 10, 5]} intensity={1.5} />
                         <Suspense fallback={null}>
                             <Environment preset="city" />
-                            
+
                             {/* Controls: Removed 'snap' prop to fix disappearing bug */}
                             <PresentationControls
                                 global={false}
                                 config={{ mass: 2, tension: 500 }}
                                 rotation={[0, 0.3, 0]}
-                                polar={[-Math.PI / 4, Math.PI / 4]} 
+                                polar={[-Math.PI / 4, Math.PI / 4]}
                                 azimuth={[-Math.PI / 3, Math.PI / 3]}
                             >
                                 {/* Safe Floating Wrapper */}
@@ -83,7 +89,7 @@ const Hero = () => {
                                     <Phone3D />
                                 </Float>
                             </PresentationControls>
-                            
+
                             <ContactShadows position={[0, -3.5, 0]} opacity={0.4} scale={20} blur={2.5} far={4.5} />
                         </Suspense>
                     </Canvas>
