@@ -51,7 +51,7 @@ const MainBanner = () => {
     };
 
     return (
-        <div className="relative w-full h-[95vh] md:h-screen min-h-[500px] md:min-h-[600px] overflow-hidden bg-gray-900 text-white font-sans">
+        <div id="home" className="relative w-full h-[95vh] md:h-screen min-h-[500px] md:min-h-[600px] overflow-hidden bg-gray-900 text-white font-sans">
             {/* Background Image with Overlay */}
             <AnimatePresence initial={false} mode="wait">
                 <motion.div
