@@ -10,7 +10,7 @@
     {
         "id": "bio-fuels",
         "type": "vertical",
-        "title": "ALHAN BIO FUELS – Products",
+        "title": "Bio Fuels",
         "headline": " Sustainable Energy for Industries",
         "basicDetails": [
             "Manufacturer & exporter of biomass briquettes",
@@ -84,7 +84,11 @@
     {
         "id": "mechanical",
         "type": "vertical",
-        "title": "Mechanical Items, Electrical Items & Pipe & Fittings",
+        "title": [
+            "Mechanical Items",
+            "Electric and Electronics",
+            "Pipe & Fittings"
+        ],
         "headline": "Complete Industrial Supply Partner",
         "basicDetails": [
             "MS & SS mechanical items",
@@ -102,7 +106,10 @@
     {
         "id": "solar",
         "type": "vertical",
-        "title": "Solar Projects (5 kW – 50 MW)",
+        "title": [
+            "Solar Projects",
+            "(5 kW – 50 MW)"
+        ],
         "headline": "Powering the Future with Solar Energy",
         "basicDetails": [
             "Rooftop & ground-mounted solar projects",
@@ -135,5 +142,27 @@
             "Bulk Supply"
         ],
         "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2670&auto=format&fit=crop"
+    },
+    {
+        "id": "lubricants",
+        "type": "vertical",
+        "title": [
+            "Industrial Lubricants,",
+            "Oils & Greases"
+        ],
+        "headline": "Comprehensive Industrial Fluids & Maintenance",
+        "basicDetails": [
+            "Industrial: Hydraulic, Gear, Compressor, Transformer Oils",
+            "Chemicals: Cutting, Rust Preventive, Release Oils",
+            "Mechanical: Bearing, High-Temp, Automotive Greases",
+            "Automotive: Engine Oil, Chassis Grease",
+            "Bulk Trading: Base Oil, Industrial Oil, Specialty Oils"
+        ],
+        "activities": [
+            "Manufacturing",
+            "Bulk Trading",
+            "Exporting"
+        ],
+        "image": "https://images.unsplash.com/photo-1657270057967-bd83afe3ce2c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
 ]

@@ -142,7 +142,13 @@ const MainBanner = () => {
                                         initial="hidden"
                                         animate="visible"
                                     >
-                                        {slidesData[currentSlide].title}
+                                        {Array.isArray(slidesData[currentSlide].title) ? (
+                                            slidesData[currentSlide].title.map((line, i) => (
+                                                <div key={i} className="block">{line}</div>
+                                            ))
+                                        ) : (
+                                            slidesData[currentSlide].title
+                                        )}
                                     </motion.h2>
                                     <motion.h3
                                         className="text-xl md:text-2xl text-blue-400 font-medium mb-6"
