@@ -7,7 +7,7 @@ const FeatureCard = ({ title, description, icon, index }) => (
         <TiltCard className="h-full bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/20 cursor-pointer relative overflow-hidden group">
             {/* Glossy shine effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            
+
             <div className="w-14 h-14 bg-premium-light rounded-xl flex items-center justify-center mb-6 text-premium-accent text-2xl shadow-inner">
                 {icon}
             </div>

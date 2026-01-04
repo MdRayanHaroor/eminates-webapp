@@ -14,10 +14,14 @@ const Footer = () => {
                         <h3 className="text-2xl font-bold mb-2">Eminates</h3>
                         <p className="text-gray-400 text-sm">Secure. Transparent. Reliable.</p>
                     </div>
-                    <div className="flex space-x-6 mb-6 md:mb-0">
-                        <button onClick={() => setIsPrivacyOpen(true)} className="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</button>
-                        <button onClick={() => setIsTermsOpen(true)} className="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</button>
-                        <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Contact Support</a>
+                    <div className="flex flex-col space-y-2 mb-6 md:mb-0">
+                        <button onClick={() => setIsPrivacyOpen(true)} className="text-gray-400 hover:text-white transition-colors text-sm text-left">Privacy Policy</button>
+                        <button onClick={() => setIsTermsOpen(true)} className="text-gray-400 hover:text-white transition-colors text-sm text-left">Terms of Service</button>
+                    </div>
+                    <div className="flex flex-col space-y-2 mb-6 md:mb-0">
+                        <h4 className="text-white font-semibold mb-1">Contact</h4>
+                        <p className="text-gray-400 text-sm">Mobile: +919445993338</p>
+                        <p className="text-gray-400 text-sm">Email: eminatesholdings@gmail.com</p>
                     </div>
                     <div className="text-gray-500 text-sm flex flex-col items-end">
                         <div>&copy; {new Date().getFullYear()} Eminates. All rights reserved.</div>

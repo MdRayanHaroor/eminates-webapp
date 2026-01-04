@@ -31,21 +31,21 @@ const Navbar = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-4' : 'bg-white py-6'}`}
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white backdrop-blur-md shadow-md py-4' : 'bg-white py-5'}`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <div className="text-2xl font-bold text-premium-dark cursor-pointer" onClick={() => scrollToSection('home')}>
                     Eminates
                 </div>
                 <div className="hidden md:flex space-x-8 items-center">
-                    {['Home', 'About', 'App Features', 'Our Business'].map((item) => (
+                    {['Home', 'Products', 'About', 'App Features'].map((item) => (
                         <motion.button
                             key={item}
                             whileHover={{ scale: 1.1, color: '#5E81AC' }}
                             onClick={() => {
                                 let targetId = item.toLowerCase();
                                 if (item === 'App Features') targetId = 'features';
-                                if (item === 'Our Business') targetId = 'our-businesses';
+                                if (item === 'Products') targetId = 'products';
                                 scrollToSection(targetId);
                             }}
                             className="text-premium-dark transition-colors font-medium"
@@ -80,13 +80,13 @@ const Navbar = () => {
                         className="md:hidden bg-white/95 backdrop-blur-md overflow-hidden"
                     >
                         <div className="flex flex-col items-center py-6 space-y-4">
-                            {['Home', 'About', 'App Features', 'Our Business'].map((item) => (
+                            {['Home', 'Products', 'About', 'App Features'].map((item) => (
                                 <button
                                     key={item}
                                     onClick={() => {
                                         let targetId = item.toLowerCase();
                                         if (item === 'App Features') targetId = 'features';
-                                        if (item === 'Our Business') targetId = 'our-businesses';
+                                        if (item === 'Products') targetId = 'products';
                                         scrollToSection(targetId);
                                         setIsMobileMenuOpen(false);
                                     }}

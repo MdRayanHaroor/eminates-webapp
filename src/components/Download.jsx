@@ -14,20 +14,9 @@ const Download = () => {
     }, []);
 
     return (
-        <section id="download" className="py-24 bg-premium-dark text-white relative overflow-hidden">
+        <section id="download" className="py-8 text-gray-900 relative overflow-hidden">
             {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-10">
-                <motion.div
-                    animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute -top-24 -left-24 w-96 h-96 bg-premium-accent rounded-full blur-3xl"
-                ></motion.div>
-                <motion.div
-                    animate={{ scale: [1, 1.3, 1], rotate: [0, -90, 0] }}
-                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                    className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"
-                ></motion.div>
-            </div>
+            {/* Background Elements removed for consistency */}
 
             <div className="container mx-auto px-6 relative z-10 text-center">
                 <motion.h2
@@ -44,7 +33,7 @@ const Download = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto"
+                    className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto"
                 >
                     Download the Eminates Investor App today and take control of your financial future. Available now for Android.
                 </motion.p>
@@ -61,7 +50,7 @@ const Download = () => {
                         }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-blue-800 to-blue-600 text-white px-6 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all shadow-lg flex items-center gap-3 w-full sm:w-auto justify-center cursor-pointer"
+                        className="bg-gradient-to-r from-blue-600 to-blue-400 text-white px-6 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all shadow-lg flex items-center gap-3 w-full sm:w-auto justify-center cursor-pointer"
                     >
                         <FcAndroidOs className="text-4xl" />
                         <div className="text-left">

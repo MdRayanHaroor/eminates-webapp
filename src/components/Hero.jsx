@@ -13,9 +13,9 @@ const Hero = () => {
     };
 
     return (
-        <section id="home" className="min-h-screen flex items-center pt-20 overflow-hidden relative">
+        <section id="home" className="min-h-screen flex items-center pt-0 overflow-hidden relative">
             {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white z-0 pointer-events-none"></div>
+            <div className="absolute inset-0  z-0 pointer-events-none"></div>
 
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10">
 

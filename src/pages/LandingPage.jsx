@@ -7,6 +7,7 @@ import Download from '../components/Download';
 import Footer from '../components/Footer';
 import ParticleBackground from '../components/ParticleBackground';
 import MainBanner from '../components/MainBanner';
+import ProductCatalog from '../components/ProductCatalog';
 
 function LandingPage() {
     return (
@@ -19,6 +20,7 @@ function LandingPage() {
             <div className="relative z-10">
                 <Navbar />
                 <MainBanner />
+                <ProductCatalog />
                 <Hero />
                 <About />
                 <AppHighlights />
