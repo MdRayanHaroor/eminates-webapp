@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,7 +31,7 @@ const Navbar = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'}`}
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-4' : 'bg-white py-6'}`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <div className="text-2xl font-bold text-premium-dark cursor-pointer" onClick={() => scrollToSection('home')}>
@@ -60,7 +62,52 @@ const Navbar = () => {
                         Download App
                     </motion.button>
                 </div>
+                {/* Mobile Menu Icon */}
+                <div className="md:hidden">
+                    <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-premium-dark text-2xl">
+                        {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+                    </button>
+                </div>
             </div>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="md:hidden bg-white/95 backdrop-blur-md overflow-hidden"
+                    >
+                        <div className="flex flex-col items-center py-6 space-y-4">
+                            {['Home', 'About', 'App Features', 'Our Business'].map((item) => (
+                                <button
+                                    key={item}
+                                    onClick={() => {
+                                        let targetId = item.toLowerCase();
+                                        if (item === 'App Features') targetId = 'features';
+                                        if (item === 'Our Business') targetId = 'our-businesses';
+                                        scrollToSection(targetId);
+                                        setIsMobileMenuOpen(false);
+                                    }}
+                                    className="text-premium-dark text-lg font-medium hover:text-blue-500 transition-colors"
+                                >
+                                    {item}
+                                </button>
+                            ))}
+                            <button
+                                onClick={() => {
+                                    scrollToSection('download');
+                                    setIsMobileMenuOpen(false);
+                                }}
+                                className="bg-premium-dark text-white px-6 py-2 rounded-full font-semibold hover:bg-premium-accent transition-colors shadow-lg"
+                            >
+                                Download App
+                            </button>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.nav>
     );
 };

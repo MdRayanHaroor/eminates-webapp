@@ -1,0 +1,139 @@
+[
+    {
+        "id": "intro",
+        "type": "intro",
+        "headline": "Manufacturing • Trading • Importing • Consulting • Constructing",
+        "subHeadline": "One Group – Multiple Industries – Global Reach",
+        "tagline": "From Bio Fuels to Solar Power | From Chemicals to Construction | From Automation to Infrastructure",
+        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop"
+    },
+    {
+        "id": "bio-fuels",
+        "type": "vertical",
+        "title": "ALHAN BIO FUELS – Products",
+        "headline": " Sustainable Energy for Industries",
+        "basicDetails": [
+            "Manufacturer & exporter of biomass briquettes",
+            "Coconut shell charcoal & charcoal briquettes",
+            "Wood coal, industrial fuel solutions",
+            "High GCV, low ash, eco-friendly",
+            "Bulk supply for boilers, furnaces & power plants"
+        ],
+        "activities": [
+            "Manufacturing",
+            "Trading & Export",
+            "Bulk Industrial Supply"
+        ],
+        "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2670&auto=format&fit=crop"
+    },
+    {
+        "id": "chemicals",
+        "type": "vertical",
+        "title": "Industrial Chemicals",
+        "headline": "Reliable Chemicals for Core Industries",
+        "basicDetails": [
+            "Caustic soda (liquid & flakes)",
+            "Hydrochloric acid (HCl)",
+            "Sodium hypochlorite, SLS, EDTA, defoamers",
+            "Industrial, ETP & manufacturing-grade chemicals",
+            "Safe packing, lab-tested quality"
+        ],
+        "activities": [
+            "Trading",
+            "Bulk Supply",
+            "Industrial Consulting"
+        ],
+        "image": "images/industrial_chemicals.jpg"
+    },
+    {
+        "id": "real-estate",
+        "type": "vertical",
+        "title": "Real Estate & Construction",
+        "headline": "Building Strong Foundations",
+        "basicDetails": [
+            "Industrial & commercial construction",
+            "Infrastructure development projects",
+            "Civil contracting & turnkey execution",
+            "Project planning, execution & supervision"
+        ],
+        "activities": [
+            "Construction",
+            "Contracting",
+            "Project Consulting"
+        ],
+        "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2670&auto=format&fit=crop"
+    },
+    {
+        "id": "automation",
+        "type": "vertical",
+        "title": "Switchgear & Automation",
+        "headline": "Smart Power & Intelligent Control",
+        "basicDetails": [
+            "ABB, Schneider & equivalent brands",
+            "LT & HT switchgear panels",
+            "PLC, automation & control systems",
+            "Industrial electrical solutions"
+        ],
+        "activities": [
+            "Trading",
+            "System Integration",
+            "Installation & Commissioning"
+        ],
+        "image": "images/switchgear_automation.jpeg"
+    },
+    {
+        "id": "mechanical",
+        "type": "vertical",
+        "title": "Mechanical Items, Electrical Items & Pipe & Fittings",
+        "headline": "Complete Industrial Supply Partner",
+        "basicDetails": [
+            "MS & SS mechanical items",
+            "Bearings, valves, fasteners",
+            "Electrical cables, panels & accessories",
+            "GI, MS, SS pipes & fittings"
+        ],
+        "activities": [
+            "Trading",
+            "Bulk Industrial Supply",
+            "Project-Based Procurement"
+        ],
+        "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2670&auto=format&fit=crop"
+    },
+    {
+        "id": "solar",
+        "type": "vertical",
+        "title": "Solar Projects (5 kW – 50 MW)",
+        "headline": "Powering the Future with Solar Energy",
+        "basicDetails": [
+            "Rooftop & ground-mounted solar projects",
+            "Capacity from 5 kW to 50 MW",
+            "EPC: Engineering, Procurement & Construction",
+            "Solar consulting, tendering & commissioning",
+            "Grid-connected & captive power plants"
+        ],
+        "activities": [
+            "Consulting",
+            "EPC Execution",
+            "Operation & Maintenance"
+        ],
+        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2672&auto=format&fit=crop"
+    },
+    {
+        "id": "gypsum",
+        "type": "vertical",
+        "title": "Imported Gypsum Powder",
+        "headline": "Premium Imported Gypsum for Superior Finish",
+        "basicDetails": [
+            "High-purity imported gypsum powder",
+            "Used in plastering, wall finishes & construction",
+            "Smooth finish, fast setting, crack resistance",
+            "Bulk supply for projects & dealers"
+        ],
+        "activities": [
+            "Importing",
+            "Trading",
+            "Bulk Supply"
+        ],
+        "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2670&auto=format&fit=crop"
+    }
+]

@@ -6,7 +6,7 @@ import AppHighlights from '../components/AppHighlights';
 import Download from '../components/Download';
 import Footer from '../components/Footer';
 import ParticleBackground from '../components/ParticleBackground';
-import UnifiedBusinessShowcase from '../components/UnifiedBusinessShowcase';
+import MainBanner from '../components/MainBanner';
 
 function LandingPage() {
     return (
@@ -18,10 +18,10 @@ function LandingPage() {
             {/* Content Layer */}
             <div className="relative z-10">
                 <Navbar />
+                <MainBanner />
                 <Hero />
                 <About />
                 <AppHighlights />
-                <UnifiedBusinessShowcase />
                 <Download />
                 <Footer />
             </div>
