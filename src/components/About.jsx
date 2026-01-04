@@ -10,7 +10,7 @@ const About = () => {
             {/* Semi-transparent background panel removed to show particles */}
 
             <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row items-center gap-12">
+                <div className="flex flex-col-reverse md:flex-row items-center gap-12">
 
 
                     {/* 3D Globe Section */}
