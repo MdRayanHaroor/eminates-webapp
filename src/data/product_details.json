@@ -1,107 +1,350 @@
 [
     {
-        "id": "edta",
-        "name": "Ethylenediaminetetraacetic Acid (EDTA)",
-        "category": "Chemicals",
-        "image": "https://www.wintersunchemical.com/cdn/shop/products/05-009-3.jpg?v=1665097445",
-        "purpose": "A versatile chelating agent used to sequester metal ions in aqueous solutions.",
+        "id": "biomass-briquettes-6mm",
+        "name": "6mm Biomass Briquettes",
+        "category": "Bio Fuels",
+        "image": "/images/products/biomass-briquettes-6mm-1.jpeg",
+        "purpose": "Small-diameter briquettes for automated feeding systems.",
+        "features": [
+            "Diameter 6mm",
+            "Low moisture",
+            "High density"
+        ],
         "usages": [
-            "Water treatment to prevent scaling",
-            "Detergents and cleaning agents",
-            "Food preservation (antioxidant)",
-            "Textile industry for dyeing",
-            "Pharmaceutical formulations"
+            "Automatic boilers",
+            "Small industries"
         ]
     },
     {
-        "id": "caustic-soda-flakes",
-        "name": "Caustic Soda Flakes",
-        "category": "Chemicals",
-        "image": "https://iigtchem.com/wp-content/uploads/2024/01/Caustic-Soda-Flakes-copy.jpg",
-        "purpose": "A strong alkali used in various industrial manufacturing processes.",
+        "id": "biomass-briquettes-70mm",
+        "name": "70mm Biomass Briquettes",
+        "category": "Bio Fuels",
+        "image": "/images/products/biomass-briquettes-70mm-1.jpeg",
+        "purpose": "Cost-effective fuel alternative for industrial thermal needs.",
+        "features": [
+            "Diameter 70mm, Length 200\u2013300mm",
+            "Low ash"
+        ],
         "usages": [
-            "Soap and detergent manufacturing",
-            "Paper and pulp industry",
-            "Aluminum production (Bayer process)",
-            "Textile processing",
-            "Water treatment (pH adjustment)"
+            "Boilers",
+            "Furnaces",
+            "Drying units"
         ]
     },
     {
-        "id": "sodium-metabisulphite",
-        "name": "Sodium Metabisulphite",
-        "category": "Chemicals",
-        "image": "https://cdn.globalso.com/toptionchem/Sodium-Metabisulphite.jpg",
-        "purpose": "An inorganic compound used as a disinfectant, antioxidant, and preservative agent.",
+        "id": "biomass-briquettes-8mm",
+        "name": "8mm Biomass Briquettes",
+        "category": "Bio Fuels",
+        "image": "/images/products/biomass-briquettes-8mm-1.jpeg",
+        "purpose": "Compact biomass fuel with consistent combustion.",
+        "features": [
+            "Diameter 8mm",
+            "Low ash content"
+        ],
         "usages": [
-            "Food preservative (dried fruits)",
-            "Water treatment (dechlorination)",
-            "Sanitization in brewing",
-            "Photography developing",
-            "Textile bleaching"
+            "Heating systems",
+            "Agro-industries"
         ]
     },
     {
-        "id": "sls",
-        "name": "Sodium Lauryl Sulfate (SLS)",
-        "category": "Chemicals",
-        "image": "https://5.imimg.com/data5/VI/TJ/MY-613074/sls-powder-500x500.jpg",
-        "purpose": "A surfactant used for cleaning and emulsifying in many hygiene products.",
+        "id": "biomass-briquettes-90mm",
+        "name": "90mm Biomass Briquettes",
+        "category": "Bio Fuels",
+        "image": "/images/products/biomass-briquettes-90mm.jpg",
+        "purpose": "High-density 90mm biomass briquettes for industrial heating and power generation.",
+        "features": [
+            "Diameter 90mm, Length 200\u2013300mm",
+            "Calorific Value 4200\u20134500 kcal/kg"
+        ],
         "usages": [
-            "Shampoos and soaps (foaming agent)",
-            "Toothpaste manufacturing",
-            "Industrial degreasers",
-            "Floor cleaners",
-            "Car wash detergents"
+            "Industrial boilers",
+            "Steam generation",
+            "Power plants"
         ]
     },
     {
-        "id": "defoamers",
-        "name": "Silicone-Based Defoamers",
-        "category": "Chemicals",
-        "image": "https://brmchemicals.com/cdn/shop/products/5kgBluecaneredBRM_8c49e050-3f27-4a35-be60-3b61811b458d.jpg?v=1702988732&width=1946",
-        "purpose": "Agents designed to reduce and hinder the formation of foam in industrial process liquids.",
+        "id": "activated-carbon",
+        "name": "Activated Carbon",
+        "category": "Bio Fuels",
+        "image": "/images/products/activated-carbon-1.jpeg",
+        "purpose": "High adsorption activated carbon.",
+        "features": [
+            "High surface area"
+        ],
         "usages": [
-            "Wastewater treatment",
-            "Paper manufacturing",
-            "Paint and coating production",
-            "Food processing",
-            "Textile dyeing"
+            "Water purification",
+            "Air filtration"
         ]
     },
     {
-        "id": "sodium-hypo",
-        "name": "Sodium Hypochlorite",
-        "category": "Chemicals",
-        "image": "https://5.imimg.com/data5/SELLER/Default/2021/6/PT/VC/IE/3148473/sodium-hypochlorite.jpg",
-        "purpose": "A chemical compound effectively used for water purification and bleaching.",
+        "id": "bio-charcoal",
+        "name": "Bio Charcoal",
+        "category": "Bio Fuels",
+        "image": "/images/products/Bio-Char-1.jpeg",
+        "purpose": "Eco-friendly bio charcoal from biomass.",
+        "features": [
+            "Low emissions"
+        ],
         "usages": [
-            "Municipal water disinfection",
-            "Household bleach",
-            "Swimming pool chlorination",
-            "Paper pulp bleaching",
-            "Odor removal in waste treatment"
+            "Cooking",
+            "Heating"
         ]
     },
     {
-        "id": "pac",
-        "name": "Poly Aluminium Chloride (PAC)",
-        "category": "Chemicals",
-        "image": "https://globexventure.com/wp-content/uploads/2024/09/pily-aluminium-chloride.webp",
-        "purpose": "A coagulant used widely in water purification and treatment processes.",
+        "id": "coco-husk-block",
+        "name": "Coco Husk Block",
+        "category": "Bio Fuels",
+        "image": "/images/products/coco-husk-block-1.jpeg",
+        "purpose": "Compressed coconut husk blocks for soil aeration.",
+        "features": [
+            "High water retention"
+        ],
         "usages": [
-            "Drinking water treatment",
-            "Sewage and wastewater treatment",
-            "Paper industry sizing",
-            "Cosmetic formulations (deodorants)",
-            "Oil and gas industry"
+            "Landscaping",
+            "Mulching"
+        ]
+    },
+    {
+        "id": "coconut-shell-charcoal-hexagonal",
+        "name": "Coconut Shell Charcoal \u2013 Hexagonal",
+        "category": "Bio Fuels",
+        "image": "/images/products/coconut-shell-charcoal-hexagonal-1.jpeg",
+        "purpose": "Hexagonal charcoal with hole for better airflow.",
+        "features": [
+            "Uniform shape",
+            "High heat output"
+        ],
+        "usages": [
+            "BBQ",
+            "Shisha"
+        ]
+    },
+    {
+        "id": "coconut-shell-charcoal-pillow",
+        "name": "Coconut Shell Charcoal \u2013 Pillow",
+        "category": "Bio Fuels",
+        "image": "/images/products/coconut-shell-charcoal-pillow-1.jpeg",
+        "purpose": "Premium pillow-shaped charcoal from coconut shells.",
+        "features": [
+            "High fixed carbon",
+            "Low ash"
+        ],
+        "usages": [
+            "BBQ",
+            "Shisha",
+            "Restaurants"
+        ]
+    },
+    {
+        "id": "coconut-shell-charcoal-pillow-standard",
+        "name": "Coconut Shell Charcoal \u2013 Pillow (Standard)",
+        "category": "Bio Fuels",
+        "image": "/images/products/coconut-shell-charcoal-pillow-standard-1.jpeg",
+        "purpose": "Standard-grade pillow charcoal for bulk usage.",
+        "features": [
+            "Consistent size",
+            "Long burning"
+        ],
+        "usages": [
+            "Commercial grilling"
+        ]
+    },
+    {
+        "id": "cocopeat-high-ec-5kg",
+        "name": "Cocopeat High EC 5kg Block",
+        "category": "Bio Fuels",
+        "image": "/images/products/cocopeat-high-ec-5kg-1.jpeg",
+        "purpose": "Economical cocopeat for general farming.",
+        "features": [
+            "Higher EC range"
+        ],
+        "usages": [
+            "Open-field cultivation"
+        ]
+    },
+    {
+        "id": "cocopeat-low-ec-5kg",
+        "name": "Cocopeat Low EC 5kg Block",
+        "category": "Bio Fuels",
+        "image": "/images/products/cocopeat-low-ec-5kg-1.jpeg",
+        "purpose": "Ultra-low EC cocopeat for sensitive crops.",
+        "features": [
+            "EC < 0.5 mS/cm"
+        ],
+        "usages": [
+            "Hydroponics",
+            "Seed germination"
+        ]
+    },
+    {
+        "id": "cocopeat-premium-5kg",
+        "name": "Cocopeat Premium 5kg Block",
+        "category": "Bio Fuels",
+        "image": "/images/products/cocopeat-premium-5kg-new-1.jpeg",
+        "purpose": "Washed and buffered cocopeat for horticulture.",
+        "features": [
+            "pH 6\u20136.5",
+            "Low EC"
+        ],
+        "usages": [
+            "Nurseries",
+            "Greenhouses"
+        ]
+    },
+    {
+        "id": "indonesian-coal-bulk",
+        "name": "Indonesian Coal (Bulk)",
+        "category": "Bio Fuels",
+        "image": "/images/products/indonesian-coal-bulk-1.jpeg",
+        "purpose": "High-quality Indonesian thermal coal in bulk.",
+        "features": [
+            "High GCV",
+            "Low ash"
+        ],
+        "usages": [
+            "Power plants",
+            "Cement plants"
+        ]
+    },
+    {
+        "id": "indonesian-coal-crushed",
+        "name": "Indonesian Coal (Crushed)",
+        "category": "Bio Fuels",
+        "image": "/images/products/indonesian-coal-crushed-1.jpeg",
+        "purpose": "Crushed Indonesian coal for industrial use.",
+        "features": [
+            "Controlled size",
+            "Stable combustion"
+        ],
+        "usages": [
+            "Boilers",
+            "Kilns"
+        ]
+    },
+    {
+        "id": "magic-coal",
+        "name": "Magic Coal",
+        "category": "Bio Fuels",
+        "image": "/images/products/sheesha-coal-1.jpeg",
+        "purpose": "Easy-light charcoal with consistent performance.",
+        "features": [
+            "Uniform shape"
+        ],
+        "usages": [
+            "BBQ",
+            "Home use"
+        ]
+    },
+    {
+        "id": "met-coke",
+        "name": "Met Coke",
+        "category": "Bio Fuels",
+        "image": "/images/products/met-coke-1.jpeg",
+        "purpose": "Metallurgical coke for steel production.",
+        "features": [
+            "High strength",
+            "Low moisture"
+        ],
+        "usages": [
+            "Blast furnaces"
+        ]
+    },
+    {
+        "id": "mine-coal",
+        "name": "Mine Coal",
+        "category": "Bio Fuels",
+        "image": "/images/products/mine-coal-1.jpeg",
+        "purpose": "Domestic mine coal for heavy industries.",
+        "features": [
+            "Medium ash",
+            "Good calorific value"
+        ],
+        "usages": [
+            "Steel",
+            "Brick kilns"
+        ]
+    },
+    {
+        "id": "pet-coke",
+        "name": "Pet Coke",
+        "category": "Bio Fuels",
+        "image": "/images/products/pet-coke-1.jpeg",
+        "purpose": "High-carbon petroleum coke fuel.",
+        "features": [
+            "Very high calorific value"
+        ],
+        "usages": [
+            "Cement plants",
+            "Power generation"
+        ]
+    },
+    {
+        "id": "sheesha-coal",
+        "name": "Sheesha Coal",
+        "category": "Bio Fuels",
+        "image": "/images/products/magic-coal-1.jpeg",
+        "purpose": "Smokeless charcoal specially made for sheesha.",
+        "features": [
+            "Long-lasting heat"
+        ],
+        "usages": [
+            "Hookah / sheesha"
+        ]
+    },
+    {
+        "id": "starter-cube",
+        "name": "Starter Cube",
+        "category": "Bio Fuels",
+        "image": "/images/products/starter-cube-1.jpeg",
+        "purpose": "Quick-ignition fire starter cubes.",
+        "features": [
+            "Odorless",
+            "Long burn time"
+        ],
+        "usages": [
+            "BBQ",
+            "Fireplaces"
+        ]
+    },
+    {
+        "id": "wood-coal",
+        "name": "Wood Coal",
+        "category": "Bio Fuels",
+        "image": "/images/products/wood-coal-1.jpeg",
+        "purpose": "Traditional wood-based charcoal.",
+        "features": [
+            "Natural carbon content"
+        ],
+        "usages": [
+            "Cooking",
+            "Heating"
+        ]
+    },
+    {
+        "id": "acetic-acid",
+        "name": "Acetic Acid",
+        "category": "Chemicals",
+        "image": [
+            "https://brmchemicals.com/cdn/shop/products/ACETIC_ACID_GLACIAL_5kg_Blue_cane_red_BRM.jpg?v=1702555415&width=1946",
+            "https://image.made-in-china.com/202f0j00hrokHpMcAybl/Factory-Price-15m3-Acetic-Acid-Liquid-Tank-Cars.webp"
+        ],
+        "purpose": "An organic acid serving as a key building block for chemicals and food additives.",
+        "usages": [
+            "Vinyl acetate monomer production",
+            "Ester production",
+            "Textile industry",
+            "Food additive",
+            "Solvent"
         ]
     },
     {
         "id": "antiscalants",
         "name": "Antiscalants",
         "category": "Chemicals",
-        "image": "https://5.imimg.com/data5/JA/OL/MY-58709962/antiscalants-500x500.jpg",
+        "image": [
+            "https://5.imimg.com/data5/JA/OL/MY-58709962/antiscalants-500x500.jpg",
+            "https://axeonsupply.com/cdn/shop/collections/Antiscalants.png?v=1723111717"
+        ],
         "purpose": "Chemical additives that prevent the formation of scale in membrane systems.",
         "usages": [
             "Reverse Osmosis (RO) systems",
@@ -112,24 +355,49 @@
         ]
     },
     {
-        "id": "hcl",
-        "name": "Hydrochloric Acid",
+        "id": "bleaching-powder",
+        "name": "Calcium Hypochlorite (Bleaching Powder)",
         "category": "Chemicals",
-        "image": "https://i0.wp.com/chemstock.ae/wp-content/uploads/Industrial%20Chemicals/Hydrochloric%20Acid%20%28HCl%20Acid%29%20-%20Chemstock.webp?fit=900%2C800&ssl=1",
-        "purpose": "A strong, corrosive acid used in various industrial applications.",
+        "image": [
+            "https://5.imimg.com/data5/NO/TQ/LT/SELLER-6195225/bleaching-powder-calcium-hypo-chlorite-extra-strong-65-70-chlorine-500x500.jpg",
+            "https://5.imimg.com/data5/SELLER/Default/2025/12/572064164/YO/PI/HT/88406792/calcium-hypochlorite-bleaching-powder.jpg"
+        ],
+        "purpose": "A widely used disinfectant and bleaching agent for water and textiles.",
         "usages": [
-            "Steel pickling (rust removal)",
-            "pH control and neutralization",
-            "Production of organic compounds",
-            "Leather processing",
-            "Household cleaners"
+            "Water disinfection",
+            "Swimming pool sanitization",
+            "Textile bleaching",
+            "Sewage treatment",
+            "Moss and algae removal"
+        ]
+    },
+    {
+        "id": "caustic-soda-flakes",
+        "name": "Caustic Soda Flakes",
+        "category": "Chemicals",
+        "image": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzdG4qcgm9oHDkjC71CT2YKVXBjhXvK3GNVA&s",
+            "https://www.dcmshriramchemicals.com/Upload/Images/thumbnail/caustic-soda-flakes-sm.webp",
+            "https://www.nuroil.com/images/pages/caustic-soda/caustic-soda-flakes-bag.png"
+        ],
+        "purpose": "A strong alkali used in various industrial manufacturing processes.",
+        "usages": [
+            "Soap and detergent manufacturing",
+            "Paper and pulp industry",
+            "Aluminum production (Bayer process)",
+            "Textile processing",
+            "Water treatment (pH adjustment)"
         ]
     },
     {
         "id": "caustic-lye",
-        "name": "Caustic Lye",
+        "name": "Caustic Soda Lye (Liquid)",
         "category": "Chemicals",
-        "image": "https://brmchemicals.com/cdn/shop/products/100gHDPEbottle_e2f4b591-9006-4b8e-b6f1-5c74ddcfc091.jpg?v=1703054259&width=1946",
+        "image": [
+            "https://5.imimg.com/data5/SELLER/Default/2022/4/NT/IO/BY/3177494/caustic-soda-iye-48-.jpg",
+            "https://www.chemcentral.com/media/catalog/product/cache/1d33bba7a7d58341818357c259d92f07/c/a/caustic_soda_50_sodium_hydroxide_680_chem.png",
+            "https://i0.wp.com/chemstock.ae/wp-content/uploads/Industrial%20Chemicals/Caustic%20Soda%20Lye%20-%20Chemstock.webp"
+        ],
         "purpose": "Liquid sodium hydroxide used for heavy-duty industrial cleaning and processing.",
         "usages": [
             "Drain cleaning",
@@ -140,10 +408,132 @@
         ]
     },
     {
+        "id": "edta-salts",
+        "name": "EDTA Tetra & Di Sodium Salt",
+        "category": "Chemicals",
+        "image": [
+            "https://cdn11.bigcommerce.com/s-6ijtzgo0pb/images/stencil/1280x1280/products/160/1086/Tetrasodium_EDTA_Bag__20449.1734728238.png?c=1",
+            "https://d2gdaxkudte5p.cloudfront.net/system/images/E57020-250.0.jpg"
+        ],
+        "purpose": "Chelating agent salts used for sequestering metal ions in various industries.",
+        "usages": [
+            "Detergents and soaps",
+            "Textile industry",
+            "Paper pulp bleaching",
+            "Water softening",
+            "Agriculture micronutrients"
+        ]
+    },
+    {
+        "id": "edta",
+        "name": "Ethylenediaminetetraacetic Acid (EDTA)",
+        "category": "Chemicals",
+        "image": [
+            "https://valetchem.co.uk/cdn/shop/files/ethylene-diamine-tetra-acetic-acid-edta-valet-chem-5kg.jpg?v=1718616850",
+            "/images/products/powder_bulk.png"
+        ],
+        "purpose": "A versatile chelating agent used to sequester metal ions in aqueous solutions.",
+        "usages": [
+            "Water treatment to prevent scaling",
+            "Detergents and cleaning agents",
+            "Food preservation (antioxidant)",
+            "Textile industry for dyeing",
+            "Pharmaceutical formulations"
+        ]
+    },
+    {
+        "id": "ferric-alum",
+        "name": "Ferric Alum",
+        "category": "Chemicals",
+        "image": [
+            "https://5.imimg.com/data5/ZP/XE/BU/SELLER-103142067/ferric-alum-grade-iv-500x500-jpg.jpg",
+            "https://5.imimg.com/data5/ANDROID/Default/2025/6/520414496/RV/MQ/QR/1400751/product-jpeg-500x500.jpg"
+        ],
+        "purpose": "A chemical coagulant effective for water purification and paper sizing.",
+        "usages": [
+            "Water purification",
+            "Paper sizing",
+            "Tanning leather",
+            "Mordant in dyeing",
+            "Effluent treatment"
+        ]
+    },
+    {
+        "id": "ferric-chloride",
+        "name": "Ferric Chloride",
+        "category": "Chemicals",
+        "image": [
+            "https://m.media-amazon.com/images/I/61Wphb9xltL._AC_UF1000,1000_QL80_.jpg",
+            "https://5.imimg.com/data5/SELLER/Default/2024/3/404725441/BG/TM/VN/74510068/ferric-chloride-solution.png"
+        ],
+        "purpose": "An industrial coagulant and etchant used in water treatment and electronics.",
+        "usages": [
+            "Sewage treatment",
+            "Drinking water production",
+            "Etching copper PCBs",
+            "Odor control",
+            "Sludge dewatering"
+        ]
+    },
+    {
+        "id": "hydrated-lime",
+        "name": "Hydrated Lime Powder",
+        "category": "Chemicals",
+        "image": [
+            "https://cpimg.tistatic.com/03037417/b/5/70-Hydrated-Lime-Powder.jpg",
+            "https://images.thdstatic.com/productImages/ff1aacc0-e500-436d-976f-748cbbd9b5f4/svn/txi-concrete-sand-gravel-5195-64_1000.jpg"
+        ],
+        "purpose": "A dry powder used extensively in water treatment and construction.",
+        "usages": [
+            "Water treatment (pH adjustment)",
+            "Sugar refining",
+            "Construction (mortar)",
+            "Flue gas desulfurization",
+            "Leather industry"
+        ]
+    },
+    {
+        "id": "hcl",
+        "name": "Hydrochloric Acid (HCL)",
+        "category": "Chemicals",
+        "image": [
+            "https://5.imimg.com/data5/SELLER/Default/2022/10/AB/QL/WN/13907044/hydrochloric-acid.jpg",
+            "https://www.dial4trade.com/uploaded_files/product_images/thumbs/hydrochloric-acid-hcl--u-134281566318345149.png"
+        ],
+        "purpose": "A strong, corrosive acid used in various industrial applications.",
+        "usages": [
+            "Steel pickling (rust removal)",
+            "pH control and neutralization",
+            "Production of organic compounds",
+            "Leather processing",
+            "Household cleaners"
+        ]
+    },
+    {
+        "id": "hydrogen-peroxide",
+        "name": "Hydrogen Peroxide",
+        "category": "Chemicals",
+        "image": [
+            "https://5.imimg.com/data5/SELLER/Default/2023/7/330110883/KS/FU/MO/42256927/hydrogen-peroxide-400-ml-2-500x500.jpg",
+            "https://fiberglasssource.com/cdn/shop/products/Screen_Shot_2017-05-10_at_12.45.56_PM.png?v=1704388324"
+        ],
+        "purpose": "A strong oxidizer and bleaching agent with diverse industrial applications.",
+        "usages": [
+            "Paper bleaching",
+            "Textile bleaching",
+            "Wastewater treatment",
+            "Disinfection",
+            "Chemical synthesis"
+        ]
+    },
+    {
         "id": "nitric-acid",
         "name": "Nitric Acid",
         "category": "Chemicals",
-        "image": "data:image/jpeg;base64,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",
+        "image": [
+            "https://5.imimg.com/data5/IP/YN/UI/SELLER-55138904/sewage-treatment-plants-500x500.jpg",
+            "https://i0.wp.com/chemstock.ae/wp-content/uploads/Industrial%20Chemicals/Nitric%20Acid%20-%20Chemstock.webp"
+        ],
         "purpose": "A highly corrosive mineral acid used for fertilizers and explosives.",
         "usages": [
             "Fertilizer production (Ammonium Nitrate)",
@@ -154,10 +544,30 @@
         ]
     },
     {
+        "id": "pac",
+        "name": "Poly Aluminium Chloride (PAC)",
+        "category": "Chemicals",
+        "image": [
+            "https://5.imimg.com/data5/LV/ZT/WR/SELLER-81012492/polyaluminium-chloride-pac.jpg",
+            "https://tiimg.tistatic.com/fp/2/006/474/poly-aluminium-chloride-pac--607.jpg"
+        ],
+        "purpose": "A coagulant used widely in water purification and treatment processes.",
+        "usages": [
+            "Drinking water treatment",
+            "Sewage and wastewater treatment",
+            "Paper industry sizing",
+            "Cosmetic formulations (deodorants)",
+            "Oil and gas industry"
+        ]
+    },
+    {
         "id": "polyelectrolytes",
         "name": "Polyelectrolytes",
         "category": "Chemicals",
-        "image": "https://cpimg.tistatic.com/07346724/b/4/Polyelectrolyte-Chemical.jpg",
+        "image": [
+            "https://5.imimg.com/data5/SELLER/Default/2023/5/310370457/VL/NL/TD/40329493/polyelectrolyte-flocculants.png",
+            "https://5.imimg.com/data5/SELLER/Default/2024/5/416232742/DC/XY/OM/45334186/polyelectrolyte-chemical-powder-500x500.jpeg"
+        ],
         "purpose": "Polymers used to destabilize colloidal suspensions and initiate flocculation.",
         "usages": [
             "Sludge dewatering",
@@ -168,48 +578,611 @@
         ]
     },
     {
-        "id": "grease-mobil",
-        "name": "MOBIL UNIREXN3 GREASE, GULF CROWN MP3",
-        "category": "Lubricants",
+        "id": "defoamers",
+        "name": "Silicone-Based Defoamers",
+        "category": "Chemicals",
         "image": [
-            "data:image/jpeg;base64,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",
-            "https://5.imimg.com/data5/SELLER/Default/2021/5/EB/HR/BI/50713106/gulf-crown-mp3-grease.jpg"
+            "https://cpimg.tistatic.com/09617209/b/4/Silicone-Based-Defoamer.jpg",
+            "https://brmchemicals.com/cdn/shop/products/5kgBluecaneredBRM_8c49e050-3f27-4a35-be60-3b61811b458d.jpg?v=1702988732&width=1946"
         ],
-        "purpose": "High-performance industrial greases for bearing and general machinery lubrication.",
+        "purpose": "Agents designed to reduce and hinder the formation of foam in industrial process liquids.",
         "usages": [
-            "Electric motor bearings",
-            "High-temperature applications",
-            "Heavy-duty industrial machinery",
-            "Automotive wheel bearings",
-            "Conveyor systems"
+            "Wastewater treatment",
+            "Paper manufacturing",
+            "Paint and coating production",
+            "Food processing",
+            "Textile dyeing"
         ]
     },
     {
-        "id": "gear-tek",
-        "name": "GULF Gear Tek HD 320",
-        "category": "Lubricants",
-        "image": "https://assets.gulfoilltd.com/gulfindia/files/styles/client_400x400/public/2023-06/GEARTEK_SHD_220_BLUE.webp?itok=IHmyXCA9",
-        "purpose": "Heavy-duty industrial gear oil designed for high load protection.",
+        "id": "sodium-bisulphite",
+        "name": "Sodium Bisulphite",
+        "category": "Chemicals",
+        "image": [
+            "https://mymicrolab.com/pub/media/catalog/product/cache/4c4cf122317d5ed3c60d8f9a6a5b5181/9/4/946_500gpg_zq6wyii7us4amno6.jpg",
+            "https://cpimg.tistatic.com/06170063/b/4/Sodium-Bisulphite-Technical-Grade.jpg"
+        ],
+        "purpose": "A versatile chemical used as a reducing agent and preservative.",
         "usages": [
-            "Enclosed industrial gear drives",
-            "Spur, helical, and bevel gears",
-            "Mining machinery gearboxes",
-            "Cement mill drives",
-            "Steel plant gear systems"
+            "Dechlorination in water treatment",
+            "Food preservative",
+            "Textile bleaching",
+            "Photography",
+            "Leather tanning"
         ]
     },
     {
-        "id": "engine-oil",
-        "name": "GULF MULTI PURPOSE E OIL 20W40",
-        "category": "Lubricants",
-        "image": "https://static.wixstatic.com/media/cdac51_915b542af5db4e4e917e3734fba77b14~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
-        "purpose": "Multi-grade engine oil for varied automotive and industrial engine applications.",
+        "id": "sodium-hypo",
+        "name": "Sodium Hypochlorite",
+        "category": "Chemicals",
+        "image": [
+            "https://pearlwater.in/assets/siteimages/product/1746265402_f416088bd541dfed962b.png",
+            "https://m.media-amazon.com/images/I/517bfT-ULHL._AC_UF1000%2C1000_QL80_.jpg"
+        ],
+        "purpose": "A chemical compound effectively used for water purification and bleaching.",
         "usages": [
-            "Diesel engines in trucks/buses",
-            "Agricultural tractors",
-            "Construction equipment usage",
-            "Generators (DG Sets)",
-            "Marine engines"
+            "Municipal water disinfection",
+            "Household bleach",
+            "Swimming pool chlorination",
+            "Paper pulp bleaching",
+            "Odor removal in waste treatment"
+        ]
+    },
+    {
+        "id": "sls",
+        "name": "Sodium Lauryl Sulfate (SLS)",
+        "category": "Chemicals",
+        "image": [
+            "https://5.imimg.com/data5/SELLER/Default/2024/12/476536915/MV/VY/TL/134387670/sodium-lauryl-sulphate-500x500.jpg",
+            "https://brmchemicals.com/cdn/shop/products/5kgBluecaneredBRM_7f562009-ef36-4c4a-9a3f-0004dc1c744f.jpg?v=1703661258&width=1946"
+        ],
+        "purpose": "A surfactant used for cleaning and emulsifying in many hygiene products.",
+        "usages": [
+            "Shampoos and soaps (foaming agent)",
+            "Toothpaste manufacturing",
+            "Industrial degreasers",
+            "Floor cleaners",
+            "Car wash detergents"
+        ]
+    },
+    {
+        "id": "sodium-metabisulphite",
+        "name": "Sodium Metabisulphite",
+        "category": "Chemicals",
+        "image": [
+            "https://aashichem.com/wp-content/uploads/2024/10/SODIUM-META-BISULPHITE-SMBS.jpg",
+            "https://i0.wp.com/chemstock.ae/wp-content/uploads/Industrial%20Chemicals/Sodium%20Metabisulphite%20%28SMBS%29%20-%20Chemstock.webp"
+        ],
+        "purpose": "An inorganic compound used as a disinfectant, antioxidant, and preservative agent.",
+        "usages": [
+            "Food preservative (dried fruits)",
+            "Water treatment (dechlorination)",
+            "Sanitization in brewing",
+            "Photography developing",
+            "Textile bleaching"
+        ]
+    },
+    {
+        "id": "sulphuric-acid",
+        "name": "Sulphuric Acid",
+        "category": "Chemicals",
+        "image": [
+            "https://c8.alamy.com/comp/RME26X/sulphuric-acid-bottle-RME26X.jpg",
+            "https://www.wintersunchemical.com/cdn/shop/products/19-091-01_b36c47b5-0995-4fd3-83e2-23c520d87df5.jpg?v=1550250752"
+        ],
+        "purpose": "A strong mineral acid widely used in industrial processing and fertilizer production.",
+        "usages": [
+            "Fertilizer manufacturing",
+            "Chemical synthesis",
+            "Wastewater treatment",
+            "Oil refining",
+            "Metal processing"
+        ]
+    },
+    {
+        "id": "acb",
+        "name": "ACB \u2013 AIR CIRCUIT BREAKER",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://iallway.com/wp-content/uploads/2024/02/78805a221a988e79ef3f.png",
+            "https://www.electricalpanelmanufacturers.com/images/products/img-lt-distribution-panel.jpg",
+            "https://us1.yofishseo.com/file/157/applications-of-air-circuit-breakers.png"
+        ],
+        "purpose": "Handles very high current protection for main LT panels and large factories.",
+        "usages": [
+            "Main LT panels",
+            "Power plants",
+            "Large factories"
+        ],
+        "features": [
+            "Handles very high current",
+            "Long electrical life"
+        ]
+    },
+    {
+        "id": "cable-trays",
+        "name": "CABLE TRAYS & ACCESSORIES",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://www.anishelectricals.com/wp-content/uploads/2023/08/Cable-Tray-Accessories-1.jpg",
+            "https://harshdeepcabletray.com/wp-content/uploads/2025/07/cable-tray-accessories.webp",
+            "https://www.perforated-sheet.com/img/perforated-cable-tray-application-1.jpg"
+        ],
+        "purpose": "Systems for organized routing and support of electrical cables.",
+        "sub_products": [
+            "Ladder tray",
+            "Perforated tray",
+            "Raceway systems"
+        ],
+        "usages": [
+            "Cable management",
+            "Power & control routing"
+        ]
+    },
+    {
+        "id": "contactors",
+        "name": "CONTACTORS",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://www.mtechcontrol.com/assets/images/content/MMS_w_FD_Auto_Inside1.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tesys_D_Contactor_Schneider_Electric.jpg",
+            "https://www.oempanels.com/wp-content/uploads/Electrical-Control-Panel-Manufacturers-1.jpg"
+        ],
+        "purpose": "Switches motors, pumps, and compressors automatically.",
+        "usages": [
+            "Motor control centers (MCC)",
+            "Automation panels"
+        ],
+        "features": [
+            "High switching frequency",
+            "Robust design"
+        ]
+    },
+    {
+        "id": "control-cables",
+        "name": "CONTROL CABLES",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://assets.belden.com/transform/fcf756f1-f9e7-41ea-b11f-3dc993a545c1/Belden-Industrial-Control-Cable",
+            "https://www.rowse.co.uk/static/images/blog/posts/open-graph/color-codes-open-graph.jpg",
+            "https://www.rowse.co.uk/static/images/blog/posts/open-graph/color-codes-open-graph.jpg"
+        ],
+        "purpose": "Carry control signals between panels, PLCs, motors, and instruments.",
+        "sub_products": [
+            "Multi-core (2C to 61C)",
+            "Copper conductor",
+            "PVC / XLPE insulation"
+        ],
+        "usages": [
+            "PLC & automation panels",
+            "MCC & PCC panels",
+            "Process control systems"
+        ]
+    },
+    {
+        "id": "earthing-cables",
+        "name": "EARTHING & GROUNDING CABLES",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKDzm8DS7Tb6aZLQdchv0cKECUusxAYvWtxg&s",
+            "https://5.imimg.com/data5/VM/VI/TF/SELLER-11669922/16-mm-earth-wire-500x500.jpg",
+            "https://www.centralwires.com/wp-content/uploads/2024/05/grounding-wire.webp"
+        ],
+        "purpose": "Essential for electrical safety and equipment grounding.",
+        "usages": [
+            "Electrical safety",
+            "Shock protection",
+            "Equipment grounding"
+        ]
+    },
+    {
+        "id": "sensors-meters",
+        "name": "ENERGY METERS & INSTRUMENTS",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://learn4electrical.altervista.org/wp-content/uploads/2017/07/Single-Phase-LCD-MFM.jpg",
+            "https://5.imimg.com/data5/SELLER/Default/2025/5/509940076/DR/NR/MO/79006301/digital-energy-meter-500x500.png"
+        ],
+        "purpose": "Precision instruments for measurement and process monitoring.",
+        "sub_products": [
+            "Energy meters",
+            "Temperature & pressure sensors",
+            "Process instruments"
+        ],
+        "usages": [
+            "Power monitoring",
+            "Energy management"
+        ],
+        "features": [
+            "High accuracy",
+            "Digital integration",
+            "Robust sensing elements"
+        ]
+    },
+    {
+        "id": "flexible-cables",
+        "name": "FLEXIBLE CABLES",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://5.imimg.com/data5/GLADMIN/Default/2022/6/DS/QR/HX/87924/copper-flexible-cable-500x500.png",
+            "https://m.media-amazon.com/images/I/71j875h0BsL.jpg"
+        ],
+        "purpose": "Flexible wiring for moving machinery and portable equipment.",
+        "usages": [
+            "Moving machinery",
+            "Portable equipment",
+            "Temporary power connections"
+        ]
+    },
+    {
+        "id": "motors-vfd",
+        "name": "INDUSTRIAL MOTORS & VFD / DRIVES",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://images.squarespace-cdn.com/content/v1/55181a36e4b05c72e7f6a2a3/1647221783175-FB03W1ZDJR380UF6TBPF/FRN060G1S-4U.jpeg",
+            "https://image.made-in-china.com/202f0j00zURbZnpIqfcQ/Industrial-Use-High-Torque-VFD-Drive-6-Pole-5-HP-4kw-3-Phase-AC-Motor.webp"
+        ],
+        "purpose": "Efficient driving force and speed control for industrial machinery.",
+        "sub_products": [
+            "AC / DC Motors",
+            "VFD / Inverter Drives",
+            "Servo Motors"
+        ],
+        "usages": [
+            "Pumps & compressors",
+            "Conveyors",
+            "HVAC systems"
+        ],
+        "features": [
+            "Energy efficient",
+            "Variable speed control",
+            "Robust construction"
+        ]
+    },
+    {
+        "id": "industrial-robotics",
+        "name": "INDUSTRIAL ROBOTICS & AUTOMATION",
+        "category": "Electric & Electronics",
+        "image": "https://etimg.etb2bimg.com/thumb/msid-121408587,imgsize-62940,width-1200,height=627,overlay-etmanufacturing,resizemode-75/news/hi-tech/how-quality-robotics-and-automation-are-powering-indias-manufacturing-leap.jpg",
+        "purpose": "Industrial robots are used to automate repetitive, high-precision, and heavy-duty tasks, improving productivity, safety, and quality.",
+        "sub_products": [
+            "Assembly lines",
+            "Welding & fabrication",
+            "Pick & place operations",
+            "Packaging & palletizing"
+        ],
+        "usages": [
+            "Automotive & heavy industries",
+            "Assembly lines",
+            "Welding & fabrication",
+            "Pick & place operations",
+            "Packaging & palletizing"
+        ],
+        "features": [
+            "High production efficiency",
+            "Reduced manpower dependency",
+            "Improved accuracy & consistency",
+            "Safer industrial operations"
+        ],
+        "solutions": [
+            "Robotic system supply",
+            "Automation integration",
+            "PLC\u2013Robot coordination",
+            "Industrial modernization projects"
+        ]
+    },
+    {
+        "id": "industrial-sockets",
+        "name": "INDUSTRIAL SOCKETS & PLUGS",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://5.imimg.com/data5/SELLER/Default/2022/2/SZ/UV/YC/10242030/industrial-plug-and-socket.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGJmH5hT3eKFP-HN2XaTYHGCt7HMtE-ev0mw&s"
+        ],
+        "purpose": "Robust connection points for heavy machinery and temporary power.",
+        "usages": [
+            "Heavy machinery connection",
+            "Temporary industrial power"
+        ],
+        "features": [
+            "Waterproof / Dustproof options",
+            "High impact resistance"
+        ]
+    },
+    {
+        "id": "instrumentation-cables",
+        "name": "INSTRUMENTATION CABLES",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN1Lfij2p4wPrf7uz8hRnM0O-H2x64_i76Xw&s",
+            "https://img500.exportersindia.com/product_images/bc-500/2018/10/4074685/instrumentation-cables-1539597056-4389433.jpeg"
+        ],
+        "purpose": "Used for low-signal, high-accuracy data transmission from sensors and instruments.",
+        "features": [
+            "Shielded / armoured",
+            "Low noise & interference",
+            "High accuracy signal transmission"
+        ],
+        "usages": [
+            "Chemical plants",
+            "Oil & gas refineries",
+            "SCADA & DCS systems"
+        ]
+    },
+    {
+        "id": "industrial-lighting",
+        "name": "LED LIGHT FITTINGS \u2013 INDUSTRIAL",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://arihantstarled.com/wp-content/uploads/2023/03/Arihant-Star-Modern-Round-Outdoor-High-Bay-Light-1.jpg",
+            "https://m.media-amazon.com/images/I/71NKHEhVMxL.jpg",
+            "https://5.imimg.com/data5/JA/RL/MY-3749901/explosion-proof-lights.jpg"
+        ],
+        "purpose": "Robust lighting solutions for large-scale industrial environments.",
+        "sub_products": [
+            "LED High Bay",
+            "Flood Lights",
+            "Street Lights",
+            "Explosion-proof lights"
+        ],
+        "usages": [
+            "Warehouses",
+            "Plants & yards",
+            "Oil & gas zones"
+        ],
+        "features": [
+            "Energy saving",
+            "High lumen output",
+            "Long operational life"
+        ]
+    },
+    {
+        "id": "mcb",
+        "name": "MCB \u2013 MINIATURE CIRCUIT BREAKER",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAIMPuBYhGRK0LAcUoYwBiS4qTXjP9hUu0Rg&s",
+            "https://us1.yofishseo.com/file/157/miniature-circuit-breaker-.jpg"
+        ],
+        "purpose": "Protects electrical circuits from overload and short circuit.",
+        "usages": [
+            "Lighting circuits",
+            "Control panels",
+            "Commercial & industrial DBs"
+        ],
+        "features": [
+            "Fast tripping",
+            "Compact design",
+            "High safety & reliability"
+        ]
+    },
+    {
+        "id": "mccb",
+        "name": "MCCB \u2013 MOLDED CASE CIRCUIT BREAKER",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://www.mitsubishielectric.com/fa/products/lvd/lvcb/items/mccb/img/img_mv-1.png",
+            "https://5.imimg.com/data5/JU/EN/MY-24001140/molded-case-circuit-breaker-500x500.jpg"
+        ],
+        "purpose": "Used for higher current protection in industrial power systems.",
+        "usages": [
+            "Motor protection",
+            "Main incomer panels",
+            "Heavy electrical loads"
+        ],
+        "features": [
+            "Adjustable trip settings",
+            "High breaking capacity"
+        ]
+    },
+    {
+        "id": "panel-lights",
+        "name": "PANEL LIGHTS & TUBE LIGHTS",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://5.imimg.com/data5/WU/MB/MY-3059229/6-watt-with-warranty-led-panel-light.jpg",
+            "https://4.imimg.com/data4/FK/JQ/MY-13807352/led-tube-light3.jpg"
+        ],
+        "purpose": "Efficient lighting for indoor workspaces and control rooms.",
+        "usages": [
+            "Control rooms",
+            "Offices",
+            "Production floors"
+        ],
+        "features": [
+            "Energy efficient",
+            "Even light distribution"
+        ]
+    },
+    {
+        "id": "smart-factory",
+        "name": "PLC + SCADA + ROBOTICS (SMART FACTORY SOLUTION)",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://5.imimg.com/data5/SELLER/Default/2024/9/453545923/BQ/TL/KR/29693538/plc-based-control-panel.jpg",
+            "https://www.endoks.com/wp-content/uploads/2020/05/Picture1.png",
+            "https://industry.plantautomation-technology.com/suppliers/ta-systems/products/1675059150-big-automated-assembly-lines-lg.jpg"
+        ],
+        "purpose": "Integrated Industry 4.0 solutions combining PLC control, SCADA monitoring, and Robotic automation.",
+        "sub_products": [
+            "PLC-based control panels",
+            "SCADA monitoring systems",
+            "Robotic automation lines",
+            "Sensor & drive integration",
+            "Industry 4.0 solutions"
+        ],
+        "usages": [
+            "Full plant automation",
+            "Smart manufacturing",
+            "Connected enterprise"
+        ],
+        "features": [
+            "Seamless integration",
+            "Real-time data analytics",
+            "End-to-end automation"
+        ],
+        "solutions": [
+            "Turnkey automation projects",
+            "Smart factory consulting"
+        ]
+    },
+    {
+        "id": "plc-systems",
+        "name": "PLC PANEL \u2013 INDUSTRIAL AUTOMATION",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGdXZyJIAUGsFRJQjpvR7vOad0TxzubuDaUA&s",
+            "https://industry.plantautomation-technology.com/suppliers/proax-technologies-ltd/products/1650944637-big-Compact-PLC-CP1HX40DT1D-lg.jpg"
+        ],
+        "purpose": "PLC (Programmable Logic Controller) panels are used to automate machines an industrial processes by controlling motors, pumps, valves, sensors, and production lines.",
+        "sub_products": [
+            "Modular PLCs",
+            "Compact PLCs",
+            "I/O Modules"
+        ],
+        "usages": [
+            "Manufacturing plants",
+            "Chemical & process industries",
+            "Water & wastewater treatment plants",
+            "Cement, steel & power plants"
+        ],
+        "features": [
+            "Fully automated operation",
+            "High reliability & accuracy",
+            "Custom-built panels as per process",
+            "Compatible with sensors, drives & motors"
+        ],
+        "solutions": [
+            "PLC panel supply",
+            "Control panel design",
+            "Industrial automation projects",
+            "Integration with SCADA & VFD"
+        ]
+    },
+    {
+        "id": "power-cables",
+        "name": "POWER CABLES (LT / HT)",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://5.imimg.com/data5/TH/ZK/ER/SELLER-68043305/ht-and-lt-cable-500x500.png",
+            "https://5.imimg.com/data5/SELLER/Default/2022/7/UB/AI/ZX/1407562/ht-lt-cables-250x250.jpg"
+        ],
+        "purpose": "Transmit electrical power safely from source to equipment, panels, and substations.",
+        "sub_products": [
+            "LT Power Cables (1.1 kV)",
+            "HT Power Cables (11 kV / 22 kV / 33 kV)",
+            "Armoured & Unarmoured"
+        ],
+        "usages": [
+            "Factories & manufacturing plants",
+            "Substations & power plants",
+            "Heavy machinery & motors"
+        ],
+        "features": [
+            "Copper / Aluminium Conductor",
+            "PVC / XLPE Insulation"
+        ]
+    },
+    {
+        "id": "relays",
+        "name": "RELAYS (OVERLOAD / CONTROL)",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://5.imimg.com/data5/FO/AC/FO/SELLER-6295525/thermal-overload-relay-500x500.jpg",
+            "https://i0.wp.com/electricbasket.in/wp-content/uploads/2023/05/tinywow_lrdrelayschneiser_31735705.webp?fit=1200%2C1200&ssl=1"
+        ],
+        "purpose": "Protects motors from overload & phase failure.",
+        "usages": [
+            "Motor starters",
+            "Automation systems"
+        ],
+        "features": [
+            "Precise protection",
+            "Adjustable range"
+        ]
+    },
+    {
+        "id": "scada-hmi",
+        "name": "SCADA SYSTEM \u2013 MONITORING & CONTROL",
+        "category": "Electric & Electronics",
+        "image": [
+            "data:image/jpeg;base64,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",
+            "https://5.imimg.com/data5/BW/QL/MY-1639820/scada-systems.jpg"
+        ],
+        "purpose": "SCADA (Supervisory Control and Data Acquisition) systems are used for real-time monitoring, data logging, alarms, and remote control of industrial plants.",
+        "sub_products": [
+            "SCADA Software",
+            "HMI Touch Panels",
+            "Industrial Monitors"
+        ],
+        "usages": [
+            "Power plants & substations",
+            "Oil & gas pipelines",
+            "Water distribution systems",
+            "Large manufacturing units"
+        ],
+        "features": [
+            "Live data monitoring",
+            "Centralized control room",
+            "Alarm & fault reporting",
+            "Remote access & automation"
+        ],
+        "solutions": [
+            "SCADA system supply",
+            "HMI panels",
+            "Control room setup",
+            "PLC\u2013SCADA integration"
+        ]
+    },
+    {
+        "id": "switchgear-panels",
+        "name": "SWITCHGEAR & POWER DISTRIBUTION (INDUSTRIAL)",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://3.imimg.com/data3/FM/VS/MY-2193540/lt-pcc-mcc-control-panels-500x500.jpg",
+            "https://djelectrocontrols.com/wp-content/uploads/2025/11/pcc-panel.jpg"
+        ],
+        "purpose": "Comprehensive power distribution solutions for industrial and commercial facilities.",
+        "sub_products": [
+            "LT Panels",
+            "MCC Panels",
+            "PCC Panels",
+            "Control Panels"
+        ],
+        "usages": [
+            "Factories & manufacturing units",
+            "Power plants",
+            "Commercial complexes",
+            "Infrastructure projects"
+        ],
+        "features": [
+            "Safe power distribution",
+            "High fault protection",
+            "Designed for continuous operation"
+        ]
+    },
+    {
+        "id": "ups-battery",
+        "name": "UPS & POWER BACKUP SYSTEM",
+        "category": "Electric & Electronics",
+        "image": [
+            "https://enertechups.com/wp-content/uploads/2021/11/Solar-Hybrid-Inverter-100KVA.jpg",
+            "https://cpimg.tistatic.com/11116885/b/4/200-Ah-Online-Ups-Battery..jpg"
+        ],
+        "purpose": "Uninterrupted power supply solutions for critical systems.",
+        "sub_products": [
+            "Online UPS",
+            "Industrial Batteries",
+            "Inverters"
+        ],
+        "usages": [
+            "Automation panels",
+            "SCADA & PLC systems"
+        ],
+        "features": [
+            "Reliable backup",
+            "Voltage stabilization",
+            "Quick switchover"
         ]
     },
     {
@@ -227,32 +1200,26 @@
         ]
     },
     {
-        "id": "mech-seals",
-        "name": "Mechanical Seals",
+        "id": "bucket-elevators",
+        "name": "BUCKET ELEVATORS",
         "category": "Mechanical",
-        "image": "https://www.alfotech.eu/media/aq3lghkz/03500008b-w-akseltaetning-med-vandskyl.jpg?rmode=pad&width=485&height=485&format=jpg&quality=90&v=1db4adc464acf50",
-        "purpose": "Devices used to prevent leakage of fluids in pumps and mixers.",
+        "image": "https://placehold.co/600x400?text=Bucket+Elevators",
         "usages": [
-            "Centrifugal pumps",
-            "Mixers and agitators",
-            "Compressors",
-            "Oil refining equipment",
-            "Chemical processing plant pumps"
-        ]
+            "Vertical material transfer",
+            "Cement, mining, fertilizer"
+        ],
+        "purpose": "Vertical bulk material handling."
     },
     {
-        "id": "ss-bolt-nut",
-        "name": "SS Bolt & Nut",
+        "id": "bushes-sleeves",
+        "name": "BUSHES & SLEEVES",
         "category": "Mechanical",
-        "image": "data:image/jpeg;base64,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",
-        "purpose": "Stainless steel fasteners for corrosion-resistant structural connections.",
+        "image": "https://placehold.co/600x400?text=Bushes+and+Sleeves",
         "usages": [
-            "Construction framework",
-            "Marine applications",
-            "Chemical plant piping",
-            "Food processing equipment assembly",
-            "Automotive assembly"
-        ]
+            "Reduce friction"
+        ],
+        "material": "Bronze, Nylon, PU",
+        "purpose": "Bearing surfaces and friction reduction."
     },
     {
         "id": "cartridge-filters",
@@ -269,6 +1236,99 @@
         ]
     },
     {
+        "id": "casting-forging",
+        "name": "CASTING & FORGING PARTS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Casting+and+Forging",
+        "usages": [
+            "Heavy equipment"
+        ],
+        "purpose": "Custom metal parts for machinery."
+    },
+    {
+        "id": "chains-sprockets",
+        "name": "CHAINS & SPROCKETS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Chains+and+Sprockets",
+        "usages": [
+            "Conveyors, elevator"
+        ],
+        "sub_products": [
+            "Roller",
+            "Duplex",
+            "Triplex"
+        ],
+        "purpose": "Chain drive systems for power transmission."
+    },
+    {
+        "id": "conveyor-rollers",
+        "name": "CONVEYOR ROLLERS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Conveyor+Rollers",
+        "usages": [
+            "Material handling systems"
+        ],
+        "purpose": "Supporting conveyor belts and materials."
+    },
+    {
+        "id": "couplings",
+        "name": "COUPLINGS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Couplings",
+        "usages": [
+            "Motor\u2013pump connection"
+        ],
+        "sub_products": [
+            "Flexible",
+            "Gear",
+            "Jaw"
+        ],
+        "purpose": "Connecting two shafts together for power transmission."
+    },
+    {
+        "id": "cranes-hoists",
+        "name": "CRANES & HOISTS (SPARES)",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Cranes+and+Hoists",
+        "usages": [
+            "Heavy lifting",
+            "Steel, manufacturing"
+        ],
+        "purpose": "Components for lifting equipment."
+    },
+    {
+        "id": "crusher-spares",
+        "name": "CRUSHER SPARES",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Crusher+Spares",
+        "usages": [
+            "Crushers",
+            "Mining, cement, quarry"
+        ],
+        "purpose": "Replacement parts for rock crushers."
+    },
+    {
+        "id": "custom-fabricated",
+        "name": "CUSTOM FABRICATED ITEMS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Custom+Fabrication",
+        "usages": [
+            "Project-based requirements"
+        ],
+        "purpose": "Tailor-made mechanical solutions."
+    },
+    {
+        "id": "dampers-louvers",
+        "name": "DAMPERS & LOUVERS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Dampers+and+Louvers",
+        "usages": [
+            "Air & gas flow control",
+            "Power, cement, HVAC"
+        ],
+        "purpose": "Flow regulation in ducts."
+    },
+    {
         "id": "electrical-spares",
         "name": "Electrical Spares",
         "category": "Mechanical",
@@ -281,6 +1341,246 @@
             "Control panel maintenance",
             "Fuse replacements"
         ]
+    },
+    {
+        "id": "expansion-joints",
+        "name": "EXPANSION JOINTS & BELLOWS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Expansion+Joints",
+        "usages": [
+            "Pipelines"
+        ],
+        "purpose": "Absorb vibration & thermal expansion"
+    },
+    {
+        "id": "fan-blowers",
+        "name": "FAN & BLOWER ASSEMBLIES",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Fan+and+Blowers",
+        "usages": [
+            "Air handling, cooling",
+            "Cement, steel, chemical"
+        ],
+        "purpose": "Industrial air movement."
+    },
+    {
+        "id": "fasteners",
+        "name": "FASTENERS (BOLTS & NUTS)",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Industrial+Fasteners",
+        "material": "MS, SS, HT",
+        "usages": [
+            "Assembly & structure"
+        ],
+        "purpose": "Joining industrial components."
+    },
+    {
+        "id": "filters-strainers",
+        "name": "FILTERS & STRAINERS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Filters+and+Strainers",
+        "usages": [
+            "Fluid systems",
+            "Chemical, water, oil"
+        ],
+        "purpose": "Removing impurities from fluids."
+    },
+    {
+        "id": "flanges",
+        "name": "FLANGES",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Flanges",
+        "usages": [
+            "Pipe connections"
+        ],
+        "material": "MS, SS",
+        "purpose": "Connecting pipes, valves, and pumps."
+    },
+    {
+        "id": "gaskets-packings",
+        "name": "GASKETS & PACKINGS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Gaskets+and+Packings",
+        "usages": [
+            "Flanges & pumps",
+            "Chemical, oil & gas"
+        ],
+        "purpose": "Sealing connection points."
+    },
+    {
+        "id": "gear-boxes",
+        "name": "GEAR BOXES",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Gear+Boxes",
+        "usages": [
+            "Speed reduction",
+            "Cement, steel, conveyors"
+        ],
+        "purpose": "Torque increase and speed reduction."
+    },
+    {
+        "id": "gears",
+        "name": "GEARS (SPUR / HELICAL)",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Gears",
+        "usages": [
+            "Power transmission"
+        ],
+        "material": "Alloy steel, MS",
+        "purpose": "Transmitting motion and force."
+    },
+    {
+        "id": "heat-exchangers",
+        "name": "HEAT EXCHANGERS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Heat+Exchangers",
+        "usages": [
+            "Cooling & heating processes",
+            "Oil & gas, power, chemical"
+        ],
+        "purpose": "Transferring heat between fluids."
+    },
+    {
+        "id": "hollow-block-ms",
+        "name": "HOLLOW BLOCK & STRUCTURAL MS ITEMS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Structural+MS+Items",
+        "usages": [
+            "Industrial structures"
+        ],
+        "purpose": "Construction of industrial frameworks."
+    },
+    {
+        "id": "hydraulic-cylinders",
+        "name": "HYDRAULIC CYLINDERS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Hydraulic+Cylinders",
+        "usages": [
+            "Heavy machinery"
+        ],
+        "purpose": "Linear force generation via hydraulics."
+    },
+    {
+        "id": "hydraulic-power-packs",
+        "name": "HYDRAULIC POWER PACKS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Hydraulic+Power+Packs",
+        "usages": [
+            "Heavy machinery",
+            "Steel, automation, presses"
+        ],
+        "purpose": "Generating hydraulic power."
+    },
+    {
+        "id": "impellers",
+        "name": "IMPELLERS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Impellers",
+        "usages": [
+            "Pumps, blowers",
+            "Chemical, water, power"
+        ],
+        "purpose": "Fluid movement & pressure generation"
+    },
+    {
+        "id": "industrial-bearings",
+        "name": "INDUSTRIAL BEARINGS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Industrial+Bearings",
+        "usages": [
+            "Motors, pumps, gearboxes, conveyors"
+        ],
+        "sub_products": [
+            "Ball",
+            "Roller",
+            "Taper",
+            "Spherical"
+        ],
+        "purpose": "Reduce friction and support loads in machinery."
+    },
+    {
+        "id": "industrial-lubricants-mech",
+        "name": "INDUSTRIAL LUBRICANTS & GREASE",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Lubricants",
+        "usages": [
+            "Bearings, gear"
+        ],
+        "sub_products": [
+            "Hydraulic oil",
+            "Gear oil"
+        ],
+        "purpose": "Reducing friction and wear."
+    },
+    {
+        "id": "industrial-springs",
+        "name": "INDUSTRIAL SPRINGS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Industrial+Springs",
+        "usages": [
+            "Shock absorption"
+        ],
+        "sub_products": [
+            "Compression",
+            "Tension"
+        ],
+        "purpose": "Energy storage and shock absorption."
+    },
+    {
+        "id": "lifting-slings",
+        "name": "LIFTING SLINGS & CHAINS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Lifting+Slings",
+        "usages": [
+            "Lifting operations",
+            "EPC, steel, power"
+        ],
+        "purpose": "Safe lifting of heavy loads."
+    },
+    {
+        "id": "machine-spares",
+        "name": "MACHINE SPARE PARTS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Machine+Spare+Parts",
+        "usages": [
+            "Maintenance & breakdown"
+        ],
+        "purpose": "Replacement parts for industrial machines."
+    },
+    {
+        "id": "material-trolleys",
+        "name": "MATERIAL HANDLING TROLLEYS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Material+Trolleys",
+        "usages": [
+            "Shop floor movement",
+            "All manufacturing units"
+        ],
+        "purpose": "Manual transport of goods."
+    },
+    {
+        "id": "mech-seals",
+        "name": "Mechanical Seals",
+        "category": "Mechanical",
+        "image": "https://www.alfotech.eu/media/aq3lghkz/03500008b-w-akseltaetning-med-vandskyl.jpg?rmode=pad&width=485&height=485&format=jpg&quality=90&v=1db4adc464acf50",
+        "purpose": "Devices used to prevent leakage of fluids in pumps and mixers.",
+        "usages": [
+            "Centrifugal pumps",
+            "Mixers and agitators",
+            "Compressors",
+            "Oil refining equipment",
+            "Chemical processing plant pumps"
+        ]
+    },
+    {
+        "id": "mechanical-seals",
+        "name": "MECHANICAL SEALS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Mechanical+Seals",
+        "usages": [
+            "Pumps & compressors"
+        ],
+        "purpose": "Leak prevention"
     },
     {
         "id": "mechanical-spares",
@@ -297,6 +1597,864 @@
         ]
     },
     {
+        "id": "oil-seals",
+        "name": "OIL SEALS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Oil+Seals",
+        "usages": [
+            "Shafts, gearboxes, pump"
+        ],
+        "purpose": "Prevent oil leakage & dust entry"
+    },
+    {
+        "id": "pneumatic-cylinders",
+        "name": "PNEUMATIC CYLINDERS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Pneumatic+Cylinders",
+        "usages": [
+            "Automation & robotics"
+        ],
+        "purpose": "Linear motion via compressed air."
+    },
+    {
+        "id": "pneumatic-frl",
+        "name": "PNEUMATIC FRL UNITS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Pneumatic+FRL",
+        "usages": [
+            "Pneumatic systems",
+            "Automation, packaging"
+        ],
+        "purpose": "Filter, Regulator, Lubricator for air systems."
+    },
+    {
+        "id": "pressure-vessels",
+        "name": "PRESSURE VESSELS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Pressure+Vessels",
+        "usages": [
+            "Storage under pressure",
+            "Chemical, refinery, pharma"
+        ],
+        "purpose": "Containing fluids under pressure."
+    },
+    {
+        "id": "pulleys",
+        "name": "PULLEYS (V / FLAT)",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Pulleys",
+        "usages": [
+            "Belt drive system",
+            "Manufacturing, conveyors"
+        ],
+        "purpose": "Transmitting torque in belt systems."
+    },
+    {
+        "id": "pumps",
+        "name": "PUMPS (INDUSTRIAL)",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Industrial+Pumps",
+        "usages": [
+            "Water, chemicals, oil"
+        ],
+        "sub_products": [
+            "Centrifugal",
+            "Gear"
+        ],
+        "purpose": "Moving fluids in industrial processes."
+    },
+    {
+        "id": "safety-guards",
+        "name": "SAFETY GUARDS & COVERS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Safety+Guards",
+        "usages": [
+            "Operator safety"
+        ],
+        "purpose": "Protecting operators and equipment."
+    },
+    {
+        "id": "screw-conveyors",
+        "name": "SCREW CONVEYORS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Screw+Conveyors",
+        "usages": [
+            "Material handling",
+            "Cement, food, chemical"
+        ],
+        "purpose": "Transporting bulk materials."
+    },
+    {
+        "id": "shafts",
+        "name": "SHAFTS (MS / EN / SS)",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Industrial+Shafts",
+        "usages": [
+            "Power transmission"
+        ],
+        "material": "MS, EN8, EN19, SS",
+        "purpose": "Transmitting power and rotation."
+    },
+    {
+        "id": "ss-bolt-nut",
+        "name": "SS Bolt & Nut",
+        "category": "Mechanical",
+        "image": "data:image/jpeg;base64,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",
+        "purpose": "Stainless steel fasteners for corrosion-resistant structural connections.",
+        "usages": [
+            "Construction framework",
+            "Marine applications",
+            "Chemical plant piping",
+            "Food processing equipment assembly",
+            "Automotive assembly"
+        ]
+    },
+    {
+        "id": "storage-tanks",
+        "name": "STORAGE TANKS (MS / SS)",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Storage+Tanks",
+        "usages": [
+            "Chemical & liquid storage",
+            "Chemical, water, food"
+        ],
+        "purpose": "Bulk liquid storage."
+    },
+    {
+        "id": "belts",
+        "name": "V-BELTS & TIMING BELTS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=V+Belts",
+        "usages": [
+            "Motors, compressor"
+        ],
+        "features": [
+            "Smooth power transfer"
+        ],
+        "purpose": "Belt drive power transmission."
+    },
+    {
+        "id": "valves",
+        "name": "VALVES (INDUSTRIAL)",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Industrial+Valves",
+        "sub_products": [
+            "Gate",
+            "Globe",
+            "Ball",
+            "Butterfly"
+        ],
+        "usages": [
+            "Fluid control"
+        ],
+        "purpose": "Regulating fluid flow."
+    },
+    {
+        "id": "vibratory-screens",
+        "name": "VIBRATORY SCREENS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Vibratory+Screens",
+        "usages": [
+            "Screening & separation",
+            "Mining, aggregates, cement"
+        ],
+        "purpose": "Sizing and separating materials."
+    },
+    {
+        "id": "wear-plates",
+        "name": "WEAR PLATES & LINERS",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Wear+Plates",
+        "usages": [
+            "High abrasion zones",
+            "Mining, cement"
+        ],
+        "purpose": "Protecting equipment from abrasion."
+    },
+    {
+        "id": "wire-ropes",
+        "name": "WIRE ROPES",
+        "category": "Mechanical",
+        "image": "https://placehold.co/600x400?text=Wire+Ropes",
+        "usages": [
+            "Cranes, hoists",
+            "Mining, ports, construction"
+        ],
+        "purpose": "Heavy dry lifting and suspension."
+    },
+    {
+        "id": "cement-mill-oil",
+        "name": "CEMENT MILL & KILN OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Cement+Mill+Oil",
+        "usages": [
+            "Open gears, kilns",
+            "Cement & mining"
+        ],
+        "packing": [
+            "Barrels",
+            "Bulk"
+        ],
+        "purpose": "Lubrication for heavy cement machinery."
+    },
+    {
+        "id": "chain-oil",
+        "name": "CHAIN OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Chain+Oil",
+        "usages": [
+            "Conveyors & chains",
+            "Packaging, textile, FMCG"
+        ],
+        "features": [
+            "Anti-wear",
+            "Anti-drip"
+        ],
+        "purpose": "Lubrication for industrial chains."
+    },
+    {
+        "id": "compressor-oil",
+        "name": "COMPRESSOR OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Compressor+Oil",
+        "usages": [
+            "Air compressors",
+            "Refrigeration compressors",
+            "Manufacturing",
+            "Food & pharma (special grades)"
+        ],
+        "purpose": "Lubrication for air and gas compressors."
+    },
+    {
+        "id": "cutting-oil",
+        "name": "CUTTING OIL / METAL WORKING FLUID",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Cutting+Oil",
+        "usages": [
+            "CNC machines",
+            "Lathes & milling machines"
+        ],
+        "purpose": "Cooling and lubrication for metal cutting."
+    },
+    {
+        "id": "demulsifying-oils",
+        "name": "DEMULSIFYING & EMULSIFYING OILS",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Emulsifying+Oil",
+        "usages": [
+            "Metalworking fluids",
+            "Machining, CNC shops"
+        ],
+        "purpose": "Fluid separation and emulsion."
+    },
+    {
+        "id": "engine-oil",
+        "name": "ENGINE OIL (INDUSTRIAL & COMERCIAL)",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Engine+Oil",
+        "purpose": "Lubrication for internal combustion engines.",
+        "usages": [
+            "DG sets",
+            "Construction equipment",
+            "Industrial engines"
+        ],
+        "features": [
+            "Grades: SAE 15W40, SAE 20W40"
+        ]
+    },
+    {
+        "id": "fire-resistant-hydraulic-oil",
+        "name": "FIRE-RESISTANT HYDRAULIC OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Fire+Resistant+Oil",
+        "usages": [
+            "High-risk areas",
+            "Steel mills, foundries, mining"
+        ],
+        "sub_products": [
+            "HFA",
+            "HFB",
+            "HFC",
+            "HFD"
+        ],
+        "packing": [
+            "Drums",
+            "IBC"
+        ],
+        "purpose": "Hydraulic fluid for fire-hazard environments."
+    },
+    {
+        "id": "food-grade-lubricants",
+        "name": "FOOD GRADE LUBRICANTS (NSF H1)",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Food+Grade+Lube",
+        "usages": [
+            "Accidental food contact zones",
+            "Food & beverage, pharma"
+        ],
+        "sub_products": [
+            "Hydraulic oil",
+            "Grease",
+            "Chain oil"
+        ],
+        "purpose": "Safe lubricants for food processing."
+    },
+    {
+        "id": "gear-oil",
+        "name": "GEAR OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Gear+Oil",
+        "features": [
+            "Grades: ISO VG 150, 220, 320, 460"
+        ],
+        "usages": [
+            "Gearboxes",
+            "Crushers",
+            "Cement & mining equipment"
+        ],
+        "purpose": "Special oil designed for high-load gears."
+    },
+    {
+        "id": "grease",
+        "name": "GREASE (MULTI-PURPOSE & HEAVY DUTY)",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Industrial+Grease",
+        "sub_products": [
+            "Lithium grease",
+            "Calcium grease",
+            "High-temperature grease",
+            "EP grease"
+        ],
+        "usages": [
+            "Bearings",
+            "Shafts & couplings",
+            "Heavy machinery"
+        ],
+        "packing": [
+            "180 kg barrels",
+            "18 kg buckets",
+            "1 kg cartridges"
+        ],
+        "purpose": "Heavy duty lubrication for moving parts."
+    },
+    {
+        "id": "gear-tek",
+        "name": "GULF Gear Tek HD 320",
+        "category": "Oil & Lubricants",
+        "image": "https://assets.gulfoilltd.com/gulfindia/files/styles/client_400x400/public/2023-06/GEARTEK_SHD_220_BLUE.webp?itok=IHmyXCA9",
+        "purpose": "Heavy-duty industrial gear oil designed for high load protection.",
+        "usages": [
+            "Enclosed industrial gear drives",
+            "Spur, helical, and bevel gears",
+            "Mining machinery gearboxes",
+            "Cement mill drives",
+            "Steel plant gear systems"
+        ]
+    },
+    {
+        "id": "heat-transfer-oil",
+        "name": "HEAT TRANSFER OIL (THERMIC FLUID)",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Heat+Transfer+Oil",
+        "usages": [
+            "Boilers, heaters, reactors",
+            "Chemical, textile, food, pharma"
+        ],
+        "packing": [
+            "210 L barrels",
+            "IBC tanks"
+        ],
+        "features": [
+            "Stable at high temperature",
+            "Long service life"
+        ],
+        "purpose": "Heat transfer medium."
+    },
+    {
+        "id": "hydraulic-oil",
+        "name": "HYDRAULIC OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Hydraulic+Oil",
+        "features": [
+            "Grades: ISO VG 32, 46, 68"
+        ],
+        "usages": [
+            "Hydraulic presses",
+            "Injection moulding machines",
+            "Excavators & heavy machinery",
+            "Power plants & steel industries"
+        ],
+        "packing": [
+            "210 L barrels",
+            "50 L drums",
+            "IBC tanks (1000 L)"
+        ],
+        "purpose": "Power transmission, lubrication, cooling & sealing in hydraulic systems."
+    },
+    {
+        "id": "industrial-lubricating-oil",
+        "name": "INDUSTRIAL LUBRICATING OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Industrial+Lube+Oil",
+        "usages": [
+            "Bearings",
+            "Slideways",
+            "Gears & chains",
+            "Manufacturing plants",
+            "Textile mills",
+            "General engineering"
+        ],
+        "purpose": "General purpose industrial lubrication."
+    },
+    {
+        "id": "grease-mobil",
+        "name": "MOBIL UNIREXN3 GREASE, GULF CROWN MP3",
+        "category": "Oil & Lubricants",
+        "image": [
+            "data:image/jpeg;base64,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",
+            "https://5.imimg.com/data5/SELLER/Default/2021/5/EB/HR/BI/50713106/gulf-crown-mp3-grease.jpg"
+        ],
+        "purpose": "High-performance industrial greases for bearing and general machinery lubrication.",
+        "usages": [
+            "Electric motor bearings",
+            "High-temperature applications",
+            "Heavy-duty industrial machinery",
+            "Automotive wheel bearings",
+            "Conveyor systems"
+        ]
+    },
+    {
+        "id": "mould-release-oil",
+        "name": "MOULD RELEASE OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Mould+Release+Oil",
+        "usages": [
+            "Rubber, plastic, concrete"
+        ],
+        "packing": [
+            "Drums",
+            "Sprays"
+        ],
+        "purpose": "Easy demoulding agent."
+    },
+    {
+        "id": "open-gear-lubricant",
+        "name": "OPEN GEAR & WIRE ROPE LUBRICANT",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Open+Gear+Lube",
+        "usages": [
+            "Cranes, open gears",
+            "Ports, mining, steel"
+        ],
+        "features": [
+            "Form: Oil / Grease"
+        ],
+        "purpose": "Exposed gear and rope lubrication."
+    },
+    {
+        "id": "process-oils",
+        "name": "PROCESS OILS (AROMATIC / PARAFFINIC)",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Process+Oils",
+        "usages": [
+            "Plastic & rubber processing",
+            "Tyre, polymer"
+        ],
+        "packing": [
+            "Barrels",
+            "IBC"
+        ],
+        "purpose": "Processing aids for rubber and polymers."
+    },
+    {
+        "id": "refrigeration-compressor-oil",
+        "name": "REFRIGERATION COMPRESSOR OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Refrigeration+Oil",
+        "usages": [
+            "Refrigeration & chillers",
+            "Cold storage, food processing"
+        ],
+        "sub_products": [
+            "Mineral",
+            "Synthetic"
+        ],
+        "packing": [
+            "Drums",
+            "Cans"
+        ],
+        "purpose": "Lubrication for refrigeration systems."
+    },
+    {
+        "id": "rust-preventive-oil",
+        "name": "RUST PREVENTIVE OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Rust+Preventive+Oil",
+        "usages": [
+            "Fabrication, export packing"
+        ],
+        "packing": [
+            "Drums",
+            "Sprays"
+        ],
+        "purpose": "Corrosion protection."
+    },
+    {
+        "id": "specialty-oils",
+        "name": "SPECIALTY & PROCESS OILS",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Specialty+Oils",
+        "usages": [
+            "Rubber & tyre industry",
+            "Plastic processing",
+            "Chemical industries"
+        ],
+        "purpose": "Oils for specific industrial processes."
+    },
+    {
+        "id": "synthetic-gear-oil",
+        "name": "SYNTHETIC GEAR OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Synthetic+Gear+Oil",
+        "usages": [
+            "Heavy-load & high-temp gearboxes",
+            "Cement, mining, wind energy"
+        ],
+        "features": [
+            "Grades: ISO VG 220\u2013680",
+            "Extended drain interval"
+        ],
+        "purpose": "High-performance gear lubrication."
+    },
+    {
+        "id": "transformer-oil",
+        "name": "TRANSFORMER OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Transformer+Oil",
+        "usages": [
+            "Transformers",
+            "Electrical substations"
+        ],
+        "purpose": "Cooling & insulation for transformers."
+    },
+    {
+        "id": "turbine-oil",
+        "name": "TURBINE OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Turbine+Oil",
+        "usages": [
+            "Steam turbines",
+            "Gas turbines",
+            "Power plants",
+            "Refineries"
+        ],
+        "purpose": "High-quality oil for turbine lubrication."
+    },
+    {
+        "id": "vacuum-pump-oil",
+        "name": "VACUUM PUMP OIL",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Vacuum+Pump+Oil",
+        "usages": [
+            "Vacuum systems",
+            "Pharma, chemicals, packaging"
+        ],
+        "features": [
+            "Low vapor pressure",
+            "Clean operation"
+        ],
+        "purpose": "Lubrication for vacuum pumps."
+    },
+    {
+        "id": "way-oil",
+        "name": "WAY OIL (SLIDEWAY OIL)",
+        "category": "Oil & Lubricants",
+        "image": "https://placehold.co/600x400?text=Way+Oil",
+        "usages": [
+            "CNC guideways",
+            "Machine slides"
+        ],
+        "purpose": "Lubrication for machine tool slideways."
+    },
+    {
+        "id": "cpvc-pipe",
+        "name": "CPVC PIPE & FITTINGS",
+        "category": "Pipes & Fittings",
+        "image": [
+            "/images/products/cpvc_pipe_stock.png",
+            "/images/products/cpvc_fittings.png"
+        ],
+        "purpose": "Heat resistant piping specially designed for hot and cold water systems.",
+        "material": "Chlorinated Polyvinyl Chloride (CPVC)",
+        "features": [
+            "High temperature resistance",
+            "Suitable for hot & cold water",
+            "Long service life"
+        ],
+        "usages": [
+            "Hot & cold water plumbing",
+            "Residential & hotel projects",
+            "Hospitals"
+        ],
+        "packing": {
+            "bulk": "Project supply",
+            "small": "3m / 6m pipes & fittings"
+        },
+        "solutions": [
+            "Hot water plumbing solutions",
+            "Turnkey plumbing material supply"
+        ]
+    },
+    {
+        "id": "gi-pipe",
+        "name": "GI PIPE & FITTINGS",
+        "category": "Pipes & Fittings",
+        "image": "https://images.jdmagicbox.com/quickquotes/images_main/gi-pipe-fitting-2182391812-d5xdevo7.jpg",
+        "purpose": "Rust-resistant galvanized pipes for outdoor and water supply lines.",
+        "material": "Galvanized Iron (GI)",
+        "features": [
+            "Rust resistant coating",
+            "Durable",
+            "Suitable for outdoor use"
+        ],
+        "usages": [
+            "Water supply",
+            "Fire fighting pipelines",
+            "Structural use"
+        ],
+        "packing": {
+            "bulk": "Bundles",
+            "small": "GI fittings & couplings"
+        },
+        "solutions": [
+            "N/A"
+        ]
+    },
+    {
+        "id": "hdpe-pipe",
+        "name": "HDPE PIPE & FITTINGS",
+        "category": "Pipes & Fittings",
+        "image": "https://www.malpanipipes.com/wp-content/uploads/2024/06/hdpe-pipes.jpg",
+        "purpose": "Heavy-duty, flexible piping for high pressure and underground applications.",
+        "material": "High Density Polyethylene (HDPE)",
+        "features": [
+            "High pressure rating",
+            "Flexible & impact resistant",
+            "Fusion joint = zero leakage"
+        ],
+        "usages": [
+            "Water pipelines",
+            "Industrial chemical lines",
+            "Gas pipelines",
+            "Sewage & drainage"
+        ],
+        "packing": {
+            "bulk": "Coils / straight lengths",
+            "small": "HDPE fittings & accessories"
+        },
+        "solutions": [
+            "Fusion welding support",
+            "Large-scale pipeline projects"
+        ]
+    },
+    {
+        "id": "ms-pipe",
+        "name": "MS PIPE & FITTINGS (MILD STEEL)",
+        "category": "Pipes & Fittings",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2024/2/384628227/SS/DL/US/4358321/ms-pipe-fittings.jpg",
+        "purpose": "Strong and durable steel pipes for structural and industrial use.",
+        "purpose": "Strong and durable steel pipes for structural and industrial use.",
+        "material": "Mild Steel (MS)",
+        "features": [
+            "High strength",
+            "Cost-effective",
+            "Weldable"
+        ],
+        "usages": [
+            "Industrial pipelines",
+            "Structural works",
+            "Fire fighting systems"
+        ],
+        "packing": {
+            "bulk": "Lengths / bundles",
+            "small": "Elbows, tees, flanges"
+        },
+        "solutions": [
+            "Industrial piping solutions",
+            "Fabrication & supply"
+        ]
+    },
+    {
+        "id": "ppr-pipe",
+        "name": "PPR PIPE & FITTINGS",
+        "category": "Pipes & Fittings",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2024/6/430294023/SH/IK/PU/2811587/ppr-pipes-and-fittings.png",
+        "purpose": "Fusion-welded pipes for reliable hot and cold water transport.",
+        "material": "Polypropylene Random Copolymer (PPR)",
+        "features": [
+            "Heat resistant",
+            "Fusion welded joints",
+            "Long life"
+        ],
+        "usages": [
+            "Hot & cold water systems",
+            "Industrial plumbing"
+        ],
+        "packing": {
+            "bulk": "PPR pipe coils/bundles",
+            "small": "PPR fittings"
+        },
+        "solutions": [
+            "N/A"
+        ]
+    },
+    {
+        "id": "pvc-pipe",
+        "name": "PVC PIPE & FITTINGS",
+        "category": "Pipes & Fittings",
+        "image": [
+            "/images/products/pvc_pipe_stock.png",
+            "/images/products/pvc_fittings.png",
+            "/images/products/pvc_installation.png",
+            "/images/products/pvc_system.png"
+        ],
+        "purpose": "Economical and versatile piping for drainage and domestic plumbing.",
+        "material": "Polyvinyl Chloride (PVC)",
+        "features": [
+            "Economical",
+            "Easy installation",
+            "Leak-proof joints"
+        ],
+        "usages": [
+            "Domestic plumbing",
+            "Drainage & sewage",
+            "Cable conduit"
+        ],
+        "packing": {
+            "bulk": "Pipe bundles",
+            "small": "Retail pipe lengths & fittings"
+        },
+        "solutions": [
+            "Residential & commercial supply",
+            "Drainage system solutions"
+        ]
+    },
+    {
+        "id": "ss-pipe",
+        "name": "SS PIPE & FITTINGS (STAINLESS STEEL)",
+        "category": "Pipes & Fittings",
+        "image": "https://steeltubes.co.in/wp-content/uploads/2019/04/Stainless-Steel-Pipe-Fittings-Manufacturers-in-India.jpg",
+        "purpose": "Corrosion resistant and hygienic pipes for sensitive industries.",
+        "material": "Stainless Steel (SS 304 / 316)",
+        "features": [
+            "Corrosion resistant",
+            "Hygienic",
+            "Long lifespan"
+        ],
+        "usages": [
+            "Chemical & pharma plants",
+            "Food & beverage industry",
+            "High-pressure systems"
+        ],
+        "packing": {
+            "bulk": "Wooden crate / bundle",
+            "small": "Precision fittings"
+        },
+        "solutions": [
+            "Hygienic piping systems",
+            "Chemical plant supply"
+        ]
+    },
+    {
+        "id": "upvc-pipe",
+        "name": "uPVC PIPE & FITTINGS",
+        "category": "Pipes & Fittings",
+        "image": [
+            "/images/products/upvc_pipe_stock.png",
+            "/images/products/upvc_fittings.png",
+            "/images/products/upvc_installation.png",
+            "/images/products/upvc_system.png"
+        ],
+        "purpose": "Rigid, chemically resistant piping for industrial and residential use.",
+        "material": "Unplasticized Polyvinyl Chloride (uPVC)",
+        "features": [
+            "Corrosion & chemical resistant",
+            "Lightweight, long life",
+            "Smooth inner surface (low friction)"
+        ],
+        "usages": [
+            "Water supply lines",
+            "Plumbing & drainage",
+            "Chemical handling (mild chemicals)",
+            "Agriculture & irrigation"
+        ],
+        "packing": {
+            "bulk": "Bundles / pallets",
+            "small": "Individual pipes & fittings (elbow, tee, coupling)"
+        },
+        "solutions": [
+            "Supply & trading",
+            "Plumbing system solutions",
+            "Project-based bulk supply"
+        ]
+    },
+    {
+        "id": "binding-wire",
+        "name": "BINDING WIRE & WIRE MESH",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Binding+Wire",
+        "usages": [
+            "Tying reinforcement bars",
+            "Slab & plaster support"
+        ],
+        "purpose": "Securing steel reinforcements."
+    },
+    {
+        "id": "bricks-blocks",
+        "name": "BRICKS & BLOCKS",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Bricks+and+Blocks",
+        "purpose": "Building walls and structures.",
+        "usages": [
+            "Load-bearing walls",
+            "Partition walls"
+        ],
+        "sub_products": [
+            "Red clay bricks",
+            "Hollow blocks",
+            "AAC blocks"
+        ]
+    },
+    {
+        "id": "cement",
+        "name": "CEMENT (ALL VARIANTS)",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Cement+Bags",
+        "sub_products": [
+            "OPC 43 / OPC 53",
+            "PPC",
+            "PSC"
+        ],
+        "usages": [
+            "Concrete & RCC",
+            "Brick masonry",
+            "Plastering & finishing"
+        ],
+        "purpose": "Binding agent for construction."
+    },
+    {
+        "id": "construction-chemicals",
+        "name": "CONSTRUCTION CHEMICALS",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Construction+Chemicals",
+        "sub_products": [
+            "Tile adhesives",
+            "Waterproofing compounds",
+            "Admixtures"
+        ],
+        "purpose": "Enhancing concrete and finishing properties."
+    },
+    {
         "id": "construction-materials",
         "name": "CONSTRUCTION MATERIALS",
         "category": "Real-estate & construction",
@@ -311,32 +2469,72 @@
         ]
     },
     {
-        "id": "tmt-steel",
-        "name": "TMT Steel & Structural Steel",
+        "id": "doors-plywood",
+        "name": "DOORS, FRAMES & PLYWOOD",
         "category": "Real-estate & construction",
-        "image": "https://pushpasteel.com/wp-content/uploads/2025/04/pushpa-blog-11.png",
-        "purpose": "Reinforcement and structural steel tailored for heavy-duty strength.",
+        "image": "https://placehold.co/600x400?text=Doors+and+Plywood",
         "usages": [
-            "High-rise buildings",
-            "Industrial sheds and factories",
-            "Metro and railway projects",
-            "Dams and heavy infrastructure",
-            "Pre-engineered buildings"
+            "Interior finishing",
+            "Commercial buildings"
+        ],
+        "purpose": "Woodwork and entry solutions."
+    },
+    {
+        "id": "electrical-conduits",
+        "name": "ELECTRICAL CONDUITS & ACCESSORIES",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Electrical+Conduits",
+        "usages": [
+            "Concealed wiring",
+            "Safety cable routing"
+        ],
+        "purpose": "Protection and routing of electrical wires."
+    },
+    {
+        "id": "fasteners-construction",
+        "name": "FASTENERS \u2013 SCREWS, BOLTS & ANCHORS",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Construction+Fasteners",
+        "sub_products": [
+            "Anchor bolts",
+            "HT bolts",
+            "Self-drilling screws"
+        ],
+        "usages": [
+            "Steel connections",
+            "Roofing sheet fixing"
+        ],
+        "purpose": "Fixing and joining construction elements."
+    },
+    {
+        "id": "gypsum-interior",
+        "name": "GYPSUM & INTERIOR FINISHING",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Gypsum+and+Interiors",
+        "purpose": "Interior wall and ceiling finishing.",
+        "usages": [
+            "Wall plastering",
+            "False ceiling manufacturing",
+            "Construction finishing",
+            "Ceramic mold making",
+            "Soil conditioning"
+        ],
+        "sub_products": [
+            "Gypsum powder",
+            "POP",
+            "Wall putty"
         ]
     },
     {
-        "id": "bricks-blocks",
-        "name": "Bricks Blocks & Aggregates",
+        "id": "paints-coatings",
+        "name": "PAINTS & COATINGS",
         "category": "Real-estate & construction",
-        "image": "data:image/jpeg;base64,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",
-        "purpose": "Essential masonry units and aggregates for solid foundations.",
-        "usages": [
-            "Wall masonry",
-            "Paving and pathways",
-            "Concrete production",
-            "Foundation laying",
-            "Retaining walls"
-        ]
+        "image": "https://placehold.co/600x400?text=Paints+and+Coatings",
+        "sub_products": [
+            "Interior & exterior paints",
+            "Epoxy & PU coatings"
+        ],
+        "purpose": "Aesthetics and surface protection."
     },
     {
         "id": "paints-waterproofing",
@@ -354,7 +2552,7 @@
     },
     {
         "id": "pipes-fittings",
-        "name": "PIPES & FITTINGS – COMPLETE RANGE",
+        "name": "PIPES & FITTINGS \u2013 COMPLETE RANGE",
         "category": "Real-estate & construction",
         "image": "https://5.imimg.com/data5/SELLER/Default/2020/12/WM/RW/DH/10219421/group-500x500.png",
         "purpose": "Comprehensive piping solutions for plumbing and industrial flow systems.",
@@ -364,6 +2562,399 @@
             "Industrial fluid transport",
             "Drainage and sewage",
             "HVAC ducting"
+        ]
+    },
+    {
+        "id": "plumbing-drainage",
+        "name": "PLUMBING & DRAINAGE MATERIALS",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Plumbing+Materials",
+        "sub_products": [
+            "uPVC / CPVC pipes",
+            "Fittings & valves"
+        ],
+        "purpose": "Water supply and waste management."
+    },
+    {
+        "id": "roofing-sheets",
+        "name": "ROOFING SHEETS & CLADDING",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Roofing+Sheets",
+        "sub_products": [
+            "GI sheets",
+            "Color-coated sheets",
+            "Polycarbonate sheets",
+            "Cement sheets"
+        ],
+        "usages": [
+            "Industrial sheds",
+            "Warehouses",
+            "Parking & shelters"
+        ],
+        "purpose": "Roofing and wall cladding solutions."
+    },
+    {
+        "id": "sand-aggregates",
+        "name": "SAND & AGGREGATES",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Sand+and+Aggregates",
+        "sub_products": [
+            "M-Sand",
+            "River Sand",
+            "Blue Metal (10mm / 20mm / 40mm)"
+        ],
+        "usages": [
+            "Concrete mixing",
+            "Brick & block work",
+            "Road construction"
+        ],
+        "purpose": "Base materials for construction."
+    },
+    {
+        "id": "shuttering-formwork",
+        "name": "SHUTTERING & FORMWORK SYSTEMS",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Shuttering+and+Formwork",
+        "sub_products": [
+            "Shuttering plywood",
+            "Steel plates",
+            "Props & jacks"
+        ],
+        "purpose": "Molds for concrete pouring."
+    },
+    {
+        "id": "structural-steel",
+        "name": "STRUCTURAL STEEL (MS)",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=Structural+Steel",
+        "sub_products": [
+            "Beams (ISMB)",
+            "Channels (ISMC)",
+            "Angles, Flats, Plates"
+        ],
+        "usages": [
+            "Industrial sheds",
+            "Warehouses",
+            "Platforms & staircases"
+        ],
+        "purpose": "Framework for industrial structures."
+    },
+    {
+        "id": "tmt-steel",
+        "name": "TMT Steel & Structural Steel",
+        "category": "Real-estate & construction",
+        "image": "https://pushpasteel.com/wp-content/uploads/2025/04/pushpa-blog-11.png",
+        "purpose": "Reinforcement and structural steel tailored for heavy-duty strength.",
+        "usages": [
+            "High-rise buildings",
+            "Industrial sheds and factories",
+            "Metro and railway projects",
+            "Dams and heavy infrastructure",
+            "Pre-engineered buildings"
+        ]
+    },
+    {
+        "id": "tmt-bars",
+        "name": "TMT STEEL BARS / STEEL RODS",
+        "category": "Real-estate & construction",
+        "image": "https://placehold.co/600x400?text=TMT+Steel+Bars",
+        "features": [
+            "Sizes: 8mm to 32mm",
+            "Grades: Fe 500 / Fe 550 / Fe 600",
+            "Standards: IS 1786"
+        ],
+        "usages": [
+            "RCC columns, beams & slabs",
+            "Foundations & structural works",
+            "High-rise & infrastructure projects"
+        ],
+        "purpose": "Reinforcement for concrete structures."
+    },
+    {
+        "id": "captive-solar",
+        "name": "CAPTIVE SOLAR POWER PLANT",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Captive+Power+Plant",
+            "https://placehold.co/600x400?text=Factory+Dedicated+Solar",
+            "https://placehold.co/600x400?text=Industrial+Power",
+            "https://placehold.co/600x400?text=Self+Consumption+Solar"
+        ],
+        "purpose": "Solar plant exclusively built for one industry\u2019s own power consumption.",
+        "features": [
+            "Stable power cost",
+            "Energy security",
+            "Long-term savings"
+        ],
+        "usages": [
+            "High power-consuming industries",
+            "Manufacturing plants"
+        ]
+    },
+    {
+        "id": "floating-solar",
+        "name": "FLOATING SOLAR POWER PLANT",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Floating+Solar",
+            "https://placehold.co/600x400?text=Reservoir+Solar",
+            "https://placehold.co/600x400?text=Water+Surface+Panels",
+            "https://placehold.co/600x400?text=Floating+PV"
+        ],
+        "purpose": "Solar plant installed on water bodies like reservoirs, ponds, and lakes.",
+        "features": [
+            "Reduces water evaporation",
+            "Higher efficiency",
+            "No land requirement"
+        ],
+        "usages": [
+            "Water treatment plants",
+            "Reservoir owners",
+            "Government & utility projects"
+        ]
+    },
+    {
+        "id": "ground-mounted-solar",
+        "name": "GROUND MOUNTED / GRASS LEVEL SOLAR (UTILITY SCALE)",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Ground+Mounted+Solar",
+            "https://placehold.co/600x400?text=Solar+Park",
+            "https://placehold.co/600x400?text=Utility+Scale+Solar",
+            "https://placehold.co/600x400?text=Mega+Watt+Scale"
+        ],
+        "purpose": "Solar plant considered on open land / grass level, suitable for large-scale power generation.",
+        "features": [
+            "High generation capacity",
+            "Easy maintenance",
+            "Best for long-term returns",
+            "Capacity: 1 MW to 50 MW"
+        ],
+        "usages": [
+            "Land owners",
+            "Industrial captive plants",
+            "Utility & IPP projects"
+        ]
+    },
+    {
+        "id": "hybrid-solar",
+        "name": "HYBRID SOLAR SYSTEM (SOLAR + DIESEL / BATTERY)",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Hybrid+Solar",
+            "https://placehold.co/600x400?text=Battery+Storage",
+            "https://placehold.co/600x400?text=Solar+Diesel+Hybrid",
+            "https://placehold.co/600x400?text=Off+Grid+System"
+        ],
+        "purpose": "Combination of solar + battery + DG / grid for uninterrupted power.",
+        "usages": [
+            "Remote locations",
+            "Critical industries",
+            "Telecom & infrastructure"
+        ]
+    },
+    {
+        "id": "open-access-solar",
+        "name": "OPEN ACCESS SOLAR PROJECT",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Open+Access+Solar",
+            "https://placehold.co/600x400?text=Grid+Wheeling",
+            "https://placehold.co/600x400?text=Remote+Solar",
+            "https://placehold.co/600x400?text=PPA+Model"
+        ],
+        "purpose": "Solar power generated at one location and wheeled through grid to consumers at another location.",
+        "features": [
+            "Cheaper green power",
+            "Long-term PPAs",
+            "Government policy benefits"
+        ],
+        "usages": [
+            "Industries without roof/land",
+            "Multiple consumers"
+        ]
+    },
+    {
+        "id": "rooftop-solar",
+        "name": "ROOFTOP SOLAR POWER PLANT (INDUSTRIAL / COMMERCIAL)",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Rooftop+Solar",
+            "https://placehold.co/600x400?text=Industrial+Roof+Panels",
+            "https://placehold.co/600x400?text=Warehouse+Solar",
+            "https://placehold.co/600x400?text=Commercial+Solar"
+        ],
+        "purpose": "Solar panels installed on factory, warehouse, shed, or commercial building roofs.",
+        "features": [
+            "Saves electricity cost",
+            "Uses unused roof space",
+            "Quick installation",
+            "Capacity: 5 kW to 5 MW"
+        ],
+        "usages": [
+            "Factories & manufacturing units",
+            "Warehouses & logistics parks",
+            "Commercial buildings, hospitals, schools"
+        ]
+    },
+    {
+        "id": "solar-carport",
+        "name": "SOLAR CARPORT / PARKING SOLAR",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Solar+Carport",
+            "https://placehold.co/600x400?text=Parking+Lot+Solar",
+            "https://placehold.co/600x400?text=EV+Charging+Solar",
+            "https://placehold.co/600x400?text=Shaded+Parking"
+        ],
+        "purpose": "Solar panels mounted on parking shades, generating power while providing shade.",
+        "features": [
+            "Dual use of space",
+            "Vehicle protection",
+            "Clean energy generation"
+        ],
+        "usages": [
+            "Factories",
+            "Malls & IT parks",
+            "Airports & institutions"
+        ]
+    },
+    {
+        "id": "solar-consulting",
+        "name": "SOLAR CONSULTING & PROJECT DEVELOPMENT",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Solar+Site+Survey",
+            "https://placehold.co/600x400?text=Feasibility+Report",
+            "https://placehold.co/600x400?text=Shadow+Analysis",
+            "https://placehold.co/600x400?text=Solar+ROI+Consulting"
+        ],
+        "purpose": "Expert consulting services for solar project feasibility and ROI analysis.",
+        "solutions": [
+            "Feasibility & ROI study",
+            "Land & site assessment",
+            "Statutory approvals",
+            "Tender & project planning"
+        ],
+        "usages": [
+            "Investors",
+            "Industries",
+            "Land owners",
+            "EPC partners"
+        ]
+    },
+    {
+        "id": "solar-epc",
+        "name": "SOLAR EPC SERVICE MODEL",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Rooftop+Solar+Project",
+            "https://placehold.co/600x400?text=Solar+Park+Installation",
+            "https://placehold.co/600x400?text=EPC+Project+Site",
+            "https://placehold.co/600x400?text=Solar+Panel+Array"
+        ],
+        "purpose": "End-to-end solar power projects including design, supply, installation, testing, commissioning, and handover.",
+        "sub_products": [
+            "Industrial rooftop solar",
+            "Commercial solar plants",
+            "Utility-scale solar parks",
+            "Captive & open-access solar"
+        ],
+        "features": [
+            "Rooftop: 5 kW to 5 MW",
+            "Ground Mounted / Utility Scale: 1 MW to 50MW"
+        ],
+        "solutions": [
+            "Engineering & design",
+            "Material supply",
+            "Installation & civil work",
+            "Testing & commissioning",
+            "Grid synchronization"
+        ],
+        "usages": [
+            "Manufacturing plants",
+            "Warehouses & logistics parks",
+            "Cement, steel & chemical industries",
+            "Commercial buildings & institutions"
+        ]
+    },
+    {
+        "id": "solar-installation",
+        "name": "SOLAR INSTALLATION & CONTRACTING",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Module+Mounting",
+            "https://placehold.co/600x400?text=Solar+Installation+Team",
+            "https://placehold.co/600x400?text=Civil+Foundation+Work",
+            "https://placehold.co/600x400?text=Cabling+Work"
+        ],
+        "purpose": "Professional installation and contracting services for solar projects.",
+        "solutions": [
+            "Civil & foundation work",
+            "Module mounting & alignment",
+            "Electrical cabling & termination",
+            "Inverter & panel installation",
+            "Grid synchronization"
+        ]
+    },
+    {
+        "id": "solar-om",
+        "name": "SOLAR OPERATION & MAINTENANCE (O&M)",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Solar+Cleaning",
+            "https://placehold.co/600x400?text=Inverter+Maintenance",
+            "https://placehold.co/600x400?text=O%26M+Services",
+            "https://placehold.co/600x400?text=Solar+Monitoring"
+        ],
+        "purpose": "Comprehensive operation and maintenance services for optimal generation.",
+        "solutions": [
+            "Panel cleaning",
+            "Performance monitoring",
+            "Preventive maintenance",
+            "AMC contracts"
+        ]
+    },
+    {
+        "id": "solar-supply",
+        "name": "SOLAR SYSTEM SUPPLY (MATERIAL)",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Solar+PV+Modules",
+            "https://placehold.co/600x400?text=Solar+Inverter",
+            "https://placehold.co/600x400?text=Mounting+Structure",
+            "https://placehold.co/600x400?text=Solar+Cables"
+        ],
+        "purpose": "Supply of high-quality solar components and materials.",
+        "sub_products": [
+            "Solar PV modules (Mono / Bi-facial)",
+            "String & central inverters",
+            "Mounting structures (GI / aluminium)",
+            "DC & AC solar cables",
+            "Junction boxes & combiner panels"
+        ],
+        "features": [
+            "Bulk project supply",
+            "Individual component supply"
+        ]
+    },
+    {
+        "id": "solar-testing",
+        "name": "TESTING, COMMISSIONING & GRID CONNECTIVITY",
+        "category": "Solar",
+        "image": [
+            "https://placehold.co/600x400?text=Solar+Testing+Equipment",
+            "https://placehold.co/600x400?text=Commissioning+Team",
+            "https://placehold.co/600x400?text=Grid+Monitor",
+            "https://placehold.co/600x400?text=Performance+Check"
+        ],
+        "purpose": "Ensuring system performance and grid connectivity compliance.",
+        "solutions": [
+            "System testing & inspection",
+            "Inverter configuration",
+            "SCADA & monitoring setup",
+            "Utility grid approval & synchronization",
+            "Performance verification"
         ]
     }
 ]

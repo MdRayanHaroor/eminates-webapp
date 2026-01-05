@@ -41,7 +41,7 @@ const ProductCatalog = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [modalImageIndex, setModalImageIndex] = useState(0);
 
-    const categories = ['Chemicals', 'Lubricants', 'Mechanical', 'Real-estate & construction'];
+    const categories = ['Bio Fuels', 'Chemicals', 'Electric & Electronics', 'Mechanical', 'Oil & Lubricants', 'Pipes & Fittings', 'Real-estate & construction', 'Solar'];
 
     // Close modal on ESC key press
     useEffect(() => {
@@ -230,7 +230,7 @@ const ProductCatalog = () => {
                                 </div>
 
                                 {/* Modal Content */}
-                                <div className="w-full md:w-1/2 p-8 overflow-y-auto relative">
+                                <div className="w-full md:w-1/2 p-8 overflow-y-auto relative bg-white">
                                     {/* Close Button Desktop */}
                                     <button
                                         onClick={() => setSelectedProduct(null)}
@@ -244,22 +244,101 @@ const ProductCatalog = () => {
                                     </span>
 
                                     <h3 className="text-3xl font-bold text-gray-900 mb-2">{selectedProduct.name}</h3>
-                                    <p className="text-gray-600 text-lg mb-8 leading-relaxed border-l-4 border-blue-500 pl-4 bg-blue-50 py-2 rounded-r-lg">
+
+                                    {/* Material Badge */}
+                                    {selectedProduct.material && (
+                                        <div className="mb-4">
+                                            <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Material: </span>
+                                            <span className="text-gray-800 font-medium">{selectedProduct.material}</span>
+                                        </div>
+                                    )}
+
+                                    <p className="text-gray-600 text-lg mb-6 leading-relaxed border-l-4 border-blue-500 pl-4 bg-blue-50 py-2 rounded-r-lg">
                                         {selectedProduct.purpose}
                                     </p>
 
-                                    <h4 className="text-gray-900 font-bold mb-4 flex items-center text-lg">
-                                        <span className="bg-blue-600 w-2 h-2 rounded-full mr-2"></span>
-                                        Top Usages
-                                    </h4>
-                                    <ul className="space-y-3">
-                                        {selectedProduct.usages.map((usage, idx) => (
-                                            <li key={idx} className="flex items-start text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-100">
-                                                <FaCheckCircle className="text-green-500 mt-1 mr-3 flex-shrink-0" />
-                                                <span>{usage}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
+
+                                    <div className="space-y-6">
+                                        {/* Sub Products / Products Covered */}
+                                        {selectedProduct.sub_products && (
+                                            <div>
+                                                <h4 className="text-gray-900 font-bold mb-3 flex items-center text-md">
+                                                    Products Covered
+                                                </h4>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {selectedProduct.sub_products.map((sub, idx) => (
+                                                        <span key={idx} className="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md border border-gray-200">
+                                                            {sub}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Features */}
+                                        {selectedProduct.features && (
+                                            <div>
+                                                <h4 className="text-gray-900 font-bold mb-3 flex items-center text-md">
+                                                    Key Features
+                                                </h4>
+                                                <ul className="grid grid-cols-1 gap-2">
+                                                    {selectedProduct.features.map((feature, idx) => (
+                                                        <li key={idx} className="flex items-center text-sm text-gray-700">
+                                                            <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mr-2"></div>
+                                                            {feature}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+
+                                        {/* Usage */}
+                                        <div>
+                                            <h4 className="text-gray-900 font-bold mb-3 flex items-center text-md">
+                                                Applications
+                                            </h4>
+                                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                                {selectedProduct.usages.map((usage, idx) => (
+                                                    <li key={idx} className="flex items-start text-sm text-gray-700">
+                                                        <FaCheckCircle className="text-green-500 mt-0.5 mr-2 flex-shrink-0 text-xs" />
+                                                        <span>{usage}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        {/* Packing & Solutions Grid */}
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                                            {selectedProduct.packing && (
+                                                <div>
+                                                    <h4 className="text-gray-900 font-bold mb-2 text-sm uppercase text-gray-500">Packing</h4>
+                                                    <div className="text-sm text-gray-700 bg-gray-50 p-3 rounded-lg">
+                                                        {typeof selectedProduct.packing === 'object' ? (
+                                                            <>
+                                                                <div className="mb-1"><span className="font-semibold">Bulk:</span> {selectedProduct.packing.bulk}</div>
+                                                                <div><span className="font-semibold">Small:</span> {selectedProduct.packing.small}</div>
+                                                            </>
+                                                        ) : (
+                                                            selectedProduct.packing
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                            {selectedProduct.solutions && (
+                                                <div>
+                                                    <h4 className="text-gray-900 font-bold mb-2 text-sm uppercase text-gray-500">Solutions</h4>
+                                                    <ul className="text-sm text-gray-700 bg-blue-50/50 p-3 rounded-lg space-y-1">
+                                                        {selectedProduct.solutions.map((sol, idx) => (
+                                                            <li key={idx} className="flex items-start">
+                                                                <span className="text-blue-500 mr-2">✔</span> {sol}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -268,6 +347,7 @@ const ProductCatalog = () => {
             </div>
         </section>
     );
+
 };
 
 export default ProductCatalog;

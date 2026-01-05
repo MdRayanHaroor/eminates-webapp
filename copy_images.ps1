@@ -1,0 +1,5 @@
+copy "C:\Users\moham\.gemini\antigravity\brain\438cd909-1dd5-424e-93d5-e504164ba2a3\liquid_small_1767583840258.png" "d:\EminatesWebsite\eminates-webapp\public\images\products\liquid_small.png"
+copy "C:\Users\moham\.gemini\antigravity\brain\438cd909-1dd5-424e-93d5-e504164ba2a3\liquid_bulk_1767583856643.png" "d:\EminatesWebsite\eminates-webapp\public\images\products\liquid_bulk.png"
+copy "C:\Users\moham\.gemini\antigravity\brain\438cd909-1dd5-424e-93d5-e504164ba2a3\powder_small_1767583872580.png" "d:\EminatesWebsite\eminates-webapp\public\images\products\powder_small.png"
+copy "C:\Users\moham\.gemini\antigravity\brain\438cd909-1dd5-424e-93d5-e504164ba2a3\powder_bulk_1767583890981.png" "d:\EminatesWebsite\eminates-webapp\public\images\products\powder_bulk.png"
+copy "C:\Users\moham\.gemini\antigravity\brain\438cd909-1dd5-424e-93d5-e504164ba2a3\chemical_plant_1767583906711.png" "d:\EminatesWebsite\eminates-webapp\public\images\products\chemical_plant.png"

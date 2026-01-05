@@ -1,0 +1,6 @@
+copy "C:\Users\moham\.gemini\antigravity\brain\438cd909-1dd5-424e-93d5-e504164ba2a3\gypsum_bag_hd_1767584501541.png" "d:\EminatesWebsite\eminates-webapp\public\images\products\gypsum_bag_hd.png"
+copy "C:\Users\moham\.gemini\antigravity\brain\438cd909-1dd5-424e-93d5-e504164ba2a3\gypsum_jumbo_1767584517293.png" "d:\EminatesWebsite\eminates-webapp\public\images\products\gypsum_jumbo.png"
+copy "C:\Users\moham\.gemini\antigravity\brain\438cd909-1dd5-424e-93d5-e504164ba2a3\gypsum_warehouse_1767584533855.png" "d:\EminatesWebsite\eminates-webapp\public\images\products\gypsum_warehouse.png"
+copy "C:\Users\moham\.gemini\antigravity\brain\438cd909-1dd5-424e-93d5-e504164ba2a3\gypsum_plastering_1767584550162.png" "d:\EminatesWebsite\eminates-webapp\public\images\products\gypsum_plastering.png"
+copy "C:\Users\moham\.gemini\antigravity\brain\438cd909-1dd5-424e-93d5-e504164ba2a3\gypsum_ceiling_1767584565791.png" "d:\EminatesWebsite\eminates-webapp\public\images\products\gypsum_ceiling.png"
+copy "C:\Users\moham\.gemini\antigravity\brain\438cd909-1dd5-424e-93d5-e504164ba2a3\gypsum_interior_1767584581787.png" "d:\EminatesWebsite\eminates-webapp\public\images\products\gypsum_interior.png"
