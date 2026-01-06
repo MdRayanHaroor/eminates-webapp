@@ -2402,7 +2402,10 @@
         "id": "binding-wire",
         "name": "BINDING WIRE & WIRE MESH",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Binding+Wire",
+        "image": [
+            "https://cpimg.tistatic.com/5475227/b/1/mesh-binding-wire.jpg",
+            "https://content.jdmagicbox.com/quickquotes/images_main/galvanised-steel-wire-mesh-with-nylon-material-thickness-2mm-size-4x4-inches-product-length-100-mm-surface-treatment-galvanized-product-strength-600-mpa-802809222-ebe03l24.jpg?impolicy=queryparam&im=Resize=(360,360),aspect=fit"
+        ],
         "usages": [
             "Tying reinforcement bars",
             "Slab & plaster support"
@@ -2413,7 +2416,10 @@
         "id": "bricks-blocks",
         "name": "BRICKS & BLOCKS",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Bricks+and+Blocks",
+        "image": [
+            "https://buildsuvidha.s3.ap-south-1.amazonaws.com/category/bricks-blocks-red-bricks-21",
+            "https://builders9.com/wp-content/uploads/2020/12/b9-solid-blocks.jpg"
+        ],
         "purpose": "Building walls and structures.",
         "usages": [
             "Load-bearing walls",
@@ -2429,7 +2435,7 @@
         "id": "cement",
         "name": "CEMENT (ALL VARIANTS)",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Cement+Bags",
+        "image": "https://www.anton-paar.com/fileadmin/images/Applications/cements_.jpg",
         "sub_products": [
             "OPC 43 / OPC 53",
             "PPC",
@@ -2446,7 +2452,7 @@
         "id": "construction-chemicals",
         "name": "CONSTRUCTION CHEMICALS",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Construction+Chemicals",
+        "image": "https://www.researchdive.com/blogImages/j0pRWM91TY.jpeg",
         "sub_products": [
             "Tile adhesives",
             "Waterproofing compounds",
@@ -2472,7 +2478,7 @@
         "id": "doors-plywood",
         "name": "DOORS, FRAMES & PLYWOOD",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Doors+and+Plywood",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2022/5/VK/FU/OK/599814/post-formed-laminated-door-frame.jpeg",
         "usages": [
             "Interior finishing",
             "Commercial buildings"
@@ -2483,7 +2489,7 @@
         "id": "electrical-conduits",
         "name": "ELECTRICAL CONDUITS & ACCESSORIES",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Electrical+Conduits",
+        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2Kg_-wV1rbGICWvXfM-5uSjMNsz1moBlewW-yAXAWtbjzHR4mFCgZIqza0ayVNcQAnKg2bKgPUgD0gb5jqHVD8zWPDdS36MHrv2FYfnYcbXshLM1gQftSFBemejMxKR-p5Wn1Aqhhkr0/s640/0660ed8e53d29e995241892ab20c4265.jpg",
         "usages": [
             "Concealed wiring",
             "Safety cable routing"
@@ -2494,7 +2500,7 @@
         "id": "fasteners-construction",
         "name": "FASTENERS \u2013 SCREWS, BOLTS & ANCHORS",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Construction+Fasteners",
+        "image": "https://3.imimg.com/data3/QL/LS/MY-9959720/anchor-bolt-500x500.jpg",
         "sub_products": [
             "Anchor bolts",
             "HT bolts",
@@ -2510,7 +2516,7 @@
         "id": "gypsum-interior",
         "name": "GYPSUM & INTERIOR FINISHING",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Gypsum+and+Interiors",
+        "image": "https://thevenusenterprises.com/public/img/products/prod1.webp",
         "purpose": "Interior wall and ceiling finishing.",
         "usages": [
             "Wall plastering",
@@ -2529,7 +2535,7 @@
         "id": "paints-coatings",
         "name": "PAINTS & COATINGS",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Paints+and+Coatings",
+        "image": "https://www.marketsandmarketsblog.com/wp-content/uploads/2024/09/Paints-Coatings-Market-Banner12.jpg",
         "sub_products": [
             "Interior & exterior paints",
             "Epoxy & PU coatings"
@@ -2568,7 +2574,10 @@
         "id": "plumbing-drainage",
         "name": "PLUMBING & DRAINAGE MATERIALS",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Plumbing+Materials",
+        "image": [
+            "https://ajaypipes.com/wp-content/uploads/2020/11/UDS-5-1024x859.jpg",
+            "https://trusteyman.com/wp-content/uploads/2018/04/How-does-plumbing-work-1024x682.jpeg"
+        ],
         "sub_products": [
             "uPVC / CPVC pipes",
             "Fittings & valves"
@@ -2579,7 +2588,7 @@
         "id": "roofing-sheets",
         "name": "ROOFING SHEETS & CLADDING",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Roofing+Sheets",
+        "image": "https://5.imimg.com/data5/JL/XB/CS/GLADMIN-6836192/selection-841-500x500.png",
         "sub_products": [
             "GI sheets",
             "Color-coated sheets",
@@ -2597,7 +2606,10 @@
         "id": "sand-aggregates",
         "name": "SAND & AGGREGATES",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Sand+and+Aggregates",
+        "image": [
+            "https://www.cdegroup.com/getmedia/9eaee86f-f252-4ac6-b26f-197e95c1bef7/Resource-Materials-C-Man-Sand-x.jpg?width=670&height=520&ext=.jpg",
+            "https://www.aboutcivil.org/sites/default/files/2017-09/aggregates-applications-uses.jpg"
+        ],
         "sub_products": [
             "M-Sand",
             "River Sand",
@@ -2614,7 +2626,7 @@
         "id": "shuttering-formwork",
         "name": "SHUTTERING & FORMWORK SYSTEMS",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Shuttering+and+Formwork",
+        "image": "https://www.teconform.com/uploads/image/20200721/17/beam-slab-formwork.jpg",
         "sub_products": [
             "Shuttering plywood",
             "Steel plates",
@@ -2626,7 +2638,7 @@
         "id": "structural-steel",
         "name": "STRUCTURAL STEEL (MS)",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=Structural+Steel",
+        "image": "https://images.jdmagicbox.com/quickquotes/images_main/ms-structural-steel-2013439068-indn4las.jpg",
         "sub_products": [
             "Beams (ISMB)",
             "Channels (ISMC)",
@@ -2657,7 +2669,7 @@
         "id": "tmt-bars",
         "name": "TMT STEEL BARS / STEEL RODS",
         "category": "Real-estate & construction",
-        "image": "https://placehold.co/600x400?text=TMT+Steel+Bars",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfj-z71VkCyXhWxXvwuxcvgbo3REQMExvX8Q&s",
         "features": [
             "Sizes: 8mm to 32mm",
             "Grades: Fe 500 / Fe 550 / Fe 600",
@@ -2675,10 +2687,8 @@
         "name": "CAPTIVE SOLAR POWER PLANT",
         "category": "Solar",
         "image": [
-            "https://placehold.co/600x400?text=Captive+Power+Plant",
-            "https://placehold.co/600x400?text=Factory+Dedicated+Solar",
-            "https://placehold.co/600x400?text=Industrial+Power",
-            "https://placehold.co/600x400?text=Self+Consumption+Solar"
+            "https://solarquarter.com/wp-content/uploads/2022/10/26-1.png",
+            "https://d382rz2cea0pah.cloudfront.net/wp-content/uploads/2019/07/Untitled-design-2019-07-08T112042.623.png"
         ],
         "purpose": "Solar plant exclusively built for one industry\u2019s own power consumption.",
         "features": [
@@ -2696,10 +2706,8 @@
         "name": "FLOATING SOLAR POWER PLANT",
         "category": "Solar",
         "image": [
-            "https://placehold.co/600x400?text=Floating+Solar",
-            "https://placehold.co/600x400?text=Reservoir+Solar",
-            "https://placehold.co/600x400?text=Water+Surface+Panels",
-            "https://placehold.co/600x400?text=Floating+PV"
+            "https://images.moneycontrol.com/static-mcnews/2023/08/floating-solar-plant.png",
+            "https://assets.ratedpower.com/1710418535-solar-power-station-float-water.jpg?auto=format&dpr=0.22&w=6016"
         ],
         "purpose": "Solar plant installed on water bodies like reservoirs, ponds, and lakes.",
         "features": [
@@ -2718,10 +2726,8 @@
         "name": "GROUND MOUNTED / GRASS LEVEL SOLAR (UTILITY SCALE)",
         "category": "Solar",
         "image": [
-            "https://placehold.co/600x400?text=Ground+Mounted+Solar",
-            "https://placehold.co/600x400?text=Solar+Park",
-            "https://placehold.co/600x400?text=Utility+Scale+Solar",
-            "https://placehold.co/600x400?text=Mega+Watt+Scale"
+            "https://5.imimg.com/data5/OC/UB/MY-26515903/ground-mounted-utility-scale-solar-power-plant.jpg",
+            "https://frontend-cdn.solarreviews.com/solar-farm.jpg"
         ],
         "purpose": "Solar plant considered on open land / grass level, suitable for large-scale power generation.",
         "features": [
@@ -2741,10 +2747,8 @@
         "name": "HYBRID SOLAR SYSTEM (SOLAR + DIESEL / BATTERY)",
         "category": "Solar",
         "image": [
-            "https://placehold.co/600x400?text=Hybrid+Solar",
-            "https://placehold.co/600x400?text=Battery+Storage",
-            "https://placehold.co/600x400?text=Solar+Diesel+Hybrid",
-            "https://placehold.co/600x400?text=Off+Grid+System"
+            "https://maxroisolar.com/uploads/10kW-installation-work.webp",
+            "https://elum-energy.com/wp-content/uploads/2023/10/what-is-the-benefit-of-a-solar-diesel-controller-in-a-solar-hybrid-project.jpeg"
         ],
         "purpose": "Combination of solar + battery + DG / grid for uninterrupted power.",
         "usages": [
@@ -2758,10 +2762,8 @@
         "name": "OPEN ACCESS SOLAR PROJECT",
         "category": "Solar",
         "image": [
-            "https://placehold.co/600x400?text=Open+Access+Solar",
-            "https://placehold.co/600x400?text=Grid+Wheeling",
-            "https://placehold.co/600x400?text=Remote+Solar",
-            "https://placehold.co/600x400?text=PPA+Model"
+            "https://d382rz2cea0pah.cloudfront.net/wp-content/uploads/2023/12/India-Adds-Over-1.9-GW-of-Open-Access-Solar-in-9M-2022-Installations-Up-by-96.jpg",
+            "https://cleantechsolar.com/content/uploads/DJI_0597_Edited-PR-March-2025-scaled.jpg"
         ],
         "purpose": "Solar power generated at one location and wheeled through grid to consumers at another location.",
         "features": [
@@ -2779,10 +2781,8 @@
         "name": "ROOFTOP SOLAR POWER PLANT (INDUSTRIAL / COMMERCIAL)",
         "category": "Solar",
         "image": [
-            "https://placehold.co/600x400?text=Rooftop+Solar",
-            "https://placehold.co/600x400?text=Industrial+Roof+Panels",
-            "https://placehold.co/600x400?text=Warehouse+Solar",
-            "https://placehold.co/600x400?text=Commercial+Solar"
+            "https://solex.in/wp-content/uploads/2025/01/Solar-Industrial-Rooftops-re-img.webp",
+            "https://enerparc.in/wp-content/uploads/2025/07/Industrial-Solar.webp"
         ],
         "purpose": "Solar panels installed on factory, warehouse, shed, or commercial building roofs.",
         "features": [
@@ -2802,10 +2802,8 @@
         "name": "SOLAR CARPORT / PARKING SOLAR",
         "category": "Solar",
         "image": [
-            "https://placehold.co/600x400?text=Solar+Carport",
-            "https://placehold.co/600x400?text=Parking+Lot+Solar",
-            "https://placehold.co/600x400?text=EV+Charging+Solar",
-            "https://placehold.co/600x400?text=Shaded+Parking"
+            "https://www.ibc-solar.com/fileadmin/_processed_/9/7/csm_Solar-Carports-Header_1f47e1493c.jpg",
+            "https://fourthpartner.co/wp-content/uploads/2025/06/Thumbnail-Carport-1.webp"
         ],
         "purpose": "Solar panels mounted on parking shades, generating power while providing shade.",
         "features": [
@@ -2823,12 +2821,7 @@
         "id": "solar-consulting",
         "name": "SOLAR CONSULTING & PROJECT DEVELOPMENT",
         "category": "Solar",
-        "image": [
-            "https://placehold.co/600x400?text=Solar+Site+Survey",
-            "https://placehold.co/600x400?text=Feasibility+Report",
-            "https://placehold.co/600x400?text=Shadow+Analysis",
-            "https://placehold.co/600x400?text=Solar+ROI+Consulting"
-        ],
+        "image": "https://abocsmanagement.com/wp-content/uploads/2024/05/Solar-Project-Consulting-Banner.jpg",
         "purpose": "Expert consulting services for solar project feasibility and ROI analysis.",
         "solutions": [
             "Feasibility & ROI study",
@@ -2848,10 +2841,8 @@
         "name": "SOLAR EPC SERVICE MODEL",
         "category": "Solar",
         "image": [
-            "https://placehold.co/600x400?text=Rooftop+Solar+Project",
-            "https://placehold.co/600x400?text=Solar+Park+Installation",
-            "https://placehold.co/600x400?text=EPC+Project+Site",
-            "https://placehold.co/600x400?text=Solar+Panel+Array"
+            "https://5.imimg.com/data5/SELLER/Default/2025/5/509102153/BD/JQ/PM/23237808/solar-epc-service.jpg",
+            "https://ganeshsolar.com/wp-content/uploads/2018/06/eps-3.jpg"
         ],
         "purpose": "End-to-end solar power projects including design, supply, installation, testing, commissioning, and handover.",
         "sub_products": [
@@ -2883,10 +2874,8 @@
         "name": "SOLAR INSTALLATION & CONTRACTING",
         "category": "Solar",
         "image": [
-            "https://placehold.co/600x400?text=Module+Mounting",
-            "https://placehold.co/600x400?text=Solar+Installation+Team",
-            "https://placehold.co/600x400?text=Civil+Foundation+Work",
-            "https://placehold.co/600x400?text=Cabling+Work"
+            "https://www.somayasolar.com/assets/img/product/somaya-solar-solutions-solar-projects-installation-and-commissioning-iandc-a33.webp",
+            "https://www.aspelectricals.in/assets/img/services/solar-power-plant-electrical-work-contractor.jpg"
         ],
         "purpose": "Professional installation and contracting services for solar projects.",
         "solutions": [
@@ -2901,12 +2890,7 @@
         "id": "solar-om",
         "name": "SOLAR OPERATION & MAINTENANCE (O&M)",
         "category": "Solar",
-        "image": [
-            "https://placehold.co/600x400?text=Solar+Cleaning",
-            "https://placehold.co/600x400?text=Inverter+Maintenance",
-            "https://placehold.co/600x400?text=O%26M+Services",
-            "https://placehold.co/600x400?text=Solar+Monitoring"
-        ],
+        "image": "https://renewablewatch.in/wp-content/uploads/2018/07/56-678x381.jpg",
         "purpose": "Comprehensive operation and maintenance services for optimal generation.",
         "solutions": [
             "Panel cleaning",
@@ -2919,12 +2903,7 @@
         "id": "solar-supply",
         "name": "SOLAR SYSTEM SUPPLY (MATERIAL)",
         "category": "Solar",
-        "image": [
-            "https://placehold.co/600x400?text=Solar+PV+Modules",
-            "https://placehold.co/600x400?text=Solar+Inverter",
-            "https://placehold.co/600x400?text=Mounting+Structure",
-            "https://placehold.co/600x400?text=Solar+Cables"
-        ],
+        "image": "https://pvprosolar.de/wp-content/uploads/2025/09/PV-Modul-transportieren.webp",
         "purpose": "Supply of high-quality solar components and materials.",
         "sub_products": [
             "Solar PV modules (Mono / Bi-facial)",
@@ -2942,12 +2921,7 @@
         "id": "solar-testing",
         "name": "TESTING, COMMISSIONING & GRID CONNECTIVITY",
         "category": "Solar",
-        "image": [
-            "https://placehold.co/600x400?text=Solar+Testing+Equipment",
-            "https://placehold.co/600x400?text=Commissioning+Team",
-            "https://placehold.co/600x400?text=Grid+Monitor",
-            "https://placehold.co/600x400?text=Performance+Check"
-        ],
+        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6InuxgYXme9_ZxTiScchgsZP-Iob7l9UGBmtFalB2yTRkWSWPqYA0-XOCAxUD1k5FZ7BhokTV8AbiSkcuZvM58R2fHAkHX6yi_LPX_5bLgUBuyplQpBM2vQxDompB9ijwglNAtQYneIU9cMvJWBkXRRChxTz0aRrYDdTqsTiipy3-IUGBAHScIJRsv8E/w640-h640/Testing%20and%20Commissioning%20a%20Grid-Tied%20Solar%20PV%20Power%20Plant.jpg",
         "purpose": "Ensuring system performance and grid connectivity compliance.",
         "solutions": [
             "System testing & inspection",

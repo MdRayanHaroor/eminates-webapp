@@ -37,7 +37,7 @@ const ProductThumbnail = ({ image, name }) => {
 };
 
 const ProductCatalog = () => {
-    const [filter, setFilter] = useState('Chemicals');
+    const [filter, setFilter] = useState('Bio Fuels');
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [modalImageIndex, setModalImageIndex] = useState(0);
 
@@ -293,19 +293,21 @@ const ProductCatalog = () => {
                                         )}
 
                                         {/* Usage */}
-                                        <div>
-                                            <h4 className="text-gray-900 font-bold mb-3 flex items-center text-md">
-                                                Applications
-                                            </h4>
-                                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                                {selectedProduct.usages.map((usage, idx) => (
-                                                    <li key={idx} className="flex items-start text-sm text-gray-700">
-                                                        <FaCheckCircle className="text-green-500 mt-0.5 mr-2 flex-shrink-0 text-xs" />
-                                                        <span>{usage}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
+                                        {selectedProduct.usages && (
+                                            <div>
+                                                <h4 className="text-gray-900 font-bold mb-3 flex items-center text-md">
+                                                    Applications
+                                                </h4>
+                                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                                    {selectedProduct.usages.map((usage, idx) => (
+                                                        <li key={idx} className="flex items-start text-sm text-gray-700">
+                                                            <FaCheckCircle className="text-green-500 mt-0.5 mr-2 flex-shrink-0 text-xs" />
+                                                            <span>{usage}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
 
                                         {/* Packing & Solutions Grid */}
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-gray-100">
