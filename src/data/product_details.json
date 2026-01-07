@@ -1203,7 +1203,7 @@
         "id": "bucket-elevators",
         "name": "BUCKET ELEVATORS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Bucket+Elevators",
+        "image": "https://www.wutra.de/fileadmin/data/Products/Becherwerke/Ausfuehrungen/buehne.png",
         "usages": [
             "Vertical material transfer",
             "Cement, mining, fertilizer"
@@ -1214,7 +1214,7 @@
         "id": "bushes-sleeves",
         "name": "BUSHES & SLEEVES",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Bushes+and+Sleeves",
+        "image": "https://5.imimg.com/data5/CS/OP/PC/SELLER-6343356/-bushings-sleeve-500x500.jpg",
         "usages": [
             "Reduce friction"
         ],
@@ -1239,7 +1239,7 @@
         "id": "casting-forging",
         "name": "CASTING & FORGING PARTS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Casting+and+Forging",
+        "image": "https://cpimg.tistatic.com/7853206/b/4/industrial-forging-casting-component.jpg",
         "usages": [
             "Heavy equipment"
         ],
@@ -1249,7 +1249,7 @@
         "id": "chains-sprockets",
         "name": "CHAINS & SPROCKETS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Chains+and+Sprockets",
+        "image": "https://m.media-amazon.com/images/I/71WkecNcgSS.jpg",
         "usages": [
             "Conveyors, elevator"
         ],
@@ -1264,7 +1264,7 @@
         "id": "conveyor-rollers",
         "name": "CONVEYOR ROLLERS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Conveyor+Rollers",
+        "image": "https://www.alfotec.com/wp-content/uploads/2019/11/alfotec_produktbild_tragrollen.jpg",
         "usages": [
             "Material handling systems"
         ],
@@ -1274,7 +1274,7 @@
         "id": "couplings",
         "name": "COUPLINGS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Couplings",
+        "image": "https://tiimg.tistatic.com/fp/2/009/581/flange-coupling-312.jpg",
         "usages": [
             "Motor\u2013pump connection"
         ],
@@ -1289,7 +1289,7 @@
         "id": "cranes-hoists",
         "name": "CRANES & HOISTS (SPARES)",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Cranes+and+Hoists",
+        "image": "https://tiimg.tistatic.com/fp/1/005/823/eot-crane-spare-parts-197.jpg",
         "usages": [
             "Heavy lifting",
             "Steel, manufacturing"
@@ -1300,7 +1300,7 @@
         "id": "crusher-spares",
         "name": "CRUSHER SPARES",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Crusher+Spares",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2023/3/WF/VR/ST/146946178/crusher-spare-parts.jpg",
         "usages": [
             "Crushers",
             "Mining, cement, quarry"
@@ -1311,7 +1311,7 @@
         "id": "custom-fabricated",
         "name": "CUSTOM FABRICATED ITEMS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Custom+Fabrication",
+        "image": "https://2.imimg.com/data2/JA/PL/MY-1021375/fabrication-item-500x500.jpg",
         "usages": [
             "Project-based requirements"
         ],
@@ -1321,7 +1321,7 @@
         "id": "dampers-louvers",
         "name": "DAMPERS & LOUVERS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Dampers+and+Louvers",
+        "image": "https://www.h-v-c.com/image/cache/occms/1080x740-s800b-heavy-duty-volume-control-dampers-600x600.png",
         "usages": [
             "Air & gas flow control",
             "Power, cement, HVAC"
@@ -1346,7 +1346,7 @@
         "id": "expansion-joints",
         "name": "EXPANSION JOINTS & BELLOWS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Expansion+Joints",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2022/6/BN/MU/DY/141646257/axial-tie-bellows-500x500.jpg",
         "usages": [
             "Pipelines"
         ],
@@ -1356,7 +1356,7 @@
         "id": "fan-blowers",
         "name": "FAN & BLOWER ASSEMBLIES",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Fan+and+Blowers",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTgEWv5F4X4R2B1M28PpIMWASchpCQjCzXZQ&s",
         "usages": [
             "Air handling, cooling",
             "Cement, steel, chemical"
@@ -1367,7 +1367,7 @@
         "id": "fasteners",
         "name": "FASTENERS (BOLTS & NUTS)",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Industrial+Fasteners",
+        "image": "https://tiimg.tistatic.com/fp/1/004/970/stainless-steel-nuts-bolts-475.jpg",
         "material": "MS, SS, HT",
         "usages": [
             "Assembly & structure"
@@ -1378,7 +1378,7 @@
         "id": "filters-strainers",
         "name": "FILTERS & STRAINERS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Filters+and+Strainers",
+        "image": "https://5.imimg.com/data5/NU/AF/QI/SELLER-1982534/filters-strainer-500x500.jpg",
         "usages": [
             "Fluid systems",
             "Chemical, water, oil"
@@ -1389,7 +1389,7 @@
         "id": "flanges",
         "name": "FLANGES",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Flanges",
+        "image": "https://tiimg.tistatic.com/fp/1/009/438/stainless-stee-flanges-292.jpg",
         "usages": [
             "Pipe connections"
         ],
@@ -1400,7 +1400,7 @@
         "id": "gaskets-packings",
         "name": "GASKETS & PACKINGS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Gaskets+and+Packings",
+        "image": "https://tiimg.tistatic.com/fp/2/009/618/silicone-rubber-gasket-045.jpg",
         "usages": [
             "Flanges & pumps",
             "Chemical, oil & gas"
@@ -1411,7 +1411,7 @@
         "id": "gear-boxes",
         "name": "GEAR BOXES",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Gear+Boxes",
+        "image": "https://cpimg.tistatic.com/03887922/b/4/Hydraulic-Planetary-Gear-Boxes.jpg",
         "usages": [
             "Speed reduction",
             "Cement, steel, conveyors"
@@ -1422,7 +1422,7 @@
         "id": "gears",
         "name": "GEARS (SPUR / HELICAL)",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Gears",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2XSCIkcfeAU6iHwF1b2TeF5YJGEqWauiLbA&s",
         "usages": [
             "Power transmission"
         ],
@@ -1433,7 +1433,7 @@
         "id": "heat-exchangers",
         "name": "HEAT EXCHANGERS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Heat+Exchangers",
+        "image": "https://www.phxequip.com/Multimedia/ResourceCenter/thumbnail/large-used-heat-exchanger-shell-and-tube-975-sf-ilsung-8-pass-c-st202524200549.jpg",
         "usages": [
             "Cooling & heating processes",
             "Oil & gas, power, chemical"
@@ -1444,7 +1444,7 @@
         "id": "hollow-block-ms",
         "name": "HOLLOW BLOCK & STRUCTURAL MS ITEMS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Structural+MS+Items",
+        "image": "https://tiimg.tistatic.com/fp/1/008/156/crack-resistance-hard-structure-hollow-blocks-676.jpg",
         "usages": [
             "Industrial structures"
         ],
@@ -1454,7 +1454,7 @@
         "id": "hydraulic-cylinders",
         "name": "HYDRAULIC CYLINDERS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Hydraulic+Cylinders",
+        "image": "https://m.media-amazon.com/images/I/515k3MUDqEL.jpg",
         "usages": [
             "Heavy machinery"
         ],
@@ -1464,7 +1464,7 @@
         "id": "hydraulic-power-packs",
         "name": "HYDRAULIC POWER PACKS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Hydraulic+Power+Packs",
+        "image": "https://productimages.withfloats.com/actual/65868c34ed7f2997cfd570b1.jpg",
         "usages": [
             "Heavy machinery",
             "Steel, automation, presses"
@@ -1475,7 +1475,7 @@
         "id": "impellers",
         "name": "IMPELLERS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Impellers",
+        "image": "https://ca1-cst.edcdn.com/_720xAUTO_crop_center-center_none/Vortex-Impeller.jpg?v=1736183610",
         "usages": [
             "Pumps, blowers",
             "Chemical, water, power"
@@ -1486,7 +1486,7 @@
         "id": "industrial-bearings",
         "name": "INDUSTRIAL BEARINGS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Industrial+Bearings",
+        "image": "https://cpimg.tistatic.com/03884765/b/5/Industrial-Ball-Bearing.jpg",
         "usages": [
             "Motors, pumps, gearboxes, conveyors"
         ],
@@ -1502,7 +1502,7 @@
         "id": "industrial-lubricants-mech",
         "name": "INDUSTRIAL LUBRICANTS & GREASE",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Lubricants",
+        "image": "https://5.imimg.com/data5/QN/TL/HL/SELLER-23151273/machines-oil.jpeg",
         "usages": [
             "Bearings, gear"
         ],
@@ -1516,7 +1516,7 @@
         "id": "industrial-springs",
         "name": "INDUSTRIAL SPRINGS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Industrial+Springs",
+        "image": "https://cpimg.tistatic.com/10939790/b/4/Industrial-Springs..jpg",
         "usages": [
             "Shock absorption"
         ],
@@ -1530,7 +1530,7 @@
         "id": "lifting-slings",
         "name": "LIFTING SLINGS & CHAINS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Lifting+Slings",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2022/12/CQ/RT/CD/82430538/lifting-chain-sling-500x500.jpg",
         "usages": [
             "Lifting operations",
             "EPC, steel, power"
@@ -1541,7 +1541,7 @@
         "id": "machine-spares",
         "name": "MACHINE SPARE PARTS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Machine+Spare+Parts",
+        "image": "https://2.wlimg.com/product_images/bc-full/2023/2/11646589/lb17-hmt-lathe-machine-spare-parts-1675660190-6749147.jpeg",
         "usages": [
             "Maintenance & breakdown"
         ],
@@ -1551,7 +1551,7 @@
         "id": "material-trolleys",
         "name": "MATERIAL HANDLING TROLLEYS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Material+Trolleys",
+        "image": "https://cpimg.tistatic.com/08404673/b/4/Material-Handling-Trolleys.jpg",
         "usages": [
             "Shop floor movement",
             "All manufacturing units"
@@ -1560,7 +1560,7 @@
     },
     {
         "id": "mech-seals",
-        "name": "Mechanical Seals",
+        "name": "MECHANICAL SEALS",
         "category": "Mechanical",
         "image": "https://www.alfotech.eu/media/aq3lghkz/03500008b-w-akseltaetning-med-vandskyl.jpg?rmode=pad&width=485&height=485&format=jpg&quality=90&v=1db4adc464acf50",
         "purpose": "Devices used to prevent leakage of fluids in pumps and mixers.",
@@ -1573,18 +1573,8 @@
         ]
     },
     {
-        "id": "mechanical-seals",
-        "name": "MECHANICAL SEALS",
-        "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Mechanical+Seals",
-        "usages": [
-            "Pumps & compressors"
-        ],
-        "purpose": "Leak prevention"
-    },
-    {
         "id": "mechanical-spares",
-        "name": "Mechanical Spares",
+        "name": "MECHANICAL SPARES",
         "category": "Mechanical",
         "image": "https://thumbs.dreamstime.com/b/auto-spare-parts-car-white-background-set-many-isolated-items-shop-aftermarket-auto-spare-parts-car-166776282.jpg",
         "purpose": "Various replacement parts for maintaining industrial machinery.",
@@ -1600,7 +1590,7 @@
         "id": "oil-seals",
         "name": "OIL SEALS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Oil+Seals",
+        "image": "https://www.specialistsealingproducts.co.uk/storage/2021/06/Choosing-the-correct-oil-seal-application.jpg",
         "usages": [
             "Shafts, gearboxes, pump"
         ],
@@ -1610,7 +1600,7 @@
         "id": "pneumatic-cylinders",
         "name": "PNEUMATIC CYLINDERS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Pneumatic+Cylinders",
+        "image": "https://www.airmaxindia.com/wp-content/uploads/2023/08/VNC-Model-Pneumatic-Cylinder-scaled.webp",
         "usages": [
             "Automation & robotics"
         ],
@@ -1620,7 +1610,7 @@
         "id": "pneumatic-frl",
         "name": "PNEUMATIC FRL UNITS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Pneumatic+FRL",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2024/9/450556156/XQ/SV/PM/40536213/pneumatic-frl-unit-500x500.jpg",
         "usages": [
             "Pneumatic systems",
             "Automation, packaging"
@@ -1631,7 +1621,7 @@
         "id": "pressure-vessels",
         "name": "PRESSURE VESSELS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Pressure+Vessels",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdaSfaFLkkVjtacr9wWJ-QMcU35JlSt3DeDQ&s",
         "usages": [
             "Storage under pressure",
             "Chemical, refinery, pharma"
@@ -1642,7 +1632,7 @@
         "id": "pulleys",
         "name": "PULLEYS (V / FLAT)",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Pulleys",
+        "image": "https://industry.pulpandpaper-technology.com/suppliers/shree-shakti-pulleys/products/flat-pulley-lg.jpg",
         "usages": [
             "Belt drive system",
             "Manufacturing, conveyors"
@@ -1653,7 +1643,7 @@
         "id": "pumps",
         "name": "PUMPS (INDUSTRIAL)",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Industrial+Pumps",
+        "image": "https://fluidhandlingpro.com/wp-content/uploads/2020/10/Industrial-Pumps-Choose-KSB-Omega-Pumps-for-Bottle-Manufacturing-Plant-.jpg",
         "usages": [
             "Water, chemicals, oil"
         ],
@@ -1667,7 +1657,7 @@
         "id": "safety-guards",
         "name": "SAFETY GUARDS & COVERS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Safety+Guards",
+        "image": "https://m.media-amazon.com/images/I/61HtLfkN3gL._AC_UF894,1000_QL80_.jpg",
         "usages": [
             "Operator safety"
         ],
@@ -1677,7 +1667,7 @@
         "id": "screw-conveyors",
         "name": "SCREW CONVEYORS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Screw+Conveyors",
+        "image": "https://www.invoitplast.com/wp-content/uploads/2025/03/screw-conveyor.jpg",
         "usages": [
             "Material handling",
             "Cement, food, chemical"
@@ -1688,7 +1678,7 @@
         "id": "shafts",
         "name": "SHAFTS (MS / EN / SS)",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Industrial+Shafts",
+        "image": "https://tiimg.tistatic.com/fp/1/003/831/ms-ss-shaft-770.jpg",
         "usages": [
             "Power transmission"
         ],
@@ -1713,7 +1703,7 @@
         "id": "storage-tanks",
         "name": "STORAGE TANKS (MS / SS)",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Storage+Tanks",
+        "image": "https://5.imimg.com/data5/MD/BR/MY-65686855/storage-tank-ss-2fms-500x500.jpg",
         "usages": [
             "Chemical & liquid storage",
             "Chemical, water, food"
@@ -1724,7 +1714,7 @@
         "id": "belts",
         "name": "V-BELTS & TIMING BELTS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=V+Belts",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2024/1/380060884/AI/WS/NK/3916631/download-54.jpg",
         "usages": [
             "Motors, compressor"
         ],
@@ -1737,7 +1727,7 @@
         "id": "valves",
         "name": "VALVES (INDUSTRIAL)",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Industrial+Valves",
+        "image": "https://www.mcneilinstruments.com/wp-content/uploads/2022/08/industrial-valve-500x500-1.png",
         "sub_products": [
             "Gate",
             "Globe",
@@ -1753,7 +1743,7 @@
         "id": "vibratory-screens",
         "name": "VIBRATORY SCREENS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Vibratory+Screens",
+        "image": "https://www.microwiremesh.com/wp-content/uploads/2019/11/Vibrating-Screen.jpg",
         "usages": [
             "Screening & separation",
             "Mining, aggregates, cement"
@@ -1764,7 +1754,7 @@
         "id": "wear-plates",
         "name": "WEAR PLATES & LINERS",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Wear+Plates",
+        "image": "https://www-welding-alloys-com.b-cdn.net/wp-content/uploads/2022/01/Wearplate-2.jpg",
         "usages": [
             "High abrasion zones",
             "Mining, cement"
@@ -1775,7 +1765,7 @@
         "id": "wire-ropes",
         "name": "WIRE ROPES",
         "category": "Mechanical",
-        "image": "https://placehold.co/600x400?text=Wire+Ropes",
+        "image": "https://m.media-amazon.com/images/I/51bwoIaIECS._AC_UF1000,1000_QL80_.jpg",
         "usages": [
             "Cranes, hoists",
             "Mining, ports, construction"
@@ -1786,7 +1776,7 @@
         "id": "cement-mill-oil",
         "name": "CEMENT MILL & KILN OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Cement+Mill+Oil",
+        "image": "https://media.noria.com/sites/Uploads/2018/4/2/ee1284aa-dd27-4a05-a243-1d0f4dd074e8_042018_ML_LubricationPrograms_extra_large.jpeg",
         "usages": [
             "Open gears, kilns",
             "Cement & mining"
@@ -1801,7 +1791,7 @@
         "id": "chain-oil",
         "name": "CHAIN OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Chain+Oil",
+        "image": "https://m.media-amazon.com/images/I/410tNBc1KUL._AC_UF1000,1000_QL80_.jpg",
         "usages": [
             "Conveyors & chains",
             "Packaging, textile, FMCG"
@@ -1816,7 +1806,7 @@
         "id": "compressor-oil",
         "name": "COMPRESSOR OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Compressor+Oil",
+        "image": "https://www.sparegenie.com/cdn/shop/products/Default_Consumables_Oils_Compressor_Oil_E2_1200x.jpg?v=1696661233",
         "usages": [
             "Air compressors",
             "Refrigeration compressors",
@@ -1829,7 +1819,7 @@
         "id": "cutting-oil",
         "name": "CUTTING OIL / METAL WORKING FLUID",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Cutting+Oil",
+        "image": "https://m.media-amazon.com/images/I/61N0unCDJXL.jpg",
         "usages": [
             "CNC machines",
             "Lathes & milling machines"
@@ -1840,7 +1830,7 @@
         "id": "demulsifying-oils",
         "name": "DEMULSIFYING & EMULSIFYING OILS",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Emulsifying+Oil",
+        "image": "https://cdn11.bigcommerce.com/s-f94htx/images/stencil/1280x1280/products/97/4782/HP6000-GAL__04495.1753282183.jpg?c=2",
         "usages": [
             "Metalworking fluids",
             "Machining, CNC shops"
@@ -1851,7 +1841,7 @@
         "id": "engine-oil",
         "name": "ENGINE OIL (INDUSTRIAL & COMERCIAL)",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Engine+Oil",
+        "image": "https://cpimg.tistatic.com/09944595/b/4/MAK-Lubricants-Engine-Oil..jpg",
         "purpose": "Lubrication for internal combustion engines.",
         "usages": [
             "DG sets",
@@ -1866,7 +1856,7 @@
         "id": "fire-resistant-hydraulic-oil",
         "name": "FIRE-RESISTANT HYDRAULIC OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Fire+Resistant+Oil",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2021/8/NY/FC/JH/109102068/1-500x500.png",
         "usages": [
             "High-risk areas",
             "Steel mills, foundries, mining"
@@ -1887,7 +1877,7 @@
         "id": "food-grade-lubricants",
         "name": "FOOD GRADE LUBRICANTS (NSF H1)",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Food+Grade+Lube",
+        "image": "https://m.media-amazon.com/images/I/61ZeqZAoi+L.jpg",
         "usages": [
             "Accidental food contact zones",
             "Food & beverage, pharma"
@@ -1903,7 +1893,7 @@
         "id": "gear-oil",
         "name": "GEAR OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Gear+Oil",
+        "image": "data:image/jpeg;base64,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",
         "features": [
             "Grades: ISO VG 150, 220, 320, 460"
         ],
@@ -1918,7 +1908,7 @@
         "id": "grease",
         "name": "GREASE (MULTI-PURPOSE & HEAVY DUTY)",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Industrial+Grease",
+        "image": "https://www.nchasia.com/en-in/wp-content/resources/sites/9/2023/04/premalube-black_2-768x1154.png",
         "sub_products": [
             "Lithium grease",
             "Calcium grease",
@@ -1955,7 +1945,7 @@
         "id": "heat-transfer-oil",
         "name": "HEAT TRANSFER OIL (THERMIC FLUID)",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Heat+Transfer+Oil",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2021/5/OI/NU/VL/94862399/shell-heat-transfer-oil-s2-thermic-fluid-.jpg",
         "usages": [
             "Boilers, heaters, reactors",
             "Chemical, textile, food, pharma"
@@ -1974,7 +1964,7 @@
         "id": "hydraulic-oil",
         "name": "HYDRAULIC OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Hydraulic+Oil",
+        "image": "https://5.imimg.com/data5/JG/CS/HG/SELLER-795299/hydraulic-oil-1000x1000.jpg",
         "features": [
             "Grades: ISO VG 32, 46, 68"
         ],
@@ -1995,7 +1985,7 @@
         "id": "industrial-lubricating-oil",
         "name": "INDUSTRIAL LUBRICATING OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Industrial+Lube+Oil",
+        "image": "https://www.kellerheartt.com/cdn/shop/products/shell_oil_drum_1024x1024_2x_77a37dbb-e56b-4b61-94e0-61ffeb448647_700x700.jpg?v=1506354588",
         "usages": [
             "Bearings",
             "Slideways",
@@ -2027,7 +2017,7 @@
         "id": "mould-release-oil",
         "name": "MOULD RELEASE OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Mould+Release+Oil",
+        "image": "https://5.imimg.com/data5/JV/BU/MY-39503832/mould-release-oil-500x500.jpg",
         "usages": [
             "Rubber, plastic, concrete"
         ],
@@ -2041,7 +2031,7 @@
         "id": "open-gear-lubricant",
         "name": "OPEN GEAR & WIRE ROPE LUBRICANT",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Open+Gear+Lube",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQkjwerCllOsPq2WhvwnKZUN4PO6pIOohvVg&s",
         "usages": [
             "Cranes, open gears",
             "Ports, mining, steel"
@@ -2055,7 +2045,7 @@
         "id": "process-oils",
         "name": "PROCESS OILS (AROMATIC / PARAFFINIC)",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Process+Oils",
+        "image": "https://5.imimg.com/data5/DF/WY/MY-55514011/rubber-processing-oil-250x250.jpg",
         "usages": [
             "Plastic & rubber processing",
             "Tyre, polymer"
@@ -2070,7 +2060,7 @@
         "id": "refrigeration-compressor-oil",
         "name": "REFRIGERATION COMPRESSOR OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Refrigeration+Oil",
+        "image": "https://chemicalsglobal.com/wp-content/uploads/2019/06/Chemicals-Global-Quinduvensa-Cobranded-Gallon-Black.jpg",
         "usages": [
             "Refrigeration & chillers",
             "Cold storage, food processing"
@@ -2089,7 +2079,7 @@
         "id": "rust-preventive-oil",
         "name": "RUST PREVENTIVE OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Rust+Preventive+Oil",
+        "image": "https://m.media-amazon.com/images/I/61Q89uznYgL.jpg",
         "usages": [
             "Fabrication, export packing"
         ],
@@ -2103,7 +2093,7 @@
         "id": "specialty-oils",
         "name": "SPECIALTY & PROCESS OILS",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Specialty+Oils",
+        "image": "https://m.media-amazon.com/images/I/41LNxy+zSjL.jpg",
         "usages": [
             "Rubber & tyre industry",
             "Plastic processing",
@@ -2115,7 +2105,7 @@
         "id": "synthetic-gear-oil",
         "name": "SYNTHETIC GEAR OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Synthetic+Gear+Oil",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2023/1/MZ/TG/BV/4125228/gulf-synthetic-gear-oil-320.jpg",
         "usages": [
             "Heavy-load & high-temp gearboxes",
             "Cement, mining, wind energy"
@@ -2130,7 +2120,7 @@
         "id": "transformer-oil",
         "name": "TRANSFORMER OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Transformer+Oil",
+        "image": "https://s3.ap-south-1.amazonaws.com/assets.hplubricants/s3fs-public/Transformer%20oil%2026%20Ltr%20Drum_367x301.png",
         "usages": [
             "Transformers",
             "Electrical substations"
@@ -2141,7 +2131,7 @@
         "id": "turbine-oil",
         "name": "TURBINE OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Turbine+Oil",
+        "image": "https://cdn.moglix.com/p/Fd9XOcfDCTghG-xxlarge.jpg",
         "usages": [
             "Steam turbines",
             "Gas turbines",
@@ -2154,7 +2144,7 @@
         "id": "vacuum-pump-oil",
         "name": "VACUUM PUMP OIL",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Vacuum+Pump+Oil",
+        "image": "https://m.media-amazon.com/images/I/51ZDHOr3o4L.jpg",
         "usages": [
             "Vacuum systems",
             "Pharma, chemicals, packaging"
@@ -2169,7 +2159,7 @@
         "id": "way-oil",
         "name": "WAY OIL (SLIDEWAY OIL)",
         "category": "Oil & Lubricants",
-        "image": "https://placehold.co/600x400?text=Way+Oil",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrMZbBAV3uAOrgq0S5NHA1iQEocwRcGVMdQ&s",
         "usages": [
             "CNC guideways",
             "Machine slides"
