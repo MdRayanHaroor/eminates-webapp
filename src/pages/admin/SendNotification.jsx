@@ -148,12 +148,20 @@ const SendNotification = () => {
                 });
 
                 if (emailError) {
-                    console.error('SMTP Function Error:', emailError);
-                    // Don't throw, just warn, so specific success isn't masked
-                    setStatusLabel({ type: 'warning', text: 'In-App sent, but Email failed. Check console.' });
+                    console.error('SMTP Function Connection Error:', emailError);
+                    setStatusLabel({ type: 'error', text: `Connection failed: ${emailError.message}` });
                     setLoading(false);
                     return;
                 }
+
+                // Check for logical error returned in 200 OK response
+                if (emailData && emailData.error) {
+                    console.error('SMTP Logic Error:', emailData.error);
+                    setStatusLabel({ type: 'warning', text: `Email failed: ${emailData.error}` });
+                    setLoading(false);
+                    return;
+                }
+
                 console.log('SMTP Result:', emailData);
             }
 

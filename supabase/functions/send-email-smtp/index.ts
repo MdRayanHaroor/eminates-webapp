@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.0.0";
-import { SmtpClient } from "https://deno.land/x/smtp@v0.7.0/mod.ts";
+import { SmtpClient } from "./smtp_client.ts";
 
 console.log("Hello from send-email-smtp!");
 
@@ -45,16 +45,16 @@ serve(async (req) => {
         console.log(`Attempting to send to ${emails.length} recipients`);
 
         // SMTP Configuration
-        const client = new SmtpClient();
-
         const smtpHostname = "smtp.gmail.com";
         const smtpPort = 465;
-        const smtpUsername = "admin@eminates.com"; // User requested this sender
-        const smtpPassword = Deno.env.get("GMAIL_APP_PASSWORD"); // App Password needs to be set in Secrets
+        const smtpUsername = "mohammedrayan977@gmail.com";
+        const smtpPassword = Deno.env.get("GMAIL_APP_PASSWORD");
 
         if (!smtpPassword) {
             throw new Error("GMAIL_APP_PASSWORD environment variable not set");
         }
+
+        const client = new SmtpClient();
 
         await client.connectTLS({
             hostname: smtpHostname,
@@ -65,7 +65,7 @@ serve(async (req) => {
 
         const results = [];
 
-        // Send emails sequentially to respect ANY potential limits and avoid flooding
+        // Send emails sequentially
         for (const email of emails) {
             try {
                 await client.send({
@@ -90,8 +90,8 @@ serve(async (req) => {
 
     } catch (error) {
         console.error(error);
-        return new Response(JSON.stringify({ error: error.message }), {
-            status: 500,
+        return new Response(JSON.stringify({ error: error.message || "Unknown error occurred" }), {
+            status: 200,
             headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
     }
