@@ -87,59 +87,83 @@ const SendNotification = () => {
         setStatusLabel({ type: 'info', text: 'Sending notification...' });
 
         try {
-            // Validate selection
-            if (targetRole === 'specific' && selectedUsers.length === 0) {
-                setStatusLabel({ type: 'warning', text: 'Please select at least one user.' });
+            // Determine effective channels
+            const sendInApp = channels.inApp;
+            const sendPush = channels.push;
+            const sendEmail = channels.email;
+
+            if (!sendInApp && !sendPush && !sendEmail) {
+                setStatusLabel({ type: 'warning', text: 'Please select at least one delivery channel.' });
                 setLoading(false);
                 return;
             }
 
-            const shouldInsert = channels.inApp || channels.push || channels.email;
-
-            if (shouldInsert) {
-                let targetUserIds = [];
-
-                if (targetRole === 'specific') {
-                    targetUserIds = selectedUsers.map(u => u.id);
-                } else {
-                    let query = supabase.from('users').select('id');
-                    if (targetRole !== 'all') {
-                        query = query.eq('role', targetRole);
-                    }
-                    const { data: users, error: userError } = await query;
-                    if (userError) throw new Error('Error fetching target users');
-                    targetUserIds = users.map(u => u.id);
+            // 1. Identify Target Users
+            let targetUserIds = [];
+            if (targetRole === 'specific') {
+                targetUserIds = selectedUsers.map(u => u.id);
+            } else {
+                let query = supabase.from('users').select('id');
+                if (targetRole !== 'all') {
+                    query = query.eq('role', targetRole);
                 }
+                const { data: users, error: userError } = await query;
+                if (userError) throw new Error('Error fetching target users');
+                targetUserIds = users.map(u => u.id);
+            }
 
-                if (targetUserIds.length > 0) {
-                    const notificationsToInsert = targetUserIds.map(userId => ({
-                        user_id: userId,
+            if (targetUserIds.length === 0) {
+                setStatusLabel({ type: 'warning', text: 'No users found for the selected targeting.' });
+                setLoading(false);
+                return;
+            }
+
+            // 2. Handle In-App / Push (via DB Insert which triggers send-fcm)
+            if (sendInApp || sendPush) {
+                const notificationsToInsert = targetUserIds.map(userId => ({
+                    user_id: userId,
+                    title,
+                    message,
+                    type,
+                    is_read: false,
+                    created_at: new Date().toISOString()
+                }));
+
+                const { error: insertError } = await supabase
+                    .from('notifications')
+                    .insert(notificationsToInsert);
+
+                if (insertError) throw insertError;
+            }
+
+            // 3. Handle Email (via Direct SMTP Function)
+            if (sendEmail) {
+                const { data: emailData, error: emailError } = await supabase.functions.invoke('send-email-smtp', {
+                    body: {
+                        user_ids: targetUserIds,
                         title,
                         message,
-                        type,
-                        is_read: false,
-                        created_at: new Date().toISOString()
-                    }));
+                        html_body: `<p>${message}</p>` // Simple wrapper
+                    }
+                });
 
-                    const { error: insertError } = await supabase
-                        .from('notifications')
-                        .insert(notificationsToInsert);
-
-                    if (insertError) throw insertError;
-
-                    setStatusLabel({ type: 'success', text: `Successfully sent to ${targetUserIds.length} users.` });
-
-                    // Reset form
-                    setTitle('');
-                    setMessage('');
-                    setType('info');
-                    if (targetRole === 'specific') setSelectedUsers([]);
-                } else {
-                    setStatusLabel({ type: 'warning', text: 'No users found for the selected targeting.' });
+                if (emailError) {
+                    console.error('SMTP Function Error:', emailError);
+                    // Don't throw, just warn, so specific success isn't masked
+                    setStatusLabel({ type: 'warning', text: 'In-App sent, but Email failed. Check console.' });
+                    setLoading(false);
+                    return;
                 }
-            } else {
-                setStatusLabel({ type: 'warning', text: 'Please select at least one delivery channel.' });
+                console.log('SMTP Result:', emailData);
             }
+
+            setStatusLabel({ type: 'success', text: `Successfully processed for ${targetUserIds.length} users.` });
+
+            // Reset form
+            setTitle('');
+            setMessage('');
+            setType('info');
+            if (targetRole === 'specific') setSelectedUsers([]);
 
         } catch (error) {
             console.error('Error sending notification:', error);
