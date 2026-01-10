@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabaseClient';
-import { FiSearch, FiFilter, FiBell, FiCheck, FiInfo, FiAlertCircle, FiTrash2 } from 'react-icons/fi';
+import { FiSearch, FiCheck, FiInfo } from 'react-icons/fi';
 
 const Notifications = () => {
     const [notifications, setNotifications] = useState([]);

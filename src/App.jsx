@@ -10,6 +10,7 @@ import InvestmentRequests from './pages/admin/InvestmentRequests';
 import Payouts from './pages/admin/Payouts';
 import InvestmentPlans from './pages/admin/InvestmentPlans';
 import Notifications from './pages/admin/Notifications';
+import SendNotification from './pages/admin/SendNotification';
 import AppSettings from './pages/admin/AppSettings';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="payouts" element={<Payouts />} />
         <Route path="plans" element={<InvestmentPlans />} />
         <Route path="notifications" element={<Notifications />} />
+        <Route path="notify-users" element={<SendNotification />} />
         <Route path="settings" element={<AppSettings />} />
       </Route>
     </Routes>

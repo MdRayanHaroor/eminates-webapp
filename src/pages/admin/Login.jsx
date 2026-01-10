@@ -3,49 +3,9 @@ import { supabase } from '../../lib/supabaseClient';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
-
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        setError(null);
-        setLoading(true);
-
-        try {
-            const { data, error: authError } = await supabase.auth.signInWithPassword({
-                email,
-                password,
-            });
-
-            if (authError) throw authError;
-
-            // Check if user is admin
-            const { data: userProfile, error: profileError } = await supabase
-                .from('users')
-                .select('role')
-                .eq('id', data.user.id)
-                .single();
-
-            if (profileError) {
-                console.error("Profile check error:", profileError);
-                throw new Error('Error fetching user profile.');
-            }
-
-            if (userProfile?.role !== 'admin') {
-                await supabase.auth.signOut();
-                throw new Error('Unauthorized access: Admins only.');
-            }
-
-            navigate('/admin/dashboard');
-        } catch (err) {
-            setError(err.message || 'An error occurred during login');
-        } finally {
-            setLoading(false);
-        }
-    };
 
     const handleGoogleLogin = async () => {
         try {
@@ -77,7 +37,7 @@ const Login = () => {
                 <button
                     onClick={handleGoogleLogin}
                     disabled={loading}
-                    className="w-full bg-white hover:bg-gray-50 text-gray-700 font-semibold py-2.5 px-4 rounded-lg mb-6 flex items-center justify-center gap-2 border border-gray-300 transition-all duration-200 shadow-sm"
+                    className="w-full bg-white hover:bg-gray-50 text-gray-700 font-semibold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 border border-gray-300 transition-all duration-200 shadow-sm"
                 >
                     <svg className="w-5 h-5" viewBox="0 0 24 24">
                         <path
@@ -99,42 +59,6 @@ const Login = () => {
                     </svg>
                     Continue with Google
                 </button>
-
-                <div className="flex items-center gap-4 mb-6">
-                    <div className="h-px bg-gray-200 flex-1"></div>
-                    <span className="text-gray-400 text-xs font-medium uppercase">Or sign in with email</span>
-                    <div className="h-px bg-gray-200 flex-1"></div>
-                </div>
-
-                <form onSubmit={handleLogin} className="space-y-4">
-                    <div>
-                        <label className="block text-gray-700 text-sm font-medium mb-1">Email</label>
-                        <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className="w-full p-2.5 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-gray-400"
-                            placeholder="admin@example.com"
-                        />
-                    </div>
-                    <div>
-                        <label className="block text-gray-700 text-sm font-medium mb-1">Password</label>
-                        <input
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="w-full p-2.5 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-gray-400"
-                            placeholder="••••••••"
-                        />
-                    </div>
-                    <button
-                        type="submit"
-                        disabled={loading}
-                        className={`w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-bold transition-all duration-200 shadow-sm ${loading ? 'opacity-75 cursor-not-allowed' : 'hover:shadow'}`}
-                    >
-                        {loading ? 'Logging in...' : 'Sign In'}
-                    </button>
-                </form>
             </div>
         </div>
     );

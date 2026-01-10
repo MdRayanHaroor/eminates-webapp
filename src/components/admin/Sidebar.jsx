@@ -7,7 +7,8 @@ import {
     FiDollarSign,
     FiBriefcase,
     FiSettings,
-    FiLogOut
+    FiLogOut,
+    FiSend
 } from 'react-icons/fi';
 import { supabase } from '../../lib/supabaseClient';
 
@@ -20,7 +21,8 @@ const Sidebar = () => {
         { path: '/admin/requests', icon: <FiDollarSign />, label: 'Inv. Requests' },
         { path: '/admin/plans', icon: <FiBriefcase />, label: 'Inv. Plans' },
         { path: '/admin/payouts', icon: <FiDollarSign />, label: 'Payouts' },
-        { path: '/admin/notifications', icon: <FiBell />, label: 'Notifications' }, // Added Notifications
+        { path: '/admin/notifications', icon: <FiBell />, label: 'Notifications' },
+        { path: '/admin/notify-users', icon: <FiSend />, label: 'Notify Users' },
         { path: '/admin/settings', icon: <FiSettings />, label: 'Settings' },
     ];
 
