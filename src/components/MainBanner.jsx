@@ -6,12 +6,12 @@ import slidesData from '../data/business_verticals.json';
 const MainBanner = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            handleNext();
-        }, 7000);
-        return () => clearInterval(timer);
-    }, [currentSlide]);
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //         handleNext();
+    //     }, 7000);
+    //     return () => clearInterval(timer);
+    // }, [currentSlide]);
 
     const handleNext = () => {
         setCurrentSlide((prev) => (prev + 1) % slidesData.length);
@@ -67,7 +67,7 @@ const MainBanner = () => {
                         alt="Background"
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30 md:via-black/60 md:to-transparent" />
+                    <div className={`absolute inset-0 ${['bio-fuels', 'chemicals', 'real-estate'].includes(slidesData[currentSlide].id) ? 'bg-gradient-to-t from-black/70 via-black/40 to-transparent' : 'bg-gradient-to-r from-black/90 via-black/70 to-black/30 md:via-black/60 md:to-transparent'}`} />
                 </motion.div>
             </AnimatePresence>
 
@@ -116,100 +116,242 @@ const MainBanner = () => {
                                 </motion.p>
                             </motion.div>
                         ) : (
-                            <motion.div
-                                key={slidesData[currentSlide].id}
-                                className="grid md:grid-cols-2 gap-8 md:gap-12 items-center"
-                                initial={{ opacity: 0, x: 50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -50 }}
-                                transition={{ duration: 0.5 }}
-                            >
-                                {/* Left Side: Title & Headline */}
-                                <div>
-                                    <motion.span
-                                        className="inline-block py-1 px-3 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold mb-4 border border-blue-500/30"
-                                        variants={contentVariants}
-                                        custom={0}
-                                        initial="hidden"
-                                        animate="visible"
-                                    >
-                                        Business Vertical
-                                    </motion.span>
-                                    <motion.h2
-                                        className="text-3xl md:text-5xl font-bold mb-2 text-white"
-                                        variants={contentVariants}
-                                        custom={1}
-                                        initial="hidden"
-                                        animate="visible"
-                                    >
-                                        {Array.isArray(slidesData[currentSlide].title) ? (
-                                            slidesData[currentSlide].title.map((line, i) => (
-                                                <div key={i} className="block">{line}</div>
-                                            ))
-                                        ) : (
-                                            slidesData[currentSlide].title
-                                        )}
-                                    </motion.h2>
-                                    <motion.h3
-                                        className="text-xl md:text-2xl text-blue-400 font-medium mb-6"
-                                        variants={contentVariants}
-                                        custom={2}
-                                        initial="hidden"
-                                        animate="visible"
-                                    >
-                                        {slidesData[currentSlide].headline}
-                                    </motion.h3>
+                            ['bio-fuels', 'chemicals', 'real-estate'].includes(slidesData[currentSlide].id) ? (
+                                <motion.div
+                                    key={`${slidesData[currentSlide].id}-custom`}
+                                    className="absolute inset-0 flex flex-col justify-center md:justify-end pb-0 md:pb-32"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    <div className="container mx-auto px-4 md:px-8 w-full">
+                                        {/* Mobile View - Preserved */}
+                                        <div className="md:hidden grid gap-8 items-center pb-20">
+                                            <div>
+                                                <motion.span
+                                                    className="inline-block py-1 px-3 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold mb-4 border border-blue-500/30"
+                                                    variants={contentVariants}
+                                                    custom={0}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                >
+                                                    Business Vertical
+                                                </motion.span>
+                                                <motion.h2
+                                                    className="text-3xl font-bold mb-2 text-white"
+                                                    variants={contentVariants}
+                                                    custom={1}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                >
+                                                    {slidesData[currentSlide].title}
+                                                </motion.h2>
+                                                <motion.h3
+                                                    className="text-xl text-blue-400 font-medium mb-6"
+                                                    variants={contentVariants}
+                                                    custom={2}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                >
+                                                    {slidesData[currentSlide].headline}
+                                                </motion.h3>
 
-                                    <motion.div
-                                        className="mb-6"
-                                        variants={contentVariants}
-                                        custom={3}
-                                        initial="hidden"
-                                        animate="visible"
-                                    >
-                                        <h4 className="text-gray-400 text-sm uppercase tracking-wider font-semibold mb-3">Core Activities</h4>
-                                        <div className="flex flex-wrap gap-2">
-                                            {slidesData[currentSlide].activities.map((activity, idx) => (
-                                                <span key={idx} className="bg-gray-800 hover:bg-gray-700 transition-colors px-3 py-1 rounded-md text-sm text-gray-200 border border-gray-700">
-                                                    {activity}
-                                                </span>
-                                            ))}
+                                                <motion.div
+                                                    className="mb-6"
+                                                    variants={contentVariants}
+                                                    custom={3}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                >
+                                                    <h4 className="text-gray-400 text-sm uppercase tracking-wider font-semibold mb-3">Core Activities</h4>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {slidesData[currentSlide].activities.map((activity, idx) => (
+                                                            <span key={idx} className="bg-gray-800 hover:bg-gray-700 transition-colors px-3 py-1 rounded-md text-sm text-gray-200 border border-gray-700">
+                                                                {activity}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                </motion.div>
+                                            </div>
+                                            <div>
+                                                <h4 className="text-gray-400 text-sm uppercase tracking-wider font-semibold mb-3">Key Offerings</h4>
+                                                <ul className="space-y-2">
+                                                    {slidesData[currentSlide].basicDetails.slice(0, 3).map((detail, idx) => (
+                                                        <li key={idx} className="flex items-start text-gray-300 text-sm">
+                                                            <FaCheckCircle className="text-blue-500 mt-1 mr-3 flex-shrink-0" />
+                                                            {detail}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </motion.div>
 
-                                    {/* Desktop Only Details List */}
-                                    <motion.div
-                                        className="hidden md:block"
-                                        variants={contentVariants}
-                                        custom={4}
-                                        initial="hidden"
-                                        animate="visible"
-                                    >
+                                        {/* Desktop View - New Layout */}
+                                        <div className="hidden md:flex w-full justify-between items-end">
+                                            <div className="max-w-xl">
+                                                <motion.span
+                                                    className="inline-block py-1 px-3 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold mb-4 border border-blue-500/30"
+                                                    variants={contentVariants}
+                                                    custom={0}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                >
+                                                    Business Vertical
+                                                </motion.span>
+                                                <motion.h2
+                                                    className="text-5xl font-bold mb-2 text-white"
+                                                    variants={contentVariants}
+                                                    custom={1}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                >
+                                                    {slidesData[currentSlide].title}
+                                                </motion.h2>
+                                                <motion.h3
+                                                    className="text-2xl text-blue-400 font-medium mb-6"
+                                                    variants={contentVariants}
+                                                    custom={2}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                >
+                                                    {slidesData[currentSlide].headline}
+                                                </motion.h3>
+
+                                                <motion.div
+                                                    className="mb-6"
+                                                    variants={contentVariants}
+                                                    custom={3}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                >
+                                                    <h4 className="text-gray-400 text-sm uppercase tracking-wider font-semibold mb-3">Core Activities</h4>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {slidesData[currentSlide].activities.map((activity, idx) => (
+                                                            <span key={idx} className="bg-gray-800 hover:bg-gray-700 transition-colors px-3 py-1 rounded-md text-sm text-gray-200 border border-gray-700">
+                                                                {activity}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                </motion.div>
+                                            </div>
+
+                                            <motion.div
+                                                className="max-w-xl"
+                                                variants={contentVariants}
+                                                custom={4}
+                                                initial="hidden"
+                                                animate="visible"
+                                            >
+                                                <h4 className="text-gray-400 text-sm uppercase tracking-wider font-semibold mb-3">Key Offerings</h4>
+                                                <ul className="space-y-2">
+                                                    {slidesData[currentSlide].basicDetails.map((detail, idx) => (
+                                                        <li key={idx} className="flex items-start text-gray-300 text-base">
+                                                            <FaCheckCircle className="text-blue-500 mt-1 mr-3 flex-shrink-0" />
+                                                            {detail}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </motion.div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ) : (
+                                <motion.div
+                                    key={slidesData[currentSlide].id}
+                                    className="grid md:grid-cols-2 gap-8 md:gap-12 items-center"
+                                    initial={{ opacity: 0, x: 50 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -50 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    {/* Left Side: Title & Headline */}
+                                    <div>
+                                        <motion.span
+                                            className="inline-block py-1 px-3 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold mb-4 border border-blue-500/30"
+                                            variants={contentVariants}
+                                            custom={0}
+                                            initial="hidden"
+                                            animate="visible"
+                                        >
+                                            Business Vertical
+                                        </motion.span>
+                                        <motion.h2
+                                            className="text-3xl md:text-5xl font-bold mb-2 text-white"
+                                            variants={contentVariants}
+                                            custom={1}
+                                            initial="hidden"
+                                            animate="visible"
+                                        >
+                                            {Array.isArray(slidesData[currentSlide].title) ? (
+                                                slidesData[currentSlide].title.map((line, i) => (
+                                                    <div key={i} className="block">{line}</div>
+                                                ))
+                                            ) : (
+                                                slidesData[currentSlide].title
+                                            )}
+                                        </motion.h2>
+                                        <motion.h3
+                                            className="text-xl md:text-2xl text-blue-400 font-medium mb-6"
+                                            variants={contentVariants}
+                                            custom={2}
+                                            initial="hidden"
+                                            animate="visible"
+                                        >
+                                            {slidesData[currentSlide].headline}
+                                        </motion.h3>
+
+                                        <motion.div
+                                            className="mb-6"
+                                            variants={contentVariants}
+                                            custom={3}
+                                            initial="hidden"
+                                            animate="visible"
+                                        >
+                                            <h4 className="text-gray-400 text-sm uppercase tracking-wider font-semibold mb-3">Core Activities</h4>
+                                            <div className="flex flex-wrap gap-2">
+                                                {slidesData[currentSlide].activities.map((activity, idx) => (
+                                                    <span key={idx} className="bg-gray-800 hover:bg-gray-700 transition-colors px-3 py-1 rounded-md text-sm text-gray-200 border border-gray-700">
+                                                        {activity}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+
+                                        {/* Desktop Only Details List */}
+                                        <motion.div
+                                            className="hidden md:block"
+                                            variants={contentVariants}
+                                            custom={4}
+                                            initial="hidden"
+                                            animate="visible"
+                                        >
+                                            <h4 className="text-gray-400 text-sm uppercase tracking-wider font-semibold mb-3">Key Offerings</h4>
+                                            <ul className="space-y-2">
+                                                {slidesData[currentSlide].basicDetails.map((detail, idx) => (
+                                                    <li key={idx} className="flex items-start text-gray-300 text-sm md:text-base">
+                                                        <FaCheckCircle className="text-blue-500 mt-1 mr-3 flex-shrink-0" />
+                                                        {detail}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </motion.div>
+                                    </div>
+
+                                    {/* Right Side: Mobile Details & Visuals */}
+                                    <div className="md:hidden">
                                         <h4 className="text-gray-400 text-sm uppercase tracking-wider font-semibold mb-3">Key Offerings</h4>
                                         <ul className="space-y-2">
-                                            {slidesData[currentSlide].basicDetails.map((detail, idx) => (
-                                                <li key={idx} className="flex items-start text-gray-300 text-sm md:text-base">
+                                            {slidesData[currentSlide].basicDetails.slice(0, 3).map((detail, idx) => (
+                                                <li key={idx} className="flex items-start text-gray-300 text-sm">
                                                     <FaCheckCircle className="text-blue-500 mt-1 mr-3 flex-shrink-0" />
                                                     {detail}
                                                 </li>
                                             ))}
                                         </ul>
-                                    </motion.div>
-                                </div>
-
-                                {/* Right Side: Mobile Details & Visuals */}
-                                <div className="md:hidden">
-                                    <h4 className="text-gray-400 text-sm uppercase tracking-wider font-semibold mb-3">Key Offerings</h4>
-                                    <ul className="space-y-2">
-                                        {slidesData[currentSlide].basicDetails.slice(0, 3).map((detail, idx) => (
-                                            <li key={idx} className="flex items-start text-gray-300 text-sm">
-                                                <FaCheckCircle className="text-blue-500 mt-1 mr-3 flex-shrink-0" />
-                                                {detail}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </motion.div>
+                                    </div>
+                                </motion.div>
+                            )
                         )}
                     </AnimatePresence>
                 </div>

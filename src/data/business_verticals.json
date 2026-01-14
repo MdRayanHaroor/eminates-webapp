@@ -24,7 +24,7 @@
             "Trading & Export",
             "Bulk Industrial Supply"
         ],
-        "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2670&auto=format&fit=crop"
+        "image": "public/images/biofuels.png"
     },
     {
         "id": "chemicals",
@@ -43,7 +43,7 @@
             "Bulk Supply",
             "Industrial Consulting"
         ],
-        "image": "https://as1.ftcdn.net/v2/jpg/05/61/52/98/1000_F_561529818_MTyFXbdhRk1ydDG4BhzE0eqRtJizHARY.jpg"
+        "image": "public/images/industrial_chemicals.png"
     },
     {
         "id": "real-estate",
@@ -61,7 +61,7 @@
             "Contracting",
             "Project Consulting"
         ],
-        "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2670&auto=format&fit=crop"
+        "image": "public/images/real-estate.png"
     },
     {
         "id": "automation",
