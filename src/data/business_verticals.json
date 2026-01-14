@@ -24,7 +24,7 @@
             "Trading & Export",
             "Bulk Industrial Supply"
         ],
-        "image": "/images/biofuels.png"
+        "image": "/images/banner-resized/biofuels.png"
     },
     {
         "id": "chemicals",
@@ -43,7 +43,7 @@
             "Bulk Supply",
             "Industrial Consulting"
         ],
-        "image": "/images/industrial_chemicals.png"
+        "image": "/images/banner-resized/industrial_chemicals.png"
     },
     {
         "id": "real-estate",
@@ -61,7 +61,7 @@
             "Contracting",
             "Project Consulting"
         ],
-        "image": "/images/real-estate.png"
+        "image": "/images/banner-resized/real-estate.png"
     },
     {
         "id": "automation",
@@ -79,7 +79,7 @@
             "System Integration",
             "Installation & Commissioning"
         ],
-        "image": "images/switchgear_automation.jpeg"
+        "image": "images/banner-resized/switchgear_automation.jpeg"
     },
     {
         "id": "mechanical",
@@ -101,7 +101,7 @@
             "Bulk Industrial Supply",
             "Project-Based Procurement"
         ],
-        "image": "/images/mechanical-electrical-pipes.png"
+        "image": "/images/banner-resized/mechanical-electrical-pipes.png"
     },
     {
         "id": "solar",
@@ -141,7 +141,7 @@
             "Trading",
             "Bulk Supply"
         ],
-        "image": "/images/gypsum.png"
+        "image": "/images/banner-resized/gypsum.png"
     },
     {
         "id": "lubricants",
@@ -163,7 +163,7 @@
             "Bulk Trading",
             "Exporting"
         ],
-        "image": "/images/lubricants.png"
+        "image": "/images/banner-resized/lubricants.png"
     },
     {
         "id": "water-solutions",
@@ -185,6 +185,6 @@
             "Turnkey Projects",
             "O&M Services"
         ],
-        "image": "images/industrial_water.png"
+        "image": "images/banner-resized/industrial_water.png"
     }
 ]
