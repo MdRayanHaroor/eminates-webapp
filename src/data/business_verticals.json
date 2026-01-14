@@ -79,7 +79,7 @@
             "System Integration",
             "Installation & Commissioning"
         ],
-        "image": "images/banner-resized/switchgear_automation.jpeg"
+        "image": "images/banner-resized/switchgear_automation.png"
     },
     {
         "id": "mechanical",
@@ -123,7 +123,7 @@
             "EPC Execution",
             "Operation & Maintenance"
         ],
-        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2672&auto=format&fit=crop"
+        "image": "/images/banner-resized/solar.png"
     },
     {
         "id": "gypsum",

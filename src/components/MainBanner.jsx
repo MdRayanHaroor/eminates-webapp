@@ -77,7 +77,7 @@ const MainBanner = () => {
                         alt="Background"
                         className="w-full h-full object-cover"
                     />
-                    <div className={`absolute inset-0 ${['bio-fuels', 'chemicals', 'real-estate', 'mechanical', 'lubricants', 'water-solutions', 'gypsum'].includes(slidesData[currentSlide].id) ? 'bg-gradient-to-t from-black/70 via-black/40 to-transparent' : 'bg-gradient-to-r from-black/90 via-black/70 to-black/30 md:via-black/60 md:to-transparent'}`} />
+                    <div className={`absolute inset-0 ${['bio-fuels', 'chemicals', 'real-estate', 'mechanical', 'lubricants', 'water-solutions', 'gypsum', 'solar'].includes(slidesData[currentSlide].id) ? 'bg-gradient-to-t from-black/70 via-black/40 to-transparent' : 'bg-gradient-to-r from-black/90 via-black/70 to-black/30 md:via-black/60 md:to-transparent'}`} />
                 </motion.div>
             </AnimatePresence>
 
@@ -126,7 +126,7 @@ const MainBanner = () => {
                                 </motion.p>
                             </motion.div>
                         ) : (
-                            ['bio-fuels', 'chemicals', 'real-estate', 'mechanical', 'lubricants', 'water-solutions', 'gypsum'].includes(slidesData[currentSlide].id) ? (
+                            ['bio-fuels', 'chemicals', 'real-estate', 'mechanical', 'lubricants', 'water-solutions', 'gypsum', 'solar'].includes(slidesData[currentSlide].id) ? (
                                 <motion.div
                                     key={`${slidesData[currentSlide].id}-custom`}
                                     className="absolute inset-0 flex flex-col justify-center md:justify-end pb-0 md:pb-32"
