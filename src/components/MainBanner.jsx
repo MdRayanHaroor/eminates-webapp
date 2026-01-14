@@ -6,12 +6,22 @@ import slidesData from '../data/business_verticals.json';
 const MainBanner = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    // useEffect(() => {
-    //     const timer = setInterval(() => {
-    //         handleNext();
-    //     }, 7000);
-    //     return () => clearInterval(timer);
-    // }, [currentSlide]);
+    useEffect(() => {
+        const timer = setInterval(() => {
+            handleNext();
+        }, 7000);
+        return () => clearInterval(timer);
+    }, [currentSlide]);
+
+    // Preload images for smoother transitions
+    useEffect(() => {
+        slidesData.forEach((slide) => {
+            if (slide.image) {
+                const img = new Image();
+                img.src = slide.image;
+            }
+        });
+    }, []);
 
     const handleNext = () => {
         setCurrentSlide((prev) => (prev + 1) % slidesData.length);
