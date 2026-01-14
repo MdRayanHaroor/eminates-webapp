@@ -684,7 +684,6 @@
         "name": "ACB \u2013 AIR CIRCUIT BREAKER",
         "category": "Electric & Electronics",
         "image": [
-            "https://iallway.com/wp-content/uploads/2024/02/78805a221a988e79ef3f.png",
             "https://www.electricalpanelmanufacturers.com/images/products/img-lt-distribution-panel.jpg",
             "https://us1.yofishseo.com/file/157/applications-of-air-circuit-breakers.png"
         ],
@@ -2253,7 +2252,7 @@
         "category": "Pipes & Fittings",
         "image": "https://5.imimg.com/data5/SELLER/Default/2024/2/384628227/SS/DL/US/4358321/ms-pipe-fittings.jpg",
         "purpose": "Strong and durable steel pipes for structural and industrial use.",
-        "purpose": "Strong and durable steel pipes for structural and industrial use.",
+
         "material": "Mild Steel (MS)",
         "features": [
             "High strength",
@@ -2919,6 +2918,158 @@
             "SCADA & monitoring setup",
             "Utility grid approval & synchronization",
             "Performance verification"
+        ]
+    },
+    {
+        "id": "etp-plant",
+        "name": "Effluent Treatment Plant (ETP)",
+        "category": "Industrial Water & Wastewater Solutions",
+        "image": "https://4.imimg.com/data4/VA/OD/MY-36615855/effulent-treatment-plant-etp-500x500.jpg",
+        "purpose": "Industrial wastewater treatment to treat effluent for reuse or safe disposal.",
+        "features": [
+            "Physio-chemical & Biological treatment",
+            "Zero Liquid Discharge (ZLD) capable",
+            "Customized based on effluent parameters",
+            "Automated & Semi-automated options"
+        ],
+        "usages": [
+            "Textile & Dyeing Industries",
+            "Chemical & Pharma Industries",
+            "Food & Beverage Processing",
+            "Tanneries & Paper Mills"
+        ]
+    },
+    {
+        "id": "stp-plant",
+        "name": "Sewage Treatment Plant (STP)",
+        "category": "Industrial Water & Wastewater Solutions",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2022/3/NH/EZ/ZK/131855392/sewage-treatment-plant-500x500.jpg",
+        "purpose": "Treats domestic and commercial sewage for gardening, flushing, or disposal.",
+        "features": [
+            "MBBR / SBR / MBR Technologies",
+            "Compact & Odor-free design available",
+            "Low operation & maintenance cost",
+            "Compliance with PCB norms"
+        ],
+        "usages": [
+            "Residential Complexes",
+            "Hotels & Resorts",
+            "Hospitals & Malls",
+            "Industrial Parks"
+        ]
+    },
+    {
+        "id": "ro-plant-industrial",
+        "name": "RO Plant (Industrial & Commercial)",
+        "category": "Industrial Water & Wastewater Solutions",
+        "image": "https://netsolwater.com/images/Commercial-RO-Plant-Heavy-Duty-RO-System-9650608473.png",
+        "purpose": "Removes impurities, salts, and contaminants using Reverse Osmosis technology.",
+        "features": [
+            "High TDS rejection rate (up to 99%)",
+            "SS / FRP Membrane housings",
+            "Fully automatic with PLC support",
+            "Capacities: 250 LPH to 100 m³/hr"
+        ],
+        "usages": [
+            "Boiler Feed Water",
+            "Process Water for Industries",
+            "Drinking Water Bottling",
+            "Dialysis Units"
+        ]
+    },
+    {
+        "id": "filter-press",
+        "name": "Filter Press",
+        "category": "Industrial Water & Wastewater Solutions",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIjweAPxKXI9V5K4aFtrGDfMKqdDp5KnQRNw&s",
+        "purpose": "Detailed solid-liquid separation and sludge dewatering equipment.",
+        "features": [
+            "Recessed plate & Membrane types",
+            "Manual, Semi-Automatic & Fully Auto",
+            "High filtration pressure",
+            "Durable PP plates"
+        ],
+        "usages": [
+            "ETP / STP Sludge Dewatering",
+            "Ceramic Industries",
+            "Granite & Marble Slurry",
+            "Chemical Processing"
+        ]
+    },
+    {
+        "id": "filter-cartridges",
+        "name": "Filter Cartridges & Housings",
+        "category": "Industrial Water & Wastewater Solutions",
+        "image": "https://amifilters.com/wp-content/uploads/2020/08/pp_housing_1.jpg",
+        "purpose": "Precision filtration consumables for micron-level contaminant removal.",
+        "features": [
+            "Spun PP, Wound, and Pleated types",
+            "Micron ratings: 0.1 to 100 microns",
+            "High flow rates & dirt holding capacity",
+            "Compatible with various housings"
+        ],
+        "usages": [
+            "Pre-treatment for RO Systems",
+            "Chemical Filtration",
+            "Food & Beverage",
+            "Pharmaceuticals"
+        ]
+    },
+    {
+        "id": "mbr-reactor",
+        "name": "Membrane Bio Reactor (MBR)",
+        "category": "Industrial Water & Wastewater Solutions",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2024/5/416912265/DY/AQ/HJ/2489329/membrane-bioreactor-mbr.jpg",
+        "purpose": "Advanced wastewater treatment combining membrane processes with biological reactors.",
+        "features": [
+            "Superior effluent quality",
+            "Very compact footprint",
+            "Modular and expandable",
+            "Reduced sludge production"
+        ],
+        "usages": [
+            "Water Recycling & Reuse",
+            "Industrial Wastewater",
+            "Municipal Sewage",
+            "Retrofitting existing plants"
+        ]
+    },
+    {
+        "id": "sbr-reactor",
+        "name": "Sequencing Batch Reactor (SBR)",
+        "category": "Industrial Water & Wastewater Solutions",
+        "image": "https://5.imimg.com/data5/TE/TJ/AV/SELLER-67323960/sequential-batch-reactor-sbr-500x500.jpg",
+        "purpose": "Active sludge process for wastewater treatment in a single batch reactor.",
+        "features": [
+            "Single-tank operation (Aeration + Settling)",
+            "Automatic process control",
+            "High nitrogen & phosphorus removal",
+            "Flexible operation"
+        ],
+        "usages": [
+            "Municipal Sewage Treatment",
+            "Industrial ETPs",
+            "Decentralized Systems",
+            "Variable flow applications"
+        ]
+    },
+    {
+        "id": "mvr-systems",
+        "name": "MVR / MVRE Systems",
+        "category": "Industrial Water & Wastewater Solutions",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2025/7/531867777/YQ/PD/NG/15480463/mvre-systems-1000x1000.jpg",
+        "purpose": "Mechanical Vapor Recompression evaporators for high-efficiency concentration.",
+        "features": [
+            "Energy efficient evaporation",
+            "Zero Liquid Discharge (ZLD) core",
+            "Low operating cost",
+            "Handles high TDS streams"
+        ],
+        "usages": [
+            "ZLD Plants",
+            "Chemical Concentration",
+            "Distilleries",
+            "Salt Recovery"
         ]
     }
 ]

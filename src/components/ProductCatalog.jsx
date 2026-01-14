@@ -41,7 +41,7 @@ const ProductCatalog = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [modalImageIndex, setModalImageIndex] = useState(0);
 
-    const categories = ['Bio Fuels', 'Chemicals', 'Electric & Electronics', 'Mechanical', 'Oil & Lubricants', 'Pipes & Fittings', 'Real-estate & construction', 'Solar'];
+    const categories = ['Bio Fuels', 'Chemicals', 'Electric & Electronics', 'Mechanical', 'Oil & Lubricants', 'Pipes & Fittings', 'Real-estate & construction', 'Solar', 'Industrial Water & Wastewater Solutions'];
 
     // Close modal on ESC key press
     useEffect(() => {

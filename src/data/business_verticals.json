@@ -24,7 +24,7 @@
             "Trading & Export",
             "Bulk Industrial Supply"
         ],
-        "image": "public/images/biofuels.png"
+        "image": "/images/biofuels.png"
     },
     {
         "id": "chemicals",
@@ -43,7 +43,7 @@
             "Bulk Supply",
             "Industrial Consulting"
         ],
-        "image": "public/images/industrial_chemicals.png"
+        "image": "/images/industrial_chemicals.png"
     },
     {
         "id": "real-estate",
@@ -61,7 +61,7 @@
             "Contracting",
             "Project Consulting"
         ],
-        "image": "public/images/real-estate.png"
+        "image": "/images/real-estate.png"
     },
     {
         "id": "automation",
@@ -101,7 +101,7 @@
             "Bulk Industrial Supply",
             "Project-Based Procurement"
         ],
-        "image": "public/images/mechanical-electrical-pipes.png"
+        "image": "/images/mechanical-electrical-pipes.png"
     },
     {
         "id": "solar",
@@ -141,7 +141,7 @@
             "Trading",
             "Bulk Supply"
         ],
-        "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2670&auto=format&fit=crop"
+        "image": "/images/gypsum.png"
     },
     {
         "id": "lubricants",
@@ -163,6 +163,28 @@
             "Bulk Trading",
             "Exporting"
         ],
-        "image": "public/images/lubricants.png"
+        "image": "/images/lubricants.png"
+    },
+    {
+        "id": "water-solutions",
+        "type": "vertical",
+        "title": [
+            "Industrial Water &",
+            "Wastewater Solutions"
+        ],
+        "headline": "Efficient Water Management & Zero Liquid Discharge",
+        "basicDetails": [
+            "ETP, STP, RO Plants & MVR Systems",
+            "MBR, SBR, Filter Press & Cartridges",
+            "Turnkey Execution & Design Consulting",
+            "AMC, Manpower Supply & Plant O&M",
+            "Serving: Textile, Pharma, Chemical, Food & Hospitals"
+        ],
+        "activities": [
+            "Water Solutions",
+            "Turnkey Projects",
+            "O&M Services"
+        ],
+        "image": "images/industrial_water.png"
     }
 ]
