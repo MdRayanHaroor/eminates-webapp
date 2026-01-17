@@ -21,7 +21,7 @@ const InvestmentPlans = () => {
         description: '',
         features: '', // Textarea (split by newline)
         is_active: true,
-        maturity_bonus: [] // Array of { year: '', percentage: '' }
+        tenure_details: [] // Array of { year: '', percentage: '' }
     });
 
     useEffect(() => {
@@ -47,16 +47,21 @@ const InvestmentPlans = () => {
     const handleOpenModal = (plan = null) => {
         if (plan) {
             setEditingPlan(plan);
-            // Parse maturity_bonus JSON to array for form
-            let bonusArray = [];
-            if (plan.maturity_bonus) {
+            // Parse tenure_details JSON to array for form
+            let tenureArray = [];
+            if (plan.tenure_details) {
                 try {
-                    bonusArray = Object.entries(plan.maturity_bonus).map(([year, percentage]) => ({
+                    // Check if it's already an object or string
+                    const details = typeof plan.tenure_details === 'string' 
+                        ? JSON.parse(plan.tenure_details) 
+                        : plan.tenure_details;
+                        
+                    tenureArray = Object.entries(details).map(([year, percentage]) => ({
                         year,
                         percentage
                     }));
                 } catch (e) {
-                    console.error("Error parsing maturity bonus", e);
+                    console.error("Error parsing tenure details", e);
                 }
             }
 
@@ -71,7 +76,7 @@ const InvestmentPlans = () => {
                 description: plan.description || '',
                 features: plan.features ? plan.features.join('\n') : '',
                 is_active: plan.is_active,
-                maturity_bonus: bonusArray
+                tenure_details: tenureArray
             });
         } else {
             setEditingPlan(null);
@@ -86,48 +91,48 @@ const InvestmentPlans = () => {
                 description: '',
                 features: '',
                 is_active: true,
-                maturity_bonus: []
+                tenure_details: []
             });
         }
         setIsModalOpen(true);
     };
 
-    // Helper to manage bonus fields
-    const addBonusTier = () => {
+    // Helper to manage tenure fields
+    const addTenureTier = () => {
         setFormData(prev => ({
             ...prev,
-            maturity_bonus: [...prev.maturity_bonus, { year: '', percentage: '' }]
+            tenure_details: [...prev.tenure_details, { year: '', percentage: '' }]
         }));
     };
 
-    const removeBonusTier = (index) => {
+    const removeTenureTier = (index) => {
         setFormData(prev => ({
             ...prev,
-            maturity_bonus: prev.maturity_bonus.filter((_, i) => i !== index)
+            tenure_details: prev.tenure_details.filter((_, i) => i !== index)
         }));
     };
 
-    const updateBonusTier = (index, field, value) => {
-        const newBonus = [...formData.maturity_bonus];
-        newBonus[index][field] = value;
-        setFormData({ ...formData, maturity_bonus: newBonus });
+    const updateTenureTier = (index, field, value) => {
+        const newDetails = [...formData.tenure_details];
+        newDetails[index][field] = value;
+        setFormData({ ...formData, tenure_details: newDetails });
     };
 
     const handleSave = async (e) => {
         e.preventDefault();
         try {
-            // Convert bonus array back to object: { "3": 30, "5": 50 }
-            const bonusObject = {};
-            formData.maturity_bonus.forEach(item => {
+            // Convert tenure array back to object: { "3": 30, "5": 50 }
+            const tenureObject = {};
+            formData.tenure_details.forEach(item => {
                 if (item.year && item.percentage) {
-                    bonusObject[item.year] = Number(item.percentage);
+                    tenureObject[item.year] = Number(item.percentage);
                 }
             });
 
             const payload = {
                 ...formData,
                 features: formData.features.split('\n').filter(f => f.trim() !== ''), // Convert to array
-                maturity_bonus: bonusObject
+                tenure_details: tenureObject
             };
 
             if (editingPlan) {
@@ -245,11 +250,11 @@ const InvestmentPlans = () => {
                                 <span>Max Investment:</span>
                                 <span className="text-gray-900 font-mono">₹{plan.max_amount}</span>
                             </div>
-                            {plan.maturity_bonus && Object.keys(plan.maturity_bonus).length > 0 && (
+                            {plan.tenure_details && Object.keys(plan.tenure_details).length > 0 && (
                                 <div className="mt-2 pt-2 border-t border-gray-100">
                                     <span className="block text-xs uppercase text-gray-400 mb-1">Maturity Bonus</span>
                                     <div className="flex flex-wrap gap-2">
-                                        {Object.entries(plan.maturity_bonus).map(([year, percent]) => (
+                                        {Object.entries(plan.tenure_details).map(([year, percent]) => (
                                             <span key={year} className="inline-flex items-center px-2 py-1 rounded bg-purple-50 text-purple-700 text-xs font-medium border border-purple-100">
                                                 {year} Yr: {percent}%
                                             </span>
@@ -331,29 +336,29 @@ const InvestmentPlans = () => {
                                     {/* Maturity Bonus Section */}
                                     <div className="col-span-2 bg-gray-50 p-4 rounded-lg border border-gray-200">
                                         <div className="flex justify-between items-center mb-3">
-                                            <label className="text-gray-700 font-medium text-sm">Maturity Bonus Tiers</label>
-                                            <button type="button" onClick={addBonusTier} className="text-blue-600 text-xs font-semibold hover:text-blue-800 flex items-center gap-1">
+                                            <label className="text-gray-700 font-medium text-sm">Maturity Bonus Tiers (Tenure Details)</label>
+                                            <button type="button" onClick={addTenureTier} className="text-blue-600 text-xs font-semibold hover:text-blue-800 flex items-center gap-1">
                                                 <FiPlus /> Add Tier
                                             </button>
                                         </div>
                                         
-                                        {formData.maturity_bonus.length === 0 ? (
+                                        {formData.tenure_details.length === 0 ? (
                                             <p className="text-gray-400 text-sm italic text-center py-2">No maturity bonuses added.</p>
                                         ) : (
                                             <div className="space-y-3">
-                                                {formData.maturity_bonus.map((tier, index) => (
+                                                {formData.tenure_details.map((tier, index) => (
                                                     <div key={index} className="flex gap-4 items-end">
                                                         <div className="flex-1">
                                                             <label className="text-gray-500 text-xs mb-1 block">Year</label>
                                                             <input type="number" placeholder="e.g 3" className="w-full bg-white border border-gray-300 rounded px-3 py-2 text-sm outline-none focus:border-blue-500"
-                                                                value={tier.year} onChange={e => updateBonusTier(index, 'year', e.target.value)} />
+                                                                value={tier.year} onChange={e => updateTenureTier(index, 'year', e.target.value)} />
                                                         </div>
                                                         <div className="flex-1">
                                                             <label className="text-gray-500 text-xs mb-1 block">Bonus %</label>
                                                             <input type="number" placeholder="e.g 30" className="w-full bg-white border border-gray-300 rounded px-3 py-2 text-sm outline-none focus:border-blue-500"
-                                                                value={tier.percentage} onChange={e => updateBonusTier(index, 'percentage', e.target.value)} />
+                                                                value={tier.percentage} onChange={e => updateTenureTier(index, 'percentage', e.target.value)} />
                                                         </div>
-                                                        <button type="button" onClick={() => removeBonusTier(index)} className="p-2 text-red-500 hover:bg-red-50 rounded transition-colors" title="Remove">
+                                                        <button type="button" onClick={() => removeTenureTier(index)} className="p-2 text-red-500 hover:bg-red-50 rounded transition-colors" title="Remove">
                                                             <FiTrash2 size={16} />
                                                         </button>
                                                     </div>
