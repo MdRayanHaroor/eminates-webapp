@@ -2223,7 +2223,9 @@
         "id": "hdpe-pipe",
         "name": "HDPE PIPE & FITTINGS",
         "category": "Pipes & Fittings",
-        "image": "https://www.malpanipipes.com/wp-content/uploads/2024/06/hdpe-pipes.jpg",
+        "image": 
+            ["https://www.malpanipipes.com/wp-content/uploads/2024/06/hdpe-pipes.jpg",
+             "/images/pipes/pipe-1.avif", "images/pipes/pipe-2.jpg"],
         "purpose": "Heavy-duty, flexible piping for high pressure and underground applications.",
         "material": "High Density Polyethylene (HDPE)",
         "features": [
@@ -2305,7 +2307,8 @@
             "/images/products/pvc_pipe_stock.png",
             "/images/products/pvc_fittings.png",
             "/images/products/pvc_installation.png",
-            "/images/products/pvc_system.png"
+            "/images/products/pvc_system.png",
+            "images/pipes/pipe-3.jpg"
         ],
         "purpose": "Economical and versatile piping for drainage and domestic plumbing.",
         "material": "Polyvinyl Chloride (PVC)",
@@ -2356,13 +2359,14 @@
     },
     {
         "id": "upvc-pipe",
-        "name": "uPVC PIPE & FITTINGS",
+        "name": "UPVC PIPE & FITTINGS",
         "category": "Pipes & Fittings",
         "image": [
             "/images/products/upvc_pipe_stock.png",
             "/images/products/upvc_fittings.png",
             "/images/products/upvc_installation.png",
-            "/images/products/upvc_system.png"
+            "/images/products/upvc_system.png",
+            "/images/pipes/pipe-4.jpg"
         ],
         "purpose": "Rigid, chemically resistant piping for industrial and residential use.",
         "material": "Unplasticized Polyvinyl Chloride (uPVC)",
@@ -2979,10 +2983,25 @@
     },
     {
         "id": "filter-press",
-        "name": "Filter Press",
+        "name": "FILTER PRESS & SLUDGE DEWATERING",
         "category": "Industrial Water & Wastewater Solutions",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIjweAPxKXI9V5K4aFtrGDfMKqdDp5KnQRNw&s",
+        "image": [
+            "/images/products/filter-press-1.png",
+            "/images/industrial-water-solution/filter-press-1.jpg"
+        ],
         "purpose": "Detailed solid-liquid separation and sludge dewatering equipment.",
+        "sub_products": [
+             "Automatic Filter Press",
+             "Manual Filter Press",
+             "Filter Press Plates",
+             "Filter Cloth",
+             "Hydraulic Power Pack",
+             "Sludge Feed Pump",
+             "Air Compressor",
+             "Drip Tray",
+             "Cake Discharge System",
+             "Sludge Collection Conveyor"
+        ],
         "features": [
             "Recessed plate & Membrane types",
             "Manual, Semi-Automatic & Fully Auto",
@@ -3036,10 +3055,22 @@
     },
     {
         "id": "sbr-reactor",
-        "name": "Sequencing Batch Reactor (SBR)",
+        "name": "SBR (SEQUENCING BATCH REACTOR) SYSTEM",
         "category": "Industrial Water & Wastewater Solutions",
-        "image": "https://5.imimg.com/data5/TE/TJ/AV/SELLER-67323960/sequential-batch-reactor-sbr-500x500.jpg",
+        "image": "/images/products/sbr-reactor-1.png",
         "purpose": "Active sludge process for wastewater treatment in a single batch reactor.",
+        "sub_products": [
+             "SBR Reactor Tank",
+             "Aeration System",
+             "Fine Bubble Diffusers",
+             "Decanter Mechanism",
+             "Submersible Mixer",
+             "Air Blower",
+             "PLC Control Panel",
+             "Sludge Wasting Pump",
+             "Level Sensors",
+             "Automation Valves"
+        ],
         "features": [
             "Single-tank operation (Aeration + Settling)",
             "Automatic process control",
@@ -3055,10 +3086,29 @@
     },
     {
         "id": "mvr-systems",
-        "name": "MVR / MVRE Systems",
+        "name": "EVAPORATOR SYSTEM – MVR / MEE",
         "category": "Industrial Water & Wastewater Solutions",
-        "image": "https://5.imimg.com/data5/SELLER/Default/2025/7/531867777/YQ/PD/NG/15480463/mvre-systems-1000x1000.jpg",
+        "image": [
+            "/images/industrial-water-solution/1.jpg",
+            "/images/industrial-water-solution/2.jpg",
+            "/images/industrial-water-solution/3.webp"
+        ],
+        "_comment": "/images/products/mvr-evaporator-1.png",
         "purpose": "Mechanical Vapor Recompression evaporators for high-efficiency concentration.",
+        "sub_products": [
+             "MVR Evaporator System",
+             "Multiple Effect Evaporator (MEE)",
+             "Heat Exchanger Tubes",
+             "Steam / Vapor Compressor",
+             "Feed Pump",
+             "Condensate Pump",
+             "Separator Vessel",
+             "Vacuum Pump",
+             "Condenser Unit",
+             "CIP Cleaning System",
+             "PLC Control Panel",
+             "Skid Mounted Evaporator Unit"
+        ],
         "features": [
             "Energy efficient evaporation",
             "Zero Liquid Discharge (ZLD) core",
@@ -3070,6 +3120,169 @@
             "Chemical Concentration",
             "Distilleries",
             "Salt Recovery"
+        ]
+    },
+    {
+        "id": "sludge-dumping-yard",
+        "name": "SLUDGE DUMPING / DISPOSAL YARD",
+        "category": "Industrial Water & Wastewater Solutions",
+        "image": [
+            "/images/products/sludge-dumping-yard-1.png",
+            "/images/industrial-water-solution/dumping-1.jpg",
+            "/images/industrial-water-solution/dumping-2.webp"
+        ],
+        "purpose": "Dedicated facility for the safe disposal and drying of industrial sludge.",
+        "sub_products": [
+             "Sludge Drying Beds",
+             "Geo-Membrane Lined Yard",
+             "Leachate Collection System",
+             "Sludge Storage Area",
+             "Sludge Collection Trolleys",
+             "Sludge Transportation Vehicle",
+             "Hazardous Waste Containers",
+             "Weighing & Record Station"
+        ],
+        "features": [
+            "Environmentally compliant design",
+            "Efficient drying mechanisms",
+            "Leachate management included",
+            "Large capacity storage"
+        ],
+        "usages": [
+            "Large Industrial Parks",
+            "Municipal Waste Management",
+            "Hazardous Waste Disposal",
+            "Chemical Plants"
+        ]
+    },
+    {
+        "id": "turbo-blower",
+        "name": "TURBO BLOWER / TURBOCHARGER SYSTEM",
+        "category": "Industrial Water & Wastewater Solutions",
+        "image": [
+            "/images/products/turbo-blower-1.png",
+            "/images/industrial-water-solution/turbo-1.webp"
+        ],
+        "purpose": "High-efficiency air blowers for aeration in wastewater treatment.",
+        "sub_products": [
+             "Turbo Blower",
+             "Magnetic Bearing System",
+             "High Speed Motor",
+             "Blower Control Panel",
+             "Air Distribution Piping"
+        ],
+        "features": [
+            "High energy efficiency",
+            "Low noise operation",
+            "Oil-free air delivery",
+            "Compact footprint"
+        ],
+        "usages": [
+            "Aeration Tanks in ETP/STP",
+            "Pneumatic Conveying",
+            "Industrial Fermentation",
+            "Process Air Supply"
+        ]
+    },
+    {
+        "id": "softener-plant",
+        "name": "HARDNESS REMOVAL / SOFTENER PLANT",
+        "category": "Industrial Water & Wastewater Solutions",
+        "image": [
+            "/images/products/water-softener-plant-1.png",
+            "/images/industrial-water-solution/hardness-1.webp"
+        ],
+        "purpose": "Systems designed to remove hardness minerals from water.",
+        "sub_products": [
+             "Water Softener Vessel",
+             "Cation Exchange Resin",
+             "Brine Tank",
+             "Salt Dosing System",
+             "Automatic Control Valve",
+             "Backwash System",
+             "Hardness Test Kit",
+             "Treated Water Tank",
+             "Raw Water Feed Pump",
+             "Softener Control Panel"
+        ],
+        "features": [
+            "Effective scale prevention",
+            "Automatic regeneration",
+            "Durable resin life",
+            "Consistent water quality"
+        ],
+        "usages": [
+            "Boiler Feed Water",
+            "Cooling Towers",
+            "Laundry & Textile Industry",
+            "Domestic Water Supply"
+        ]
+    },
+    {
+        "id": "flanges-joints-special-items",
+        "name": "FLANGES, JOINTS & SPECIAL ITEMS",
+        "category": "Pipes & Fittings",
+        "image": [
+            "/images/products/flanges-joints-special-items-1.png",
+            "/images/flanges/Industrial-Flanges-1.jpeg",
+            "/images/flanges/Industrial-Flanges-2.jpg",
+            "/images/flanges/Industrial-Flanges-3.jpeg",
+            "/images/flanges/Industrial-Flanges-4.jpg"
+        ],
+        "purpose": "Essential components for connecting pipes, valves, pumps and other equipment to form a piping system.",
+        "sub_products": [
+            "MS Flange (Slip-On / Weld Neck)",
+            "SS Flange (ANSI / DIN)",
+            "HDPE Flange Joint",
+            "Rubber Expansion Joint / Bellow",
+            "Dismantling Joint (Large DIA)"
+        ],
+        "features": [
+            "High durability and pressure resistance",
+            "Precision engineered interfaces",
+            "Compatible with multiple standards (ANSI/DIN)",
+            "Leak-proof sealing solutions"
+        ],
+        "usages": [
+            "Industrial Piping Systems",
+            "Water Treatment Plants",
+            "Petrochemical Industries",
+            "HVAC Systems"
+        ]
+    },
+    {
+        "id": "valves-industrial",
+        "name": "VALVES (INDUSTRIAL – ALL DIAMETERS)",
+        "category": "Pipes & Fittings",
+        "image": [
+            "/images/products/industrial-valves-1.png",
+            "/images/valves/valve-1.jpg",
+            "/images/valves/valve-2.png",
+            "/images/valves/valve-3.png",
+            "/images/valves/valve-4.jpg"
+        ],
+        "purpose": "Critical devices for controlling, regulating and directing flow within a system.",
+        "sub_products": [
+            "Butterfly Valve (Wafer / Lug – 50 to 400 DIA)",
+            "Gate Valve (CI / DI / MS)",
+            "Ball Valve (PVC / UPVC / SS)",
+            "Knife Gate Valve (Slurry / Sludge Line)",
+            "Non-Return Valve (NRV / Check Valve)",
+            "Pneumatic Actuated Valve",
+            "Motorized Actuated Valve"
+        ],
+        "features": [
+            "Wide range of diameters (50-400 DIA available)",
+            "Manual, Pneumatic, and Motorized actuation",
+            "Robust materials (CI, DI, MS, PVC, SS)",
+            "Reliable flow control and isolation"
+        ],
+        "usages": [
+            "Flow Regulation",
+            "Process Control",
+            "Slurry and Sludge Lines",
+            "Water Distribution Networks",
+            "Industrial Automation"
         ]
     }
 ]
