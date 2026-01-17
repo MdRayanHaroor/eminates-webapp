@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabaseClient';
 import { motion } from 'framer-motion';
-import { FiUsers, FiDollarSign, FiActivity, FiClock } from 'react-icons/fi';
+import { FiUsers, FiDollarSign, FiActivity, FiClock, FiBriefcase } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
-const StatCard = ({ title, value, icon, colorClass, delay }) => (
+const StatCard = ({ title, value, icon, colorClass, delay, onClick }) => (
     <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay }}
-        className="bg-white border border-gray-200 p-6 rounded-xl hover:border-gray-300 transition-all shadow-sm group"
+        onClick={onClick}
+        className={`bg-white border border-gray-200 p-6 rounded-xl hover:border-gray-300 transition-all shadow-sm group ${onClick ? 'cursor-pointer hover:shadow-md' : ''}`}
     >
         <div className="flex items-center justify-between mb-4">
             <h3 className="text-gray-500 text-sm font-medium uppercase tracking-wider">{title}</h3>
@@ -21,9 +23,11 @@ const StatCard = ({ title, value, icon, colorClass, delay }) => (
 );
 
 const Dashboard = () => {
+    const navigate = useNavigate();
     // ... (stats state and useEffect remain unchanged) ...
     const [stats, setStats] = useState({
         totalUsers: 0,
+        totalAgents: 0,
         pendingRequests: 0,
         totalInvested: 0,
         recentActivity: []
@@ -33,22 +37,32 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchStats = async () => {
             try {
-                // 1. Total Users (Users table)
+                // 1. Total Users (Users table - role 'user')
+                // Note: role might be 'authenticated' if using Supabase auth directly, or 'user' if using custom role column. 
+                // Based on UserDetails code, there is a 'role' column. User requested 'users'. 
+                // Trying case insensitive search for safety or standard string.
                 const { count: userCount, error: userError } = await supabase
                     .from('users')
-                    .select('*', { count: 'exact', head: true });
+                    .select('*', { count: 'exact', head: true })
+                    .or('role.eq.user,role.eq.users');
 
-                // 2. Pending Requests
+                // 1b. Total Agents
+                const { count: agentCount, error: agentError } = await supabase
+                    .from('users')
+                    .select('*', { count: 'exact', head: true })
+                    .eq('role', 'agent');
+
+                // 2. Pending Requests (Fix: Check for 'Pending' Title Case as well)
                 const { count: pendingCount, error: pendingError } = await supabase
                     .from('investor_requests')
                     .select('*', { count: 'exact', head: true })
-                    .eq('status', 'pending');
+                    .ilike('status', 'pending');
 
                 // 3. Total Investment Volume (Approved/Active)
                 const { data: investments, error: investError } = await supabase
                     .from('investor_requests')
                     .select('investment_amount')
-                    .or('status.eq.approved,status.eq.active');
+                    .eq('status', 'Investment Confirmed');
 
                 const totalVol = investments?.reduce((acc, curr) => {
                     const amount = parseFloat(curr.investment_amount) || 0;
@@ -62,12 +76,13 @@ const Dashboard = () => {
                     .order('created_at', { ascending: false })
                     .limit(5);
 
-                if (userError || pendingError || investError || activityError) {
-                    console.error("Error fetching stats:", userError, pendingError, investError, activityError);
+                if (userError || agentError || pendingError || investError || activityError) {
+                    console.error("Error fetching stats:", userError, agentError, pendingError, investError, activityError);
                 }
 
                 setStats({
                     totalUsers: userCount || 0,
+                    totalAgents: agentCount || 0,
                     pendingRequests: pendingCount || 0,
                     totalInvested: totalVol,
                     recentActivity: activity || []
@@ -108,27 +123,38 @@ const Dashboard = () => {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <StatCard
                     title="Total Users"
                     value={stats.totalUsers}
                     icon={<FiUsers size={24} />}
                     colorClass="bg-blue-50 text-blue-600"
                     delay={0}
+                    onClick={() => navigate('/admin/users')}
+                />
+                <StatCard
+                    title="Total Agents"
+                    value={stats.totalAgents}
+                    icon={<FiBriefcase size={24} />}
+                    colorClass="bg-purple-50 text-purple-600"
+                    delay={0.1}
+                    onClick={() => navigate('/admin/users', { state: { roleFilter: 'agent' } })}
                 />
                 <StatCard
                     title="Pending Requests"
                     value={stats.pendingRequests}
                     icon={<FiClock size={24} />}
                     colorClass="bg-yellow-50 text-yellow-600"
-                    delay={0.1}
+                    delay={0.2}
+                    onClick={() => navigate('/admin/requests', { state: { activeTab: 'pending' } })}
                 />
                 <StatCard
                     title="Total Investment"
                     value={formatCurrency(stats.totalInvested)}
                     icon={<FiDollarSign size={24} />}
                     colorClass="bg-green-50 text-green-600"
-                    delay={0.2}
+                    delay={0.3}
+                    onClick={() => navigate('/admin/requests', { state: { activeTab: 'active' } })}
                 />
             </div>
 

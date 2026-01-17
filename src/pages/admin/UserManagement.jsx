@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabaseClient';
 import { FiSearch, FiFilter, FiMoreVertical, FiEye } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const UserManagement = () => {
     const [users, setUsers] = useState([]);
@@ -9,6 +9,13 @@ const UserManagement = () => {
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const [roleFilter, setRoleFilter] = useState('all');
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state?.roleFilter) {
+            setRoleFilter(location.state.roleFilter);
+        }
+    }, [location.state]);
 
     useEffect(() => {
         fetchUsers();

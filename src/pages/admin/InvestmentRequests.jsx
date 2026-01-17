@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { supabase } from '../../lib/supabaseClient';
 import { FiCheck, FiX, FiEye, FiDownload, FiSearch, FiFilter } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 const InvestmentRequests = () => {
     const [requests, setRequests] = useState([]);
@@ -18,6 +21,13 @@ const InvestmentRequests = () => {
     const [adminBanks, setAdminBanks] = useState([]);
     const [selectedBank, setSelectedBank] = useState(null);
     const [processingAction, setProcessingAction] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state?.activeTab) {
+            setActiveTab(location.state.activeTab);
+        }
+    }, [location.state]);
 
     useEffect(() => {
         fetchRequests();
@@ -119,8 +129,8 @@ const InvestmentRequests = () => {
         if (activeTab === 'all') {
             setFilteredRequests(requests);
         } else if (activeTab === 'active') {
-            // Active investments are those that are confirmed
-            setFilteredRequests(requests.filter(r => r.is_confirmed === true));
+            // Active investments are those that are specifically 'Investment Confirmed'
+            setFilteredRequests(requests.filter(r => r.status === 'Investment Confirmed'));
         } else if (activeTab === 'approved') {
             // Approved but not yet confirmed (waiting for payment/UTR)
             // Comparison is now case-insensitive but targeting the new Title Case values
@@ -190,6 +200,134 @@ const InvestmentRequests = () => {
             alert(`Failed to update request: ${error.message}`);
         } finally {
             setProcessingAction(false);
+        }
+    };
+
+    const generatePDF = async () => {
+        if (!selectedRequest) return;
+
+        try {
+            // Generate standard signed URLs for the PDF (24h validity)
+            const pdfSignedUrls = {};
+            const types = [
+                { key: 'aadhaar_card_url', label: 'Aadhaar Card' },
+                { key: 'pan_card_url', label: 'PAN Card' },
+                { key: 'selfie_url', label: 'Selfie' }
+            ];
+
+            for (const type of types) {
+                const path = selectedRequest[type.key];
+                if (path) {
+                    const { data } = await supabase.storage.from('kyc_docs').createSignedUrl(path, 3600 * 24);
+                    if (data?.signedUrl) {
+                        pdfSignedUrls[type.key] = data.signedUrl;
+                    }
+                }
+            }
+
+            const doc = new jsPDF();
+
+            // Header
+            doc.setFontSize(20);
+            doc.setTextColor(40);
+            doc.text("Investment Request Details", 14, 20);
+
+            doc.setFontSize(10);
+            doc.setTextColor(100);
+            doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 28);
+            doc.text(`Request ID: ${selectedRequest.id}`, 14, 33);
+
+            // User Info
+            doc.setFontSize(14);
+            doc.setTextColor(0);
+            doc.text("Investor Information", 14, 45);
+
+            autoTable(doc, {
+                startY: 50,
+                body: [
+                    ["Full Name", selectedRequest.users?.full_name || '-'],
+                    ["Email", selectedRequest.users?.email || '-'],
+                    ["Phone", selectedRequest.primary_mobile || selectedRequest.users?.phone || '-']
+                ],
+                theme: 'striped',
+                headStyles: { fillColor: [66, 133, 244] },
+                margin: { left: 14, right: 14 }
+            });
+
+            // Investment Details
+            let finalY = doc.lastAutoTable.finalY + 15;
+            doc.text("Investment Details", 14, finalY);
+
+            autoTable(doc, {
+                startY: finalY + 5,
+                body: [
+                    ["Plan Name", selectedRequest.plan_name],
+                    ["Amount", `Rs. ${selectedRequest.investment_amount}`],
+                    ["Status", selectedRequest.status],
+                    ["Transaction UTR", selectedRequest.transaction_utr || '-'],
+                    ["Date", new Date(selectedRequest.created_at).toLocaleString()]
+                ],
+                theme: 'grid',
+                headStyles: { fillColor: [52, 168, 83] },
+                margin: { left: 14, right: 14 }
+            });
+
+            // Bank Details
+            finalY = doc.lastAutoTable.finalY + 15;
+            doc.text("Bank Details", 14, finalY);
+
+            autoTable(doc, {
+                startY: finalY + 5,
+                body: [
+                    ["Bank Name", selectedRequest.bank_name || '-'],
+                    ["Account Holder", selectedRequest.account_holder_name || '-'],
+                    ["Account Number", selectedRequest.account_number || '-'],
+                    ["IFSC Code", selectedRequest.ifsc_code || '-']
+                ],
+                theme: 'grid',
+                headStyles: { fillColor: [255, 170, 0] },
+                margin: { left: 14, right: 14 }
+            });
+
+            // Document Links
+            finalY = doc.lastAutoTable.finalY + 15;
+            if (finalY > 250) { doc.addPage(); finalY = 20; }
+            
+            doc.text("Uploaded Documents", 14, finalY);
+            let docY = finalY + 10;
+            doc.setFontSize(10);
+            doc.setTextColor(50, 50, 200);
+
+            const docLinks = [
+                { label: 'Aadhaar Card', url: pdfSignedUrls.aadhaar_card_url },
+                { label: 'PAN Card', url: pdfSignedUrls.pan_card_url },
+                { label: 'Selfie', url: pdfSignedUrls.selfie_url }
+            ];
+
+            let hasDocs = false;
+            docLinks.forEach(link => {
+                if (link.url) {
+                    hasDocs = true;
+                    doc.textWithLink(`View ${link.label}`, 20, docY, { url: link.url });
+                    docY += 8;
+                }
+            });
+
+            if (!hasDocs) {
+                doc.setTextColor(100);
+                doc.text("No documents uploaded.", 20, docY);
+            } else {
+                docY += 5;
+                doc.setFontSize(8);
+                doc.setTextColor(128);
+                doc.text("(Note: Ctrl + Click on links to open in a new tab)", 14, docY);
+            }
+
+            doc.save(`investment_request_${selectedRequest.id}.pdf`);
+
+        } catch (error) {
+            console.error("Error generating PDF:", error);
+            alert("Failed to generate PDF. Please try again.");
         }
     };
 
@@ -431,6 +569,14 @@ const InvestmentRequests = () => {
                                             Confirm Investment
                                         </button>
                                     </>
+                                )}
+                                {(selectedRequest.status === 'Investment Confirmed') && (
+                                    <button
+                                        onClick={generatePDF}
+                                        className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-all font-medium flex items-center gap-2"
+                                    >
+                                        <FiDownload size={16} /> Download Details
+                                    </button>
                                 )}
                                 <button onClick={() => setSelectedRequest(null)} className="px-4 py-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-gray-200 border border-gray-200">Close</button>
                             </div>

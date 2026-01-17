@@ -20,7 +20,8 @@ const InvestmentPlans = () => {
         max_amount: '',
         description: '',
         features: '', // Textarea (split by newline)
-        is_active: true
+        is_active: true,
+        maturity_bonus: [] // Array of { year: '', percentage: '' }
     });
 
     useEffect(() => {
@@ -46,6 +47,19 @@ const InvestmentPlans = () => {
     const handleOpenModal = (plan = null) => {
         if (plan) {
             setEditingPlan(plan);
+            // Parse maturity_bonus JSON to array for form
+            let bonusArray = [];
+            if (plan.maturity_bonus) {
+                try {
+                    bonusArray = Object.entries(plan.maturity_bonus).map(([year, percentage]) => ({
+                        year,
+                        percentage
+                    }));
+                } catch (e) {
+                    console.error("Error parsing maturity bonus", e);
+                }
+            }
+
             setFormData({
                 name: plan.name,
                 roi_percentage: plan.roi_percentage,
@@ -56,7 +70,8 @@ const InvestmentPlans = () => {
                 max_amount: plan.max_amount,
                 description: plan.description || '',
                 features: plan.features ? plan.features.join('\n') : '',
-                is_active: plan.is_active
+                is_active: plan.is_active,
+                maturity_bonus: bonusArray
             });
         } else {
             setEditingPlan(null);
@@ -70,18 +85,49 @@ const InvestmentPlans = () => {
                 max_amount: '',
                 description: '',
                 features: '',
-                is_active: true
+                is_active: true,
+                maturity_bonus: []
             });
         }
         setIsModalOpen(true);
     };
 
+    // Helper to manage bonus fields
+    const addBonusTier = () => {
+        setFormData(prev => ({
+            ...prev,
+            maturity_bonus: [...prev.maturity_bonus, { year: '', percentage: '' }]
+        }));
+    };
+
+    const removeBonusTier = (index) => {
+        setFormData(prev => ({
+            ...prev,
+            maturity_bonus: prev.maturity_bonus.filter((_, i) => i !== index)
+        }));
+    };
+
+    const updateBonusTier = (index, field, value) => {
+        const newBonus = [...formData.maturity_bonus];
+        newBonus[index][field] = value;
+        setFormData({ ...formData, maturity_bonus: newBonus });
+    };
+
     const handleSave = async (e) => {
         e.preventDefault();
         try {
+            // Convert bonus array back to object: { "3": 30, "5": 50 }
+            const bonusObject = {};
+            formData.maturity_bonus.forEach(item => {
+                if (item.year && item.percentage) {
+                    bonusObject[item.year] = Number(item.percentage);
+                }
+            });
+
             const payload = {
                 ...formData,
-                features: formData.features.split('\n').filter(f => f.trim() !== '') // Convert to array
+                features: formData.features.split('\n').filter(f => f.trim() !== ''), // Convert to array
+                maturity_bonus: bonusObject
             };
 
             if (editingPlan) {
@@ -199,6 +245,18 @@ const InvestmentPlans = () => {
                                 <span>Max Investment:</span>
                                 <span className="text-gray-900 font-mono">₹{plan.max_amount}</span>
                             </div>
+                            {plan.maturity_bonus && Object.keys(plan.maturity_bonus).length > 0 && (
+                                <div className="mt-2 pt-2 border-t border-gray-100">
+                                    <span className="block text-xs uppercase text-gray-400 mb-1">Maturity Bonus</span>
+                                    <div className="flex flex-wrap gap-2">
+                                        {Object.entries(plan.maturity_bonus).map(([year, percent]) => (
+                                            <span key={year} className="inline-flex items-center px-2 py-1 rounded bg-purple-50 text-purple-700 text-xs font-medium border border-purple-100">
+                                                {year} Yr: {percent}%
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </motion.div>
                 ))}
@@ -268,6 +326,40 @@ const InvestmentPlans = () => {
                                         <textarea className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:border-blue-500 outline-none"
                                             placeholder="Capital Protection&#10;Instant Withdrawal&#10;24/7 Support"
                                             value={formData.features} onChange={e => setFormData({ ...formData, features: e.target.value })} rows="4" />
+                                    </div>
+
+                                    {/* Maturity Bonus Section */}
+                                    <div className="col-span-2 bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                        <div className="flex justify-between items-center mb-3">
+                                            <label className="text-gray-700 font-medium text-sm">Maturity Bonus Tiers</label>
+                                            <button type="button" onClick={addBonusTier} className="text-blue-600 text-xs font-semibold hover:text-blue-800 flex items-center gap-1">
+                                                <FiPlus /> Add Tier
+                                            </button>
+                                        </div>
+                                        
+                                        {formData.maturity_bonus.length === 0 ? (
+                                            <p className="text-gray-400 text-sm italic text-center py-2">No maturity bonuses added.</p>
+                                        ) : (
+                                            <div className="space-y-3">
+                                                {formData.maturity_bonus.map((tier, index) => (
+                                                    <div key={index} className="flex gap-4 items-end">
+                                                        <div className="flex-1">
+                                                            <label className="text-gray-500 text-xs mb-1 block">Year</label>
+                                                            <input type="number" placeholder="e.g 3" className="w-full bg-white border border-gray-300 rounded px-3 py-2 text-sm outline-none focus:border-blue-500"
+                                                                value={tier.year} onChange={e => updateBonusTier(index, 'year', e.target.value)} />
+                                                        </div>
+                                                        <div className="flex-1">
+                                                            <label className="text-gray-500 text-xs mb-1 block">Bonus %</label>
+                                                            <input type="number" placeholder="e.g 30" className="w-full bg-white border border-gray-300 rounded px-3 py-2 text-sm outline-none focus:border-blue-500"
+                                                                value={tier.percentage} onChange={e => updateBonusTier(index, 'percentage', e.target.value)} />
+                                                        </div>
+                                                        <button type="button" onClick={() => removeBonusTier(index)} className="p-2 text-red-500 hover:bg-red-50 rounded transition-colors" title="Remove">
+                                                            <FiTrash2 size={16} />
+                                                        </button>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
 
