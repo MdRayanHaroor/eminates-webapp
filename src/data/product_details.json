@@ -2224,7 +2224,10 @@
         "name": "HDPE PIPE & FITTINGS",
         "category": "Pipes & Fittings",
         "image": 
-            ["https://www.malpanipipes.com/wp-content/uploads/2024/06/hdpe-pipes.jpg",
+            [
+                "/images/hdpe-1.jpg",
+                "images/hdpe-2.jpg",
+                "https://www.malpanipipes.com/wp-content/uploads/2024/06/hdpe-pipes.jpg",
              "/images/pipes/pipe-1.avif", "images/pipes/pipe-2.jpg"],
         "purpose": "Heavy-duty, flexible piping for high pressure and underground applications.",
         "material": "High Density Polyethylene (HDPE)",
@@ -2966,7 +2969,11 @@
         "id": "ro-plant-industrial",
         "name": "RO Plant (Industrial & Commercial)",
         "category": "Industrial Water & Wastewater Solutions",
-        "image": "https://netsolwater.com/images/Commercial-RO-Plant-Heavy-Duty-RO-System-9650608473.png",
+        "image": [
+            "/images/ro-plant-1.jpg",
+            "https://netsolwater.com/images/Commercial-RO-Plant-Heavy-Duty-RO-System-9650608473.png",
+            "https://aquafresh.company/wp-content/uploads/2025/06/Add-a-heading-2025-06-28T121656.804.png"
+        ],
         "purpose": "Removes impurities, salts, and contaminants using Reverse Osmosis technology.",
         "features": [
             "High TDS rejection rate (up to 99%)",
@@ -3038,7 +3045,11 @@
         "id": "mbr-reactor",
         "name": "Membrane Bio Reactor (MBR)",
         "category": "Industrial Water & Wastewater Solutions",
-        "image": "https://5.imimg.com/data5/SELLER/Default/2024/5/416912265/DY/AQ/HJ/2489329/membrane-bioreactor-mbr.jpg",
+        "image": [
+            "/images/mbr-1.jpg",
+            "https://5.imimg.com/data5/SELLER/Default/2024/5/416912265/DY/AQ/HJ/2489329/membrane-bioreactor-mbr.jpg",
+            "https://susbio.in/wp-content/uploads/2025/06/ChatGPT-Image-Jun-12-2025-12_14_42-PM-672x372.png.webp"
+        ],
         "purpose": "Advanced wastewater treatment combining membrane processes with biological reactors.",
         "features": [
             "Superior effluent quality",
@@ -3283,6 +3294,66 @@
             "Slurry and Sludge Lines",
             "Water Distribution Networks",
             "Industrial Automation"
+        ]
+    },
+    {
+        "id": "gi-pipes",
+        "name": "GI (Galvanized Iron) Heavy Duty Pipe",
+        "category": "Pipes & Fittings",
+        "image": [
+            "/images/gi-pipe-1.jpg",
+            "https://5.imimg.com/data5/SELLER/Default/2021/7/ZP/EE/TJ/25464058/gi-pipe-500x500.jpeg",
+            "https://cpimg.tistatic.com/05887218/b/4/Industrial-GI-Round-Pipe.jpg"
+        ],
+        "purpose": "Durable galvanized iron pipes for water, gas, and structural applications.",
+        "sub_products": [
+             "GI Heavy Duty Pipe",
+             "GI Elbow",
+             "GI Tee",
+             "GI Socket",
+             "GI Union"
+        ],
+        "features": [
+            "Zinc coating for corrosion resistance",
+            "Heavy-duty threaded ends",
+            "High pressure tolerance",
+            "Long service life"
+        ],
+        "usages": [
+            "Water Supply Lines",
+            "Gas Distribution",
+            "Structural Scaffolding",
+            "Agricultural Irrigation"
+        ]
+    },
+    {
+        "id": "ss-pipes",
+        "name": "Stainless Steel (SS 304 / 316) Pipe",
+        "category": "Pipes & Fittings",
+        "image": [
+            "/images/ss-pipe-1.jpg",
+            "https://5.imimg.com/data5/SELLER/Default/2021/6/TC/QS/QA/95508765/stainless-steel-large-diameter-pipes-304-500x500.jpg",
+            "https://5.imimg.com/data5/SELLER/Default/2023/1/PG/XK/HA/3672834/large-diameter-steel-pipes-500x500.webp"
+        ],
+        "purpose": "High-grade stainless steel pipes and fittings for sanitary and industrial use.",
+        "sub_products": [
+             "SS 304 Pipe",
+             "SS 316 Pipe",
+             "SS Elbow (Butt Weld / Threaded)",
+             "SS Tee",
+             "SS Reducer"
+        ],
+        "features": [
+            "Grades 304 & 316 available",
+            "Excellent corrosion resistance",
+            "Hygienic and easy to clean",
+            "High temperature resistance"
+        ],
+        "usages": [
+            "Food & Beverage Industry",
+            "Chemical Processing",
+            "Pharmaceutical Plants",
+            "Dairy Industry"
         ]
     }
 ]
