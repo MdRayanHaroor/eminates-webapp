@@ -682,7 +682,7 @@
     {
         "id": "acb",
         "name": "ACB \u2013 AIR CIRCUIT BREAKER",
-        "category": "Electric & Electronics",
+        "category": "Switchgear and Robotics",
         "image": [
             "https://www.electricalpanelmanufacturers.com/images/products/img-lt-distribution-panel.jpg",
             "https://us1.yofishseo.com/file/157/applications-of-air-circuit-breakers.png"
@@ -721,7 +721,7 @@
     {
         "id": "contactors",
         "name": "CONTACTORS",
-        "category": "Electric & Electronics",
+        "category": "Switchgear and Robotics",
         "image": [
             "https://www.mtechcontrol.com/assets/images/content/MMS_w_FD_Auto_Inside1.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tesys_D_Contactor_Schneider_Electric.jpg",
@@ -816,7 +816,7 @@
     {
         "id": "motors-vfd",
         "name": "INDUSTRIAL MOTORS & VFD / DRIVES",
-        "category": "Electric & Electronics",
+        "category": "Switchgear and Robotics",
         "image": [
             "https://images.squarespace-cdn.com/content/v1/55181a36e4b05c72e7f6a2a3/1647221783175-FB03W1ZDJR380UF6TBPF/FRN060G1S-4U.jpeg",
             "https://image.made-in-china.com/202f0j00zURbZnpIqfcQ/Industrial-Use-High-Torque-VFD-Drive-6-Pole-5-HP-4kw-3-Phase-AC-Motor.webp"
@@ -841,7 +841,7 @@
     {
         "id": "industrial-robotics",
         "name": "INDUSTRIAL ROBOTICS & AUTOMATION",
-        "category": "Electric & Electronics",
+        "category": "Switchgear and Robotics",
         "image": "https://etimg.etb2bimg.com/thumb/msid-121408587,imgsize-62940,width-1200,height=627,overlay-etmanufacturing,resizemode-75/news/hi-tech/how-quality-robotics-and-automation-are-powering-indias-manufacturing-leap.jpg",
         "purpose": "Industrial robots are used to automate repetitive, high-precision, and heavy-duty tasks, improving productivity, safety, and quality.",
         "sub_products": [
@@ -938,7 +938,7 @@
     {
         "id": "mcb",
         "name": "MCB \u2013 MINIATURE CIRCUIT BREAKER",
-        "category": "Electric & Electronics",
+        "category": "Switchgear and Robotics",
         "image": [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAIMPuBYhGRK0LAcUoYwBiS4qTXjP9hUu0Rg&s",
             "https://us1.yofishseo.com/file/157/miniature-circuit-breaker-.jpg"
@@ -958,7 +958,7 @@
     {
         "id": "mccb",
         "name": "MCCB \u2013 MOLDED CASE CIRCUIT BREAKER",
-        "category": "Electric & Electronics",
+        "category": "Switchgear and Robotics",
         "image": [
             "https://www.mitsubishielectric.com/fa/products/lvd/lvcb/items/mccb/img/img_mv-1.png",
             "https://5.imimg.com/data5/JU/EN/MY-24001140/molded-case-circuit-breaker-500x500.jpg"
@@ -996,7 +996,7 @@
     {
         "id": "smart-factory",
         "name": "PLC + SCADA + ROBOTICS (SMART FACTORY SOLUTION)",
-        "category": "Electric & Electronics",
+        "category": "Switchgear and Robotics",
         "image": [
             "https://5.imimg.com/data5/SELLER/Default/2024/9/453545923/BQ/TL/KR/29693538/plc-based-control-panel.jpg",
             "https://www.endoks.com/wp-content/uploads/2020/05/Picture1.png",
@@ -1028,7 +1028,7 @@
     {
         "id": "plc-systems",
         "name": "PLC PANEL \u2013 INDUSTRIAL AUTOMATION",
-        "category": "Electric & Electronics",
+        "category": "Switchgear and Robotics",
         "image": [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGdXZyJIAUGsFRJQjpvR7vOad0TxzubuDaUA&s",
             "https://industry.plantautomation-technology.com/suppliers/proax-technologies-ltd/products/1650944637-big-Compact-PLC-CP1HX40DT1D-lg.jpg"
@@ -1085,7 +1085,7 @@
     {
         "id": "relays",
         "name": "RELAYS (OVERLOAD / CONTROL)",
-        "category": "Electric & Electronics",
+        "category": "Switchgear and Robotics",
         "image": [
             "https://5.imimg.com/data5/FO/AC/FO/SELLER-6295525/thermal-overload-relay-500x500.jpg",
             "https://i0.wp.com/electricbasket.in/wp-content/uploads/2023/05/tinywow_lrdrelayschneiser_31735705.webp?fit=1200%2C1200&ssl=1"
@@ -1103,10 +1103,11 @@
     {
         "id": "scada-hmi",
         "name": "SCADA SYSTEM \u2013 MONITORING & CONTROL",
-        "category": "Electric & Electronics",
+        "category": "Switchgear and Robotics",
         "image": [
-            "data:image/jpeg;base64,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",
-            "https://5.imimg.com/data5/BW/QL/MY-1639820/scada-systems.jpg"
+            "https://5.imimg.com/data5/SELLER/Default/2024/4/407859311/YC/VP/SX/39870802/scada-system-500x500.jpg",
+            "/images/scada-system.jpg",
+            "/images/scada-system-1.jpg"
         ],
         "purpose": "SCADA (Supervisory Control and Data Acquisition) systems are used for real-time monitoring, data logging, alarms, and remote control of industrial plants.",
         "sub_products": [
@@ -1136,7 +1137,7 @@
     {
         "id": "switchgear-panels",
         "name": "SWITCHGEAR & POWER DISTRIBUTION (INDUSTRIAL)",
-        "category": "Electric & Electronics",
+        "category": "Switchgear and Robotics",
         "image": [
             "https://3.imimg.com/data3/FM/VS/MY-2193540/lt-pcc-mcc-control-panels-500x500.jpg",
             "https://djelectrocontrols.com/wp-content/uploads/2025/11/pcc-panel.jpg"

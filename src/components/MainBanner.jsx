@@ -5,13 +5,15 @@ import slidesData from '../data/business_verticals.json';
 
 const MainBanner = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
+        if (isHovered) return;
         const timer = setInterval(() => {
             handleNext();
         }, 7000);
         return () => clearInterval(timer);
-    }, [currentSlide]);
+    }, [currentSlide, isHovered]);
 
     // Preload images for smoother transitions
     useEffect(() => {
@@ -61,7 +63,12 @@ const MainBanner = () => {
     };
 
     return (
-        <div id="home" className="relative w-full h-[95vh] md:h-screen min-h-[500px] md:min-h-[600px] overflow-hidden bg-gray-900 text-white font-sans">
+        <div 
+            id="home" 
+            className="relative w-full h-[95vh] md:h-screen min-h-[500px] md:min-h-[600px] overflow-hidden bg-gray-900 text-white font-sans"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
             {/* Background Image with Overlay */}
             <AnimatePresence initial={false} mode="wait">
                 <motion.div

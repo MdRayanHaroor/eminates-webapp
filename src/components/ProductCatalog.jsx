@@ -41,7 +41,7 @@ const ProductCatalog = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [modalImageIndex, setModalImageIndex] = useState(0);
 
-    const categories = ['Bio Fuels', 'Chemicals', 'Electric & Electronics', 'Mechanical', 'Oil & Lubricants', 'Pipes & Fittings', 'Real-estate & construction', 'Solar', 'Industrial Water & Wastewater Solutions'];
+    const categories = ['Bio Fuels', 'Chemicals', 'Electric & Electronics', 'Switchgear and Robotics', 'Mechanical', 'Oil & Lubricants', 'Pipes & Fittings', 'Real-estate & construction', 'Solar', 'Industrial Water & Wastewater Solutions'];
 
     // Close modal on ESC key press
     useEffect(() => {
@@ -186,7 +186,7 @@ const ProductCatalog = () => {
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
                                             transition={{ duration: 0.3 }}
-                                            className="w-full h-full object-cover"
+                                            className="w-full h-full object-contain"
                                         />
                                     </AnimatePresence>
 

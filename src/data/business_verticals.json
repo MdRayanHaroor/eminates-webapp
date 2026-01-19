@@ -24,7 +24,7 @@
             "Trading & Export",
             "Bulk Industrial Supply"
         ],
-        "image": "/images/banner-resized/biofuels.png"
+        "image": "/images/biofuels-main.png"
     },
     {
         "id": "chemicals",
@@ -43,7 +43,7 @@
             "Bulk Supply",
             "Industrial Consulting"
         ],
-        "image": "/images/banner-resized/industrial_chemicals.png"
+        "image": "/images/industrial_chemicals.png"
     },
     {
         "id": "real-estate",
@@ -123,7 +123,7 @@
             "EPC Execution",
             "Operation & Maintenance"
         ],
-        "image": "/images/banner-resized/solar.png"
+        "image": "/images/solar.png"
     },
     {
         "id": "gypsum",
@@ -163,7 +163,7 @@
             "Bulk Trading",
             "Exporting"
         ],
-        "image": "/images/banner-resized/lubricants.png"
+        "image": "/images/lubricants.png"
     },
     {
         "id": "water-solutions",
