@@ -84,11 +84,13 @@ const Navbar = () => {
                                 <button
                                     key={item}
                                     onClick={() => {
-                                        let targetId = item.toLowerCase();
-                                        if (item === 'App Features') targetId = 'features';
-                                        if (item === 'Products') targetId = 'products';
-                                        scrollToSection(targetId);
                                         setIsMobileMenuOpen(false);
+                                        setTimeout(() => {
+                                            let targetId = item.toLowerCase();
+                                            if (item === 'App Features') targetId = 'features';
+                                            if (item === 'Products') targetId = 'products';
+                                            scrollToSection(targetId);
+                                        }, 100);
                                     }}
                                     className="text-premium-dark text-lg font-medium hover:text-blue-500 transition-colors"
                                 >
@@ -97,8 +99,10 @@ const Navbar = () => {
                             ))}
                             <button
                                 onClick={() => {
-                                    scrollToSection('download');
                                     setIsMobileMenuOpen(false);
+                                    setTimeout(() => {
+                                        scrollToSection('download');
+                                    }, 100);
                                 }}
                                 className="bg-premium-dark text-white px-6 py-2 rounded-full font-semibold hover:bg-premium-accent transition-colors shadow-lg"
                             >
