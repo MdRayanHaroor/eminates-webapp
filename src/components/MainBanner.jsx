@@ -404,13 +404,22 @@ const MainBanner = () => {
 
             {/* Indicators */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-                {slidesData.map((_, idx) => (
-                    <button
-                        key={idx}
-                        onClick={() => setCurrentSlide(idx)}
-                        className={`transition-all duration-300 rounded-full h-2 ${idx === currentSlide ? 'w-8 bg-blue-500' : 'w-2 bg-white/50 hover:bg-white/80'
-                            }`}
-                    />
+                {slidesData.map((slide, idx) => (
+                    <div key={idx} className="relative group flex justify-center">
+                        {/* Tooltip */}
+                        <div className="absolute bottom-full mb-3 hidden group-hover:block whitespace-nowrap px-2 py-1 bg-black/80 text-white text-xs rounded shadow-lg backdrop-blur-sm transition-opacity duration-300">
+                            {slide.type === 'intro' ? 'Home' : (Array.isArray(slide.title) ? slide.title.join(' ') : slide.title)}
+                            {/* Arrow */}
+                            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-black/80"></div>
+                        </div>
+                        
+                        <button
+                            onClick={() => setCurrentSlide(idx)}
+                            className={`transition-all duration-300 rounded-full h-2 ${idx === currentSlide ? 'w-8 bg-blue-500' : 'w-2 bg-white/50 hover:bg-white/80'
+                                }`}
+                            aria-label={`Go to slide ${idx + 1}`}
+                        />
+                    </div>
                 ))}
             </div>
         </div>
