@@ -387,7 +387,7 @@ const MainBanner = () => {
             </div>
 
             {/* Controls */}
-            <div className="absolute inset-x-0 bottom-12 z-20 flex justify-between px-4 md:inset-x-auto md:top-1/2 md:-translate-y-1/2 md:w-full md:px-8 pointer-events-none">
+            <div className="absolute inset-x-0 bottom-12 z-20 flex justify-between px-4 md:px-8 pointer-events-none">
                 <button
                     onClick={handlePrev}
                     className="pointer-events-auto p-2 md:p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all hover:scale-110 active:scale-95 group"
