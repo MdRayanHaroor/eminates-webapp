@@ -33,16 +33,20 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
             className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white backdrop-blur-md shadow-md py-4' : 'bg-white py-4'}`}
         >
-            <div className="container mx-auto p-0 flex justify-between items-center">
+            <div className="container mx-auto px-4 lg:px-0 flex justify-between items-center">
                 {/* <div className="text-2xl font-bold text-premium-dark cursor-pointer" onClick={() => scrollToSection('home')}>
                     Eminates
                 </div> */}
-                <div className="relative h-10 w-auto flex items-center cursor-pointer" onClick={() => scrollToSection('home')}>
+                <div className="relative h-10 w-auto flex items-center cursor-pointer gap-2" onClick={() => scrollToSection('home')}>
                     <img
-                        src="/eminates_logo_side.png"
+                        src="/eminates_icon_nobg.png"
                         alt="Eminates Logo"
-                        className="h-16 w-auto max-w-none transform transition-all duration-300 hover:scale-102"
+                        className="h-18 w-auto max-w-none transform transition-all duration-300 hover:scale-102"
                     />
+                    <div className="flex flex-col justify-center translate-y-1">
+                        <span className="text-xl font-bold text-premium-dark leading-none tracking-wider">EMINATES</span>
+                        <span className="text-[8px] text-gray-700 font-bold tracking-widest mt-1 uppercase">INDUSTRIAL INVESTMENT FORUM</span>
+                    </div>
                 </div>
                 <div className="hidden md:flex space-x-8 items-center">
                     {['Home', 'Products', 'About', 'App Features'].map((item) => (
@@ -86,7 +90,7 @@ const Navbar = () => {
                         exit={{ opacity: 0, height: 0 }}
                         className="md:hidden bg-white/95 backdrop-blur-md overflow-hidden mt-2"
                     >
-                        <div className="flex flex-col items-center mt-0 py-4 px-0 space-y-2">
+                        <div className="flex flex-col items-center mt-0 py-2 px-0 space-y-2">
                             {['Home', 'Products', 'About', 'App Features'].map((item) => (
                                 <button
                                     key={item}
