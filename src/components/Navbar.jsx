@@ -39,7 +39,7 @@ const Navbar = () => {
                 </div> */}
                 <div className="relative h-10 w-auto flex items-center cursor-pointer" onClick={() => scrollToSection('home')}>
                     <img
-                        src="/public/eminates_logo_side.png"
+                        src="/eminates_logo_side.png"
                         alt="Eminates Logo"
                         className="h-16 w-auto max-w-none transform transition-all duration-300 hover:scale-102"
                     />
